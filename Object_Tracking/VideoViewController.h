@@ -7,30 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "SampleBase.h"
 #import "SampleFacade.h"
 
-@interface VideoViewController : UIViewController
+@interface VideoViewController : UIViewController <UIGestureRecognizerDelegate>
 
-@property (readonly) SampleFacade * currentSample;
+@property (strong, nonatomic) SampleFacade * currentSample;
 
+@property (weak, nonatomic) IBOutlet UIView *captureView;
 @property (weak, nonatomic) IBOutlet UIImageView *containerView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *toggleCameraButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *options;
-
-@property (nonatomic, strong) UITableView * optionsView;
-@property (nonatomic, strong) UIViewController * optionsViewController;
-
-@property (nonatomic, strong) UIAlertController * actionSheet;
 
 - (IBAction)captureReferenceFrame:(id)sender;
 - (IBAction)clearReferenceFrame:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *actionSheetButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *captureReferenceFrameButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *clearReferenceFrameButton;
-
-- (IBAction)showActionSheet:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *captureReferenceFrameButton;
+@property (weak, nonatomic) IBOutlet UIButton *clearReferenceFrameButton;
 
 @end
 

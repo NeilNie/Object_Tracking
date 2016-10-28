@@ -9,6 +9,7 @@
 #import "SampleFacade.h"
 #import "NSString+StdString.h"
 #import "UIImage2OpenCV.h"
+#import "ObjectTrackingSample.h"
 
 @interface SampleFacade(){
     NSString * m_title;
@@ -25,12 +26,10 @@
 @implementation SampleFacade
 //@synthesize sample = _sample;
 
-- (id)initWithSample: (SampleBase *)s{
-    
-    assert(s);
+- (id)init{
     
     if (self = [super init]){
-        _sample = s;
+        _sample = new ObjectTrackingSample();
     }
     
     return self;

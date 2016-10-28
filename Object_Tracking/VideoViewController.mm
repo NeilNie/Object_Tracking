@@ -15,6 +15,7 @@
 
 @interface VideoViewController ()<CvVideoCameraDelegate>
 {
+    CGPoint begin;
     cv::Mat outputFrame;
 }
 @property (nonatomic, strong) CvVideoCamera* videoSource;
@@ -28,6 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.currentSample = [[SampleFacade alloc] init];
+    
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
+    [self.view addGestureRecognizer:pan];
     
     self.videoSource = [[CvVideoCamera alloc] initWithParentView:self.containerView];
     self.videoSource.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
@@ -46,8 +52,7 @@
     [super viewWillAppear:animated];
     
     NSLog(@"capture session loaded: %d", [self.videoSource captureSessionLoaded]);
-    
-    self.toggleCameraButton.enabled = true;
+
     self.captureReferenceFrameButton.enabled = self.currentSample.isReferenceFrameRequired;
     self.clearReferenceFrameButton.enabled = self.currentSample.isReferenceFrameRequired;
 }
@@ -68,8 +73,30 @@
     [self.videoSource stop];
 }
 
-- (IBAction)showActionSheet:(id)sender{
-    [self presentViewController:self.actionSheet animated:YES completion:nil];
+#pragma mark - UIGesture Recognizers
+
+-(void)panGesture:(UIPanGestureRecognizer *)pan{
+    
+    CGPoint point = [pan translationInView:self.containerView];
+    
+    if (pan.state == UIGestureRecognizerStateBegan) {
+        
+        begin = [pan locationInView:self.view];
+        self.captureView.frame = CGRectMake(begin.x, begin.y, 1, 1);
+        self.captureView.backgroundColor = [UIColor clearColor];
+        self.captureView.layer.borderColor = [UIColor blackColor].CGColor;
+        self.captureView.layer.borderWidth = 5.0f;
+        
+    }else if (pan.state == UIGestureRecognizerStateChanged){
+        
+        self.captureView.frame = CGRectMake(begin.x, begin.y, point.x, point.y);
+        
+    }else if (pan.state == UIGestureRecognizerStateEnded){
+        
+        UIButton *track = [[UIButton alloc] initWithFrame:CGRectMake(std::abs(begin.x - point.x), std::abs(begin.y - point.y), 40, 30)];
+        [self.view addSubview:track];
+    }
+    
 }
 
 #pragma mark - Protocol CvVideoCameraDelegate

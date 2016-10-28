@@ -13,7 +13,7 @@
 
 @interface SampleFacade : NSObject
 
-- (id) initWithSample:(SampleBase*) sample;
+- (id) init;
 
 - (NSString *) title;
 - (NSString *) description;

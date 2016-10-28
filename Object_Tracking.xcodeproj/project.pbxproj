@@ -496,6 +496,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -544,6 +545,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -582,6 +584,7 @@
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PREFIX_HEADER = /Users/Neil/Desktop/Object_Tracking/Object_Tracking/object_tracking.pch;
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.Object-Tracking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -602,6 +605,7 @@
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PREFIX_HEADER = /Users/Neil/Desktop/Object_Tracking/Object_Tracking/object_tracking.pch;
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.Object-Tracking";
 				PRODUCT_NAME = "$(TARGET_NAME)";

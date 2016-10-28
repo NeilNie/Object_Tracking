@@ -83,7 +83,7 @@ public:
     //! conjugation
     Complex conj() const;
 
-    _Tp re, im; //< the real and the imaginary parts
+    _Tp re, im; ///< the real and the imaginary parts
 };
 
 typedef Complex<float> Complexf;
@@ -240,7 +240,7 @@ public:
     //! cross product of the 2 3D points
     Point3_ cross(const Point3_& pt) const;
 
-    _Tp x, y, z; //< the point coordinates
+    _Tp x, y, z; ///< the point coordinates
 };
 
 typedef Point3_<int> Point3i;
@@ -400,7 +400,7 @@ public:
     //! checks whether the rectangle contains the point
     bool contains(const Point_<_Tp>& pt) const;
 
-    _Tp x, y, width, height; //< the top-left corner, as well as width and height of the rectangle
+    _Tp x, y, width, height; ///< the top-left corner, as well as width and height of the rectangle
 };
 
 typedef Rect_<int> Rect2i;
@@ -479,9 +479,9 @@ public:
     //! returns the minimal up-right rectangle containing the rotated rectangle
     Rect boundingRect() const;
 
-    Point2f center; //< the rectangle mass center
+    Point2f center; ///< the rectangle mass center
     Size2f size;    //< width and height of the rectangle
-    float angle;    //< the rotation angle. When the angle is 0, 90, 180, 270 etc., the rectangle becomes an up-right rectangle.
+    float angle;    ///< the rotation angle. When the angle is 0, 90, 180, 270 etc., the rectangle becomes an up-right rectangle.
 };
 
 template<> class DataType< RotatedRect >
