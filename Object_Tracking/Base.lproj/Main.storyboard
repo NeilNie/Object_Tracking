@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11523"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,12 +43,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ga-CL-dIR">
+                                <rect key="frame" x="280" y="539" width="95" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ff4-uE-l4s"/>
+                                    <constraint firstAttribute="width" constant="95" id="s8z-dy-sat"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qpb-MN-FVV">
+                                <rect key="frame" x="185" y="539" width="95" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="XBO-bU-V8d"/>
+                                    <constraint firstAttribute="height" constant="128" id="YD5-Qz-Gft"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bB5-71-da1" secondAttribute="bottom" id="Bkf-R5-21J"/>
                             <constraint firstItem="RxQ-Qe-EV1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DLm-gh-woI"/>
                             <constraint firstItem="bB5-71-da1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ebb-zu-IY8"/>
+                            <constraint firstItem="8ga-CL-dIR" firstAttribute="leading" secondItem="Qpb-MN-FVV" secondAttribute="trailing" id="Lr5-YH-fqQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8ga-CL-dIR" secondAttribute="bottom" id="Pbr-J5-WrH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qpb-MN-FVV" secondAttribute="bottom" id="UAo-FD-Eug"/>
+                            <constraint firstAttribute="trailing" secondItem="8ga-CL-dIR" secondAttribute="trailing" id="axR-kw-cVi"/>
                             <constraint firstItem="bB5-71-da1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bl0-e6-ruj"/>
                             <constraint firstItem="rTT-la-3SN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cLe-4Q-OCz"/>
                             <constraint firstAttribute="trailing" secondItem="bB5-71-da1" secondAttribute="trailing" id="kCA-J5-Xb6"/>
@@ -62,6 +79,8 @@
                         <outlet property="captureView" destination="IeW-E0-uBh" id="xXL-0l-IhW"/>
                         <outlet property="clearReferenceFrameButton" destination="rTT-la-3SN" id="bvT-ph-D85"/>
                         <outlet property="containerView" destination="bB5-71-da1" id="VVy-Ha-GZ4"/>
+                        <outlet property="testImage" destination="8ga-CL-dIR" id="M1q-Vn-vZD"/>
+                        <outlet property="testImage2" destination="Qpb-MN-FVV" id="rkv-x8-Hvm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

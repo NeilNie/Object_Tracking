@@ -91,12 +91,23 @@
         
         self.captureView.frame = CGRectMake(begin.x, begin.y, point.x, point.y);
         
-    }else if (pan.state == UIGestureRecognizerStateEnded){
-        
-        UIButton *track = [[UIButton alloc] initWithFrame:CGRectMake(std::abs(begin.x - point.x), std::abs(begin.y - point.y), 40, 30)];
-        [self.view addSubview:track];
     }
+}
+
+- (UIImage *)imageByCroppingImage:(UIImage *)image{
     
+    // not equivalent to image.size (which depends on the imageOrientation)
+    CGRect cropRect = CGRectMake(self.view.frame.size.width - self.captureView.frame.origin.y - self.captureView.frame.size.height,
+                                 self.view.frame.size.height -self.captureView.frame.origin.x - self.captureView.frame.size.width,
+                                 self.captureView.frame.size.height,
+                                 self.captureView.frame.size.width);
+    
+    CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], cropRect);
+    
+    UIImage *cropped = [UIImage imageWithCGImage:imageRef scale:0.0 orientation:UIImageOrientationLeft];
+    CGImageRelease(imageRef);
+    
+    return cropped;
 }
 
 #pragma mark - Protocol CvVideoCameraDelegate
@@ -107,12 +118,18 @@
     // Do some OpenCV stuff with the image
     [self.currentSample processFrame:image into:outputFrame];
     outputFrame.copyTo(image);
+    self.testImage2.image = [UIImage imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
 }
 #endif
 
 #pragma mark - Capture reference frame
 
 - (IBAction) captureReferenceFrame:(id) sender{
+    
+    UIImage *uiimage = [UIImage imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
+    self.testImage2.image = uiimage;
+    self.testImage.image = [self imageByCroppingImage:uiimage];
+    outputFrame = [[self imageByCroppingImage:uiimage] toMat];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.currentSample setReferenceFrame:outputFrame];

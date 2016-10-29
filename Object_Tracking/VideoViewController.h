@@ -10,16 +10,16 @@
 #import <UIKit/UIKit.h>
 #import "SampleBase.h"
 #import "SampleFacade.h"
+#import "UIImage2OpenCV.h"
 
 @interface VideoViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) SampleFacade * currentSample;
 
+@property (weak, nonatomic) IBOutlet UIImageView *testImage2;
+@property (weak, nonatomic) IBOutlet UIImageView *testImage;
 @property (weak, nonatomic) IBOutlet UIView *captureView;
 @property (weak, nonatomic) IBOutlet UIImageView *containerView;
-
-- (IBAction)captureReferenceFrame:(id)sender;
-- (IBAction)clearReferenceFrame:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *captureReferenceFrameButton;
 @property (weak, nonatomic) IBOutlet UIButton *clearReferenceFrameButton;
