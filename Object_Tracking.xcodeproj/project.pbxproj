@@ -23,6 +23,13 @@
 		281E477C1DC1689900AFB85D /* UIImage2OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 281E477B1DC1689900AFB85D /* UIImage2OpenCV.mm */; };
 		281E47801DC1697A00AFB85D /* Globals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 281E477E1DC1697A00AFB85D /* Globals.cpp */; };
 		281E47831DC1699800AFB85D /* cvneon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 281E47811DC1699800AFB85D /* cvneon.cpp */; };
+		28EB1A591DC65A7E0066E8C0 /* GeometryUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28EB1A4D1DC65A7E0066E8C0 /* GeometryUtil.mm */; };
+		28EB1A5A1DC65A7E0066E8C0 /* MLManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28EB1A4F1DC65A7E0066E8C0 /* MLManager.mm */; };
+		28EB1A5B1DC65A7E0066E8C0 /* MSERFeature.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28EB1A511DC65A7E0066E8C0 /* MSERFeature.mm */; };
+		28EB1A5C1DC65A7E0066E8C0 /* MSERManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28EB1A531DC65A7E0066E8C0 /* MSERManager.mm */; };
+		28EB1A5D1DC65A7E0066E8C0 /* FPS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28EB1A561DC65A7E0066E8C0 /* FPS.mm */; };
+		28EB1A5E1DC65A7E0066E8C0 /* ImageUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28EB1A581DC65A7E0066E8C0 /* ImageUtils.mm */; };
+		28EB1A611DC65A900066E8C0 /* CameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28EB1A601DC65A900066E8C0 /* CameraViewController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +82,20 @@
 		281E47811DC1699800AFB85D /* cvneon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cvneon.cpp; sourceTree = "<group>"; };
 		281E47821DC1699800AFB85D /* cvneon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvneon.h; sourceTree = "<group>"; };
 		281E47861DC16BEE00AFB85D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		28EB1A4C1DC65A7E0066E8C0 /* GeometryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryUtil.h; sourceTree = "<group>"; };
+		28EB1A4D1DC65A7E0066E8C0 /* GeometryUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GeometryUtil.mm; sourceTree = "<group>"; };
+		28EB1A4E1DC65A7E0066E8C0 /* MLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLManager.h; sourceTree = "<group>"; };
+		28EB1A4F1DC65A7E0066E8C0 /* MLManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MLManager.mm; sourceTree = "<group>"; };
+		28EB1A501DC65A7E0066E8C0 /* MSERFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSERFeature.h; sourceTree = "<group>"; };
+		28EB1A511DC65A7E0066E8C0 /* MSERFeature.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MSERFeature.mm; sourceTree = "<group>"; };
+		28EB1A521DC65A7E0066E8C0 /* MSERManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSERManager.h; sourceTree = "<group>"; };
+		28EB1A531DC65A7E0066E8C0 /* MSERManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MSERManager.mm; sourceTree = "<group>"; };
+		28EB1A551DC65A7E0066E8C0 /* FPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPS.h; sourceTree = "<group>"; };
+		28EB1A561DC65A7E0066E8C0 /* FPS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FPS.mm; sourceTree = "<group>"; };
+		28EB1A571DC65A7E0066E8C0 /* ImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtils.h; sourceTree = "<group>"; };
+		28EB1A581DC65A7E0066E8C0 /* ImageUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageUtils.mm; sourceTree = "<group>"; };
+		28EB1A5F1DC65A900066E8C0 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		28EB1A601DC65A900066E8C0 /* CameraViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraViewController.mm; sourceTree = "<group>"; };
 		9D19A605FBB8061045344166 /* Pods-Object_Tracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Object_Tracking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Object_Tracking/Pods-Object_Tracking.debug.xcconfig"; sourceTree = "<group>"; };
 		BB42437E00136F391C9A20FF /* libPods-Object_Tracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Object_Tracking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2ED191FFABD83FCC7D510D0 /* Pods-Object_Tracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Object_Tracking.release.xcconfig"; path = "Pods/Target Support Files/Pods-Object_Tracking/Pods-Object_Tracking.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,12 +151,11 @@
 		281E472F1DC167B300AFB85D /* Object_Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				281E47841DC1699B00AFB85D /* OpenCV_neon */,
+				281E47391DC167B300AFB85D /* Main.storyboard */,
+				28EB1A4B1DC65A7E0066E8C0 /* Algorithms */,
+				28EB1A541DC65A7E0066E8C0 /* Utils */,
 				281E47701DC167F700AFB85D /* Object_Tracking */,
 				281E47711DC1680100AFB85D /* Bases */,
-				281E47331DC167B300AFB85D /* AppDelegate.h */,
-				281E47341DC167B300AFB85D /* AppDelegate.m */,
-				281E47391DC167B300AFB85D /* Main.storyboard */,
 				281E47631DC167CA00AFB85D /* ViewControllers */,
 				281E47301DC167B300AFB85D /* Supporting Files */,
 			);
@@ -145,6 +165,8 @@
 		281E47301DC167B300AFB85D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				281E47331DC167B300AFB85D /* AppDelegate.h */,
+				281E47341DC167B300AFB85D /* AppDelegate.m */,
 				281E477D1DC168B800AFB85D /* object_tracking.pch */,
 				281E477A1DC1689900AFB85D /* UIImage2OpenCV.h */,
 				281E477B1DC1689900AFB85D /* UIImage2OpenCV.mm */,
@@ -170,6 +192,8 @@
 		281E47631DC167CA00AFB85D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				28EB1A5F1DC65A900066E8C0 /* CameraViewController.h */,
+				28EB1A601DC65A900066E8C0 /* CameraViewController.mm */,
 				281E47721DC1682B00AFB85D /* VideoViewController.h */,
 				281E47731DC1682B00AFB85D /* VideoViewController.mm */,
 			);
@@ -179,6 +203,7 @@
 		281E47701DC167F700AFB85D /* Object_Tracking */ = {
 			isa = PBXGroup;
 			children = (
+				281E47841DC1699B00AFB85D /* OpenCV_neon */,
 				281E476A1DC167F100AFB85D /* ObjectTrackingClass.cpp */,
 				281E476B1DC167F100AFB85D /* ObjectTrackingClass.h */,
 				281E476C1DC167F100AFB85D /* ObjectTrackingSample.cpp */,
@@ -216,6 +241,32 @@
 				BB42437E00136F391C9A20FF /* libPods-Object_Tracking.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28EB1A4B1DC65A7E0066E8C0 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				28EB1A4C1DC65A7E0066E8C0 /* GeometryUtil.h */,
+				28EB1A4D1DC65A7E0066E8C0 /* GeometryUtil.mm */,
+				28EB1A4E1DC65A7E0066E8C0 /* MLManager.h */,
+				28EB1A4F1DC65A7E0066E8C0 /* MLManager.mm */,
+				28EB1A501DC65A7E0066E8C0 /* MSERFeature.h */,
+				28EB1A511DC65A7E0066E8C0 /* MSERFeature.mm */,
+				28EB1A521DC65A7E0066E8C0 /* MSERManager.h */,
+				28EB1A531DC65A7E0066E8C0 /* MSERManager.mm */,
+			);
+			path = Algorithms;
+			sourceTree = "<group>";
+		};
+		28EB1A541DC65A7E0066E8C0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				28EB1A551DC65A7E0066E8C0 /* FPS.h */,
+				28EB1A561DC65A7E0066E8C0 /* FPS.mm */,
+				28EB1A571DC65A7E0066E8C0 /* ImageUtils.h */,
+				28EB1A581DC65A7E0066E8C0 /* ImageUtils.mm */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		898E48032DC631DE49E7A6B6 /* Pods */ = {
@@ -417,14 +468,21 @@
 				281E476F1DC167F100AFB85D /* ObjectTrackingSample.cpp in Sources */,
 				281E47681DC167EA00AFB85D /* SampleBase.cpp in Sources */,
 				281E476E1DC167F100AFB85D /* ObjectTrackingClass.cpp in Sources */,
+				28EB1A5B1DC65A7E0066E8C0 /* MSERFeature.mm in Sources */,
 				281E47831DC1699800AFB85D /* cvneon.cpp in Sources */,
+				28EB1A5C1DC65A7E0066E8C0 /* MSERManager.mm in Sources */,
 				281E47741DC1682B00AFB85D /* VideoViewController.mm in Sources */,
+				28EB1A5D1DC65A7E0066E8C0 /* FPS.mm in Sources */,
 				281E47801DC1697A00AFB85D /* Globals.cpp in Sources */,
 				281E47351DC167B300AFB85D /* AppDelegate.m in Sources */,
+				28EB1A5E1DC65A7E0066E8C0 /* ImageUtils.mm in Sources */,
 				281E47691DC167EA00AFB85D /* SampleFacade.mm in Sources */,
+				28EB1A5A1DC65A7E0066E8C0 /* MLManager.mm in Sources */,
 				281E477C1DC1689900AFB85D /* UIImage2OpenCV.mm in Sources */,
+				28EB1A591DC65A7E0066E8C0 /* GeometryUtil.mm in Sources */,
 				281E47321DC167B300AFB85D /* main.m in Sources */,
 				281E47791DC1689200AFB85D /* NSString+StdString.mm in Sources */,
+				28EB1A611DC65A900066E8C0 /* CameraViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +634,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -597,6 +656,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

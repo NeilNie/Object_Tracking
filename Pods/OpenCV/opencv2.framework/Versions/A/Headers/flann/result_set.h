@@ -449,7 +449,7 @@ class RadiusUniqueResultSet : public UniqueResultSet<DistanceType>
 {
 public:
     /** Constructor
-     * @param radius the maximum distance of a neighbor
+     * @param capacity the number of neighbors to store at max
      */
     RadiusUniqueResultSet(DistanceType radius) :
         radius_(radius)
@@ -509,7 +509,6 @@ class KNNRadiusUniqueResultSet : public KNNUniqueResultSet<DistanceType>
 public:
     /** Constructor
      * @param capacity the number of neighbors to store at max
-     * @param radius the maximum distance of a neighbor
      */
     KNNRadiusUniqueResultSet(unsigned int capacity, DistanceType radius)
     {

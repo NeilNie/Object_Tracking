@@ -15,10 +15,6 @@
 
 - (id) init;
 
-- (NSString *) title;
-- (NSString *) description;
-- (NSString *) friendlyName;
-
 - (bool)processFrame:(const cv::Mat&) inputFrame into:(cv::Mat&) outputFrame;
 
 - (UIImage*)processFrame:(UIImage*) source;
