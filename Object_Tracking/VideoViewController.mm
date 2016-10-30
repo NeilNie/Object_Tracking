@@ -9,13 +9,12 @@
 #import "VideoViewController.h"
 #import "UIImage2OpenCV.h"
 
-#import <opencv2/highgui/cap_ios.h>
+#import <opencv2/videoio/cap_ios.h>
 
 #define kTransitionDuration	0.75
 
 @interface VideoViewController ()<CvVideoCameraDelegate>
 {
-    BOOL bbegin;
     CGPoint begin;
     cv::Mat outputFrame;
 }
@@ -38,14 +37,14 @@
     
     self.videoSource = [[CvVideoCamera alloc] initWithParentView:self.containerView];
     self.videoSource.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
-    self.videoSource.defaultAVCaptureSessionPreset = AVCaptureSessionPresetMedium;
-    self.videoSource.defaultFPS = 15;
-    self.videoSource.imageWidth = self.view.frame.size.width / 2;
-    self.videoSource.imageHeight = self.view.frame.size.height/ 2;
+    self.videoSource.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
+    self.videoSource.defaultFPS = 30;
+    self.videoSource.imageWidth = 1280;
+    self.videoSource.imageHeight = 720;
     self.videoSource.delegate = self;
     self.videoSource.recordVideo = NO;
     self.videoSource.grayscaleMode = NO;
-    bbegin = NO;
+
 }
 
 - (void) viewWillAppear:(BOOL)animated{
@@ -53,7 +52,7 @@
     [super viewWillAppear:animated];
     
     NSLog(@"capture session loaded: %d", [self.videoSource captureSessionLoaded]);
-    
+
     self.captureReferenceFrameButton.enabled = self.currentSample.isReferenceFrameRequired;
     self.clearReferenceFrameButton.enabled = self.currentSample.isReferenceFrameRequired;
 }
@@ -95,9 +94,16 @@
     }
 }
 
-- (UIImage *)croppIngimageByImageName:(UIImage *)imageToCrop toRect:(CGRect)rect{
+- (UIImage *)imageByCroppingImage:(UIImage *)image{
     
-    CGImageRef imageRef = CGImageCreateWithImageInRect([imageToCrop CGImage], rect);
+    // not equivalent to image.size (which depends on the imageOrientation)
+    CGRect cropRect = CGRectMake(self.view.frame.size.width - self.captureView.frame.origin.y - self.captureView.frame.size.height,
+                                 self.view.frame.size.height -self.captureView.frame.origin.x - self.captureView.frame.size.width,
+                                 self.captureView.frame.size.height,
+                                 self.captureView.frame.size.width);
+    
+    CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], cropRect);
+    
     UIImage *cropped = [UIImage imageWithCGImage:imageRef scale:0.0 orientation:UIImageOrientationLeft];
     CGImageRelease(imageRef);
     
@@ -109,48 +115,24 @@
 #ifdef __cplusplus
 
 - (void) processImage:(cv::Mat&)image{
-    
-    //frame processing should be done here. Refer to objectTrack class for actual algorithm.
-    
+    // Do some OpenCV stuff with the image
     [self.currentSample processFrame:image into:outputFrame];
     outputFrame.copyTo(image);
-    
-//    if (bbegin) {
-//        UIImage *iimage = [UIImage imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
-//        outputFrame = [[self croppIngimageByImageName:iimage toRect:CGRectMake(300,
-//                                                                               300,
-//                                                                               300,
-//                                                                               300)] toMat];
-//    }
-//    
-    //display actual image
-    UIImage *uiimage2 = [UIImage imageWithMat:image andImageOrientation:UIImageOrientationLeft];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.testImage2.image = uiimage2;
-    });
-    
-    //display output frame
-    UIImage *uiimage = [UIImage imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.testImage.image = uiimage;
-    });
+    self.testImage2.image = [UIImage imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
 }
 #endif
 
 #pragma mark - Capture reference frame
 
 - (IBAction) captureReferenceFrame:(id) sender{
-
-    UIImage *iimage = [UIImage imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
-    outputFrame = [[self croppIngimageByImageName:iimage toRect:CGRectMake(200,
-                                                                     200,
-                                                                     200,
-                                                                     200)] toMat];
-    bbegin = YES;
+    
+    UIImage *uiimage = [UIImage imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
+    self.testImage2.image = uiimage;
+    self.testImage.image = [self imageByCroppingImage:uiimage];
+    outputFrame = [[self imageByCroppingImage:uiimage] toMat];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.currentSample setReferenceFrame:outputFrame];
-        self.testImage.image = [UIImage imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
     });
 }
 
@@ -160,8 +142,8 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.currentSample resetReferenceFrame];
-        bbegin = NO;
     });
 }
+
 
 @end

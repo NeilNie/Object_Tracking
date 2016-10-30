@@ -51,11 +51,33 @@ namespace cv
     
     static void neon_asm_mat4_vec4_mul(const float* __restrict m, const int* __restrict v, int* __restrict output)
     {
-
+        float32x4x4_t _m = vld4q_f32(m);
+        float32x4_t   _v = vcvtq_f32_s32(vld1q_s32(v));
+        
+        float32x4_t    r = vmulq_n_f32(_m.val[0], _v[0]);
+        r = vmlaq_n_f32(r, _m.val[1], _v[1]);
+        r = vmlaq_n_f32(r, _m.val[2], _v[2]);
+        r = vmlaq_n_f32(r, _m.val[3], _v[3]);
+        
+        int32x4_t result = vcvtq_s32_f32(r);
+        vst1q_s32(output, result);
     }
     
     static void neon_asm_convert(uint8_t * __restrict dest, uint8_t * __restrict src, int numPixels)
     {
+        uint8x8_t r = vdup_n_u8(28);
+        uint8x8_t g = vdup_n_u8(151);
+        uint8x8_t b = vdup_n_u8(77);
+        
+        for (int i = 0; i < numPixels; i += 8, src += 32, dest += 8)
+        {
+            uint8x8x4_t _src = vld4_u8(src);
+            int16x8_t gray = vmull_u8(r, _src.val[0]);
+            gray = vmlal_u8(gray, _src.val[1], g);
+            gray = vmlal_u8(gray, _src.val[2], b);
+            uint8x8_t res = vshrn_n_s16(gray, 8);
+            vst1_u8(dest, res);
+        }
         
     }
     

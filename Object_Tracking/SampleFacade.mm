@@ -22,14 +22,76 @@
 
 @end
 
+
 @implementation SampleFacade
+//@synthesize sample = _sample;
 
 - (id)init{
     
-    if (self = [super init])
+    if (self = [super init]){
         _sample = new ObjectTrackingSample();
+    }
     
     return self;
+}
+
+- (NSString *) title{
+    
+    if (!m_title)
+    {
+        m_title = [NSString stringWithCString:_sample->getName().c_str() encoding:NSASCIIStringEncoding];
+    }
+    
+    return m_title;
+}
+
+- (NSString *) description{
+    
+    if (!m_description){
+        
+        m_description = [NSString stringWithCString:_sample->getDescription().c_str() encoding:NSASCIIStringEncoding];
+    }
+    
+    return m_description;
+}
+
+
+- (UIImage *)smallIcon{
+    
+    if (!m_smallIcon)
+    {
+        if (_sample->hasIcon()){
+            
+            NSString * iconStr = [NSString stringWithStdString:_sample->getSampleIcon()];
+            m_smallIcon = [[UIImage imageNamed:iconStr] thumbnailWithSize:80];
+        }else{
+            UIImage * srcImage = [UIImage imageNamed:@"DefaultSampleIcon.png"];
+            m_smallIcon = [self processFrame:[srcImage thumbnailWithSize:80]];
+        }
+    }
+    
+    return m_smallIcon;
+}
+
+- (UIImage *)largeIcon{
+    
+    if (!m_largeIcon)
+    {
+        if (_sample->hasIcon())
+        {
+            NSString * iconStr = [NSString stringWithStdString:_sample->getSampleIcon()];
+            m_largeIcon = [UIImage imageNamed:iconStr];
+        }
+        else
+        {
+            UIImage * src = [UIImage imageNamed:@"DefaultSampleIcon.png"];
+            assert(src);
+
+            m_largeIcon = [self processFrame:src];
+        }
+    }
+    
+    return m_largeIcon;
 }
 
 - (bool)processFrame:(const cv::Mat&) inputFrame into:(cv::Mat&) outputFrame{
@@ -46,12 +108,23 @@
     return result;
 }
 
+- (NSString *) friendlyName{
+    return [NSString stringWithCString:_sample->getUserFriendlyName().c_str() encoding:NSASCIIStringEncoding];
+}
+
 - (bool) getIsReferenceFrameRequired{
     return _sample->isReferenceFrameRequired();
 }
 
-- (void) setReferenceFrame:(cv::Mat&) referenceFrame{ _sample->setReferenceFrame(referenceFrame);}
+- (void) setReferenceFrame:(cv::Mat&) referenceFrame{
+    
+    _sample->setReferenceFrame(referenceFrame);
+    
+}
 
-- (void) resetReferenceFrame{ _sample->resetReferenceFrame(); }
+- (void) resetReferenceFrame{
+    
+    _sample->resetReferenceFrame();
+}
 
 @end
