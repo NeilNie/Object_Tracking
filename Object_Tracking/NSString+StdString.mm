@@ -10,9 +10,9 @@
 
 @implementation NSString (StdString)
 
-+ (NSString*) stringWithStdString: (const std::string&) str
-{
-  return [[NSString alloc] initWithCString:str.c_str() encoding:NSASCIIStringEncoding];
++ (NSString*) stringWithStdString: (const std::string&) str{
+    
+    return [[NSString alloc] initWithCString:str.c_str() encoding:NSASCIIStringEncoding];
 }
 
 @end
