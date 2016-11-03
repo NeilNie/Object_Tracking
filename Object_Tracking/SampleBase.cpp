@@ -10,21 +10,6 @@
 #include <iostream>
 #include "cvneon.h"
 
-std::string SampleBase::getUserFriendlyName() const
-{
-    return getName();
-}
-
-std::string SampleBase::getSampleIcon() const
-{
-    return "";
-}
-
-bool SampleBase::hasIcon() const
-{
-    return false == getSampleIcon().empty();
-}
-
 void SampleBase::getGray(const cv::Mat& input, cv::Mat& gray){
     
     const int numChannes = input.channels();

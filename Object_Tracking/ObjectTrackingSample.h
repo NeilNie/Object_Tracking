@@ -16,14 +16,6 @@ class ObjectTrackingSample : public SampleBase
 public:
     ObjectTrackingSample();
     
-    //! Gets a sample name
-    virtual std::string getName() const;
-    
-    virtual std::string getSampleIcon() const;
-    
-    //! Returns a detailed sample description
-    virtual std::string getDescription() const;
-    
     //! Returns true if this sample requires setting a reference image for latter use
     virtual bool isReferenceFrameRequired() const;
     

@@ -7,8 +7,7 @@
 //
 
 #import "VideoViewController.h"
-#import "UIImage2OpenCV.h"
-
+#import "ImageUtils.h"
 #import <opencv2/videoio/cap_ios.h>
 
 #define kTransitionDuration	0.75
@@ -118,7 +117,7 @@
     // Do some OpenCV stuff with the image
     [self.currentSample processFrame:image into:outputFrame];
     outputFrame.copyTo(image);
-    self.testImage2.image = [UIImage imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
+    self.testImage2.image = [ImageUtils imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
 }
 #endif
 
@@ -126,10 +125,10 @@
 
 - (IBAction) captureReferenceFrame:(id) sender{
     
-    UIImage *uiimage = [UIImage imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
+    UIImage *uiimage = [ImageUtils imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
     self.testImage2.image = uiimage;
     self.testImage.image = [self imageByCroppingImage:uiimage];
-    outputFrame = [[self imageByCroppingImage:uiimage] toMat];
+    outputFrame = [ImageUtils cvMatFromUIImage:[self imageByCroppingImage:uiimage]];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.currentSample setReferenceFrame:outputFrame];

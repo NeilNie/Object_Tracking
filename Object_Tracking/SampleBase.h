@@ -16,17 +16,6 @@
 class SampleBase
 {
 public:
-    //! Gets a sample name
-    virtual std::string getName() const = 0;
-    
-    //! Returns a user-friendly name for displaying as description
-    virtual std::string getUserFriendlyName() const;
-    
-    //! Returns a detailed sample description
-    virtual std::string getDescription() const = 0;
-    
-    //! Returns a icon for this sample. The default implementation returns empty string
-    virtual std::string getSampleIcon() const;
     
     //! Returns true if this sample requires setting a reference image for latter use
     virtual bool isReferenceFrameRequired() const;

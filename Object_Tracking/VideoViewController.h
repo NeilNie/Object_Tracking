@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 #import "SampleBase.h"
 #import "SampleFacade.h"
-#import "UIImage2OpenCV.h"
 
 @interface VideoViewController : UIViewController <UIGestureRecognizerDelegate>
 

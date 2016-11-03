@@ -17,20 +17,6 @@ ObjectTrackingSample::ObjectTrackingSample(): m_algorithmName("LKT"), m_maxCorne
     algos.push_back("LKT");
 }
 
-//! Gets a sample name
-std::string ObjectTrackingSample::getName() const{
-    return "Object tracking";
-}
-
-//! Returns a detailed sample description
-std::string ObjectTrackingSample::getDescription() const{
-    return "Object tracking sample.";
-}
-
-std::string ObjectTrackingSample::getSampleIcon() const{
-    return "";
-}
-
 //! Returns true if this sample requires setting a reference image for latter use
 bool ObjectTrackingSample::isReferenceFrameRequired() const{
     return true;
