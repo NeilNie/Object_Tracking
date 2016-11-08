@@ -19,8 +19,8 @@
 
 static long long last;
 
-+(int)tick{
-    
++(int) tick
+{
     struct timeval t;
     gettimeofday(&t, NULL);
     
@@ -32,7 +32,7 @@ static long long last;
     return result;
 }
 
-+(void)draw: (cv::Mat) rgb;
++(void) draw: (cv::Mat) rgb;
 {
     int fps = [FPS tick];
     const char* str_fps = [[NSString stringWithFormat: @"FPS: %d", fps] cStringUsingEncoding: NSUTF8StringEncoding];

@@ -26,8 +26,8 @@ const cv::Scalar WHITE = cv::Scalar(255, 255, 255);
 const cv::Scalar YELLOW = cv::Scalar(0, 255, 255);
 const cv::Scalar LIGHT_GRAY = cv::Scalar(100, 100, 100);
 
-+ (cv::Mat) cvMatFromUIImage: (UIImage *) image{
-    
++ (cv::Mat) cvMatFromUIImage: (UIImage *) image
+{
     CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
     CGFloat cols = image.size.width;
     CGFloat rows = image.size.height;
@@ -76,9 +76,12 @@ const cv::Scalar LIGHT_GRAY = cv::Scalar(100, 100, 100);
     NSData *data = [NSData dataWithBytes:cvMat.data length:cvMat.elemSize()*cvMat.total()];
     CGColorSpaceRef colorSpace;
     
-    if (cvMat.elemSize() == 1){
+    if (cvMat.elemSize() == 1)
+    {
         colorSpace = CGColorSpaceCreateDeviceGray();
-    }else{
+    }
+    else
+    {
         colorSpace = CGColorSpaceCreateDeviceRGB();
     }
     
@@ -117,7 +120,8 @@ const cv::Scalar LIGHT_GRAY = cv::Scalar(100, 100, 100);
 
     cv::Mat color(maxY - minY, maxX - minX, CV_8UC3);
     
-    std::for_each(mser->begin(), mser->end(), [&] (cv::Point &p) {
+    std::for_each(mser->begin(), mser->end(), [&] (cv::Point &p) 
+    {
         cv::Point newPoint = cv::Point(p.x - minX, p.y - minY);
         cv::line(color, newPoint, newPoint, WHITE);
     });    
@@ -127,15 +131,15 @@ const cv::Scalar LIGHT_GRAY = cv::Scalar(100, 100, 100);
     return gray;
 }
 
-+ (void) drawMser: (std::vector<cv::Point> *) mser intoImage: (cv::Mat *) image withColor: (cv::Scalar) color{
-    
++ (void) drawMser: (std::vector<cv::Point> *) mser intoImage: (cv::Mat *) image withColor: (cv::Scalar) color
+{
     std::for_each(mser->begin(), mser->end(), [&](cv::Point &p) { 
         cv::line(*image, p, p, color);
     });
 }
 
-+ (std::vector<cv::Point>) maxMser: (cv::Mat *) gray{
-    
++ (std::vector<cv::Point>) maxMser: (cv::Mat *) gray
+{
     std::vector<std::vector<cv::Point>> msers;
     [[MSERManager sharedInstance] detectRegions: *gray intoVector: msers];
 
@@ -147,122 +151,6 @@ const cv::Scalar LIGHT_GRAY = cv::Scalar(100, 100, 100);
     })[0];
     
     return mser;
-}
-
-#pragma mark - methods from 
-
-//-(cv::Mat)toMat
-//{
-//    CGImageRef imageRef = self.CGImage;
-//    
-//    const int srcWidth        = (int)CGImageGetWidth(imageRef);
-//    const int srcHeight       = (int)CGImageGetHeight(imageRef);
-//    //const int stride          = CGImageGetBytesPerRow(imageRef);
-//    //const int bitPerPixel     = CGImageGetBitsPerPixel(imageRef);
-//    //const int bitPerComponent = CGImageGetBitsPerComponent(imageRef);
-//    //const int numPixels       = bitPerPixel / bitPerComponent;
-//    
-//    CGDataProviderRef dataProvider = CGImageGetDataProvider(imageRef);
-//    CFDataRef rawData = CGDataProviderCopyData(dataProvider);
-//    
-//    //unsigned char * dataPtr = const_cast<unsigned char*>(CFDataGetBytePtr(rawData));
-//    
-//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-//    
-//    cv::Mat rgbaContainer(srcHeight, srcWidth, CV_8UC4);
-//    CGContextRef context = CGBitmapContextCreate(rgbaContainer.data,
-//                                                 srcWidth,
-//                                                 srcHeight,
-//                                                 8,
-//                                                 4 * srcWidth,
-//                                                 colorSpace,
-//                                                 kCGImageAlphaNoneSkipLast | kCGBitmapByteOrder32Big);
-//    
-//    CGContextDrawImage(context, CGRectMake(0, 0, srcWidth, srcHeight), imageRef);
-//    CGContextRelease(context);
-//    CGColorSpaceRelease(colorSpace);
-//    
-//    CFRelease(rawData);
-//    
-//    cv::Mat t;
-//    cv::cvtColor(rgbaContainer, t, cv::COLOR_RGBA2BGRA);
-//    
-//    //cv::Vec4b a = rgbaContainer.at<cv::Vec4b>(0,0);
-//    //cv::Vec4b b = t.at<cv::Vec4b>(0,0);
-//    //std::cout << std::hex << (int)a[0] << " "<< (int)a[1] << " " << (int)a[2] << " "  << (int)a[3] << std::endl;
-//    //std::cout << std::hex << (int)b[0] << " "<< (int)b[1] << " " << (int)b[2] << " "  << (int)b[3] << std::endl;
-//    
-//    return t;
-//}
-
-+(UIImage*) imageWithMat:(const cv::Mat&) image andDeviceOrientation: (UIDeviceOrientation) orientation
-{
-    UIImageOrientation imgOrientation = UIImageOrientationUp;
-    
-    switch (orientation){
-        case UIDeviceOrientationLandscapeLeft:
-            imgOrientation = UIImageOrientationUp; break;
-            
-        case UIDeviceOrientationLandscapeRight:
-            imgOrientation = UIImageOrientationDown; break;
-            
-        case UIDeviceOrientationPortraitUpsideDown:
-            imgOrientation = UIImageOrientationRightMirrored; break;
-            
-        default:
-        case UIDeviceOrientationPortrait:
-            imgOrientation = UIImageOrientationRight; break;
-    };
-    
-    return [ImageUtils imageWithMat:image andImageOrientation:imgOrientation];
-}
-
-+(UIImage*) imageWithMat:(const cv::Mat&) image andImageOrientation: (UIImageOrientation) orientation;
-{
-    cv::Mat rgbaView;
-    
-    if (image.channels() == 3)
-    {
-        cv::cvtColor(image, rgbaView, cv::COLOR_BGR2RGBA);
-    }
-    else if (image.channels() == 4)
-    {
-        cv::cvtColor(image, rgbaView, cv::COLOR_BGRA2RGBA);
-    }
-    else if (image.channels() == 1)
-    {
-        cv::cvtColor(image, rgbaView, cv::COLOR_GRAY2RGBA);
-    }
-    
-    NSData *data = [NSData dataWithBytes:rgbaView.data length:rgbaView.elemSize() * rgbaView.total()];
-    
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    
-    CGDataProviderRef provider = CGDataProviderCreateWithCFData((__bridge CFDataRef)data);
-    
-    CGBitmapInfo bmInfo = kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big;
-    
-    // Creating CGImage from cv::Mat
-    CGImageRef imageRef = CGImageCreate(rgbaView.cols,                              //width
-                                        rgbaView.rows,                              //height
-                                        8,                                          //bits per component
-                                        8 * rgbaView.elemSize(),                    //bits per pixel
-                                        rgbaView.step.p[0],                         //bytesPerRow
-                                        colorSpace,                                 //colorspace
-                                        bmInfo,// bitmap info
-                                        provider,                                   //CGDataProviderRef
-                                        NULL,                                       //decode
-                                        false,                                      //should interpolate
-                                        kCGRenderingIntentDefault                   //intent
-                                        );
-    
-    // Getting UIImage from CGImage
-    UIImage *finalImage = [UIImage imageWithCGImage:imageRef scale:1 orientation:orientation];
-    CGImageRelease(imageRef);
-    CGDataProviderRelease(provider);
-    CGColorSpaceRelease(colorSpace);
-    
-    return finalImage;
 }
 
 @end

@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "SampleBase.h"
 
-//typedef std::map<std::string> OptionsMap;
-
 @interface SampleFacade : NSObject
 
 - (id) init;
@@ -18,8 +16,6 @@
 - (bool)processFrame:(const cv::Mat&) inputFrame into:(cv::Mat&) outputFrame;
 
 - (UIImage*)processFrame:(UIImage*) source;
-
-@property (getter = getIsReferenceFrameRequired, readonly) bool isReferenceFrameRequired;
 
 - (void) setReferenceFrame:(cv::Mat&) referenceFrame;
 - (void) resetReferenceFrame;

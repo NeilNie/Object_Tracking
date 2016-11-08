@@ -8,6 +8,7 @@
 
 #import "VideoViewController.h"
 #import "ImageUtils.h"
+
 #import <opencv2/videoio/cap_ios.h>
 
 #define kTransitionDuration	0.75
@@ -51,9 +52,6 @@
     [super viewWillAppear:animated];
     
     NSLog(@"capture session loaded: %d", [self.videoSource captureSessionLoaded]);
-
-    self.captureReferenceFrameButton.enabled = self.currentSample.isReferenceFrameRequired;
-    self.clearReferenceFrameButton.enabled = self.currentSample.isReferenceFrameRequired;
 }
 
 - (void) viewDidAppear:(BOOL)animated{
@@ -117,7 +115,7 @@
     // Do some OpenCV stuff with the image
     [self.currentSample processFrame:image into:outputFrame];
     outputFrame.copyTo(image);
-    self.testImage2.image = [ImageUtils imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
+    self.testImage2.image = [ImageUtils UIImageFromCVMat:outputFrame];
 }
 #endif
 
@@ -125,7 +123,7 @@
 
 - (IBAction) captureReferenceFrame:(id) sender{
     
-    UIImage *uiimage = [ImageUtils imageWithMat:outputFrame andImageOrientation:UIImageOrientationLeft];
+    UIImage *uiimage = [ImageUtils UIImageFromCVMat:outputFrame];
     self.testImage2.image = uiimage;
     self.testImage.image = [self imageByCroppingImage:uiimage];
     outputFrame = [ImageUtils cvMatFromUIImage:[self imageByCroppingImage:uiimage]];

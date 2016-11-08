@@ -17,11 +17,6 @@ ObjectTrackingSample::ObjectTrackingSample(): m_algorithmName("LKT"), m_maxCorne
     algos.push_back("LKT");
 }
 
-//! Returns true if this sample requires setting a reference image for latter use
-bool ObjectTrackingSample::isReferenceFrameRequired() const{
-    return true;
-}
-
 //! Sets the reference frame for latter processing
 void ObjectTrackingSample::setReferenceFrame(const cv::Mat& reference)
 {

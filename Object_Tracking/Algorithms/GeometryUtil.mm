@@ -17,8 +17,8 @@
 
 #define PYTHAGOR(p1,p2) (sqrt((p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y)))
 
-+ (cv::Mat) getPerspectiveMatrix: (cv::Point2f[]) points toSize: (cv::Size2f) size{
-    
++ (cv::Mat) getPerspectiveMatrix: (cv::Point2f[]) points toSize: (cv::Size2f) size
+{
     cv::Point2f dst[] = { 
         cv::Point2f(0, 0), 
         cv::Point2f(size.width, 0), 
@@ -37,7 +37,8 @@
     return result;
 }
 
-+ (cv::Mat) normalizeImage: (cv::Mat *) image withTranformationMatrix: (cv::Mat *) M withSize: (float) size{
++ (cv::Mat) normalizeImage: (cv::Mat *) image withTranformationMatrix: (cv::Mat *) M withSize: (float) size
+{
     cv::Mat dst(cv::Size(size, size), image->type());
     cv::warpPerspective(*image, dst, *M, dst.size(), cv::INTER_LINEAR, cv::BORDER_DEFAULT, cv::Scalar(1, 1, 1));
 

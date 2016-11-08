@@ -12,13 +12,10 @@
 #import "SampleFacade.h"
 #import "ImageUtils.h"
 
-@interface VideoViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface FeatureDetectionViewController : UIViewController <UIGestureRecognizerDelegate>
 
-@property (strong, nonatomic) SampleFacade * currentSample;
+@property (strong, nonatomic) SampleFacade * featureSample;
 
-@property (weak, nonatomic) IBOutlet UIImageView *testImage2;
-@property (weak, nonatomic) IBOutlet UIImageView *testImage;
-@property (weak, nonatomic) IBOutlet UIView *captureView;
 @property (weak, nonatomic) IBOutlet UIImageView *containerView;
 
 @property (weak, nonatomic) IBOutlet UIButton *captureReferenceFrameButton;

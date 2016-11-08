@@ -14,12 +14,6 @@
 #import <Foundation/Foundation.h>
 
 #import <opencv2/features2d/features2d.hpp>
-#include "opencv2/highgui/highgui.hpp"
-#import <opencv2/core/types_c.h>
-#include "opencv2/imgproc/imgproc.hpp"
-#include <iostream>
-#include <chrono>
-#include <ctime>
 #import "MSERFeature.h"
 
 /*
@@ -32,7 +26,7 @@
 /*
  Extracts all msers into provided vector
  */
-- (void)detectRegions: (cv::Mat &) gray intoVector: (std::vector<std::vector<cv::Point>> &) vector;
+- (void) detectRegions: (cv::Mat &) gray intoVector: (std::vector<std::vector<cv::Point>> &) vector;
 
 /*
  Extracts feature from the mser. For some MSERs feature can be NULL !!!

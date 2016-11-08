@@ -28,8 +28,6 @@ public:
     
     //! Processes a frame and returns output image 
     virtual bool processFrame(const cv::Mat& inputFrame, cv::Mat& outputFrame) = 0;
-    
-    bool hasIcon() const;
 
     static void getGray(const cv::Mat& input, cv::Mat& gray);
 

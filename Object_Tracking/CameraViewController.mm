@@ -1,5 +1,5 @@
 ////////
-// This sample is published as part of the blog article at www.toptal.com/blog
+// This sample is published as part of the blog article at www.toptal.com/blog 
 // Visit www.toptal.com/blog and subscribe to our newsletter to read great posts
 ////////
 
@@ -62,9 +62,9 @@
 
 - (void) test {
     
-    UIImage *logo = [UIImage imageNamed: @"toptal logo"];
+    UIImage *logo = [UIImage imageNamed: @"toptal logo"];    
     cv::Mat image = [ImageUtils cvMatFromUIImage: logo];
-    
+
     //get gray image
     cv::Mat gray;
     cvtColor(image, gray, CV_BGRA2GRAY);
@@ -73,14 +73,14 @@
     std::vector<cv::Point> mser = [ImageUtils maxMser: &gray];
     
     //get 4 vertices of the maxMSER minrect
-    cv::RotatedRect rect = cv::minAreaRect(mser);
+    cv::RotatedRect rect = cv::minAreaRect(mser);    
     cv::Point2f points[4];
     rect.points(points);
     
     //normalize image
     cv::Mat M = [GeometryUtil getPerspectiveMatrix: points toSize: rect.size];
     cv::Mat normalizedImage = [GeometryUtil normalizeImage: &gray withTranformationMatrix: &M withSize: rect.size.width];
-    
+
     //get maxMser from normalized image
     std::vector<cv::Point> normalizedMser = [ImageUtils maxMser: &normalizedImage];
     
@@ -113,7 +113,7 @@
                       
                       if(feature != nil){
                           
-                          if([[MLManager sharedInstance] isObject: feature] ){
+                          if([[MLManager sharedInstance] isToptalLogo: feature] ){
                               
                               double tmp = [[MLManager sharedInstance] distance:feature];
                               if ( bestPoint > tmp ) {

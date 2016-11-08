@@ -34,8 +34,8 @@
 
 @implementation MLManager
 
-+ (MLManager *) sharedInstance{
-    
++ (MLManager *) sharedInstance
+{
     static MLManager *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -46,8 +46,8 @@
     return instance;
 }
 
-- (void) learn:(UIImage *) templateImage;{
-    
+- (void) learn: (UIImage *) templateImage;
+{
     cv::Mat logo = [ImageUtils cvMatFromUIImage: templateImage];
     
     //get gray image
@@ -76,51 +76,52 @@
     [self storeTemplate];
 }
 
-- (double) distance: (MSERFeature *) feature{
+- (double) distance: (MSERFeature *) feature
+{
     return [self.logoTemplate distace: feature];
 }
 
-- (BOOL) isObject: (MSERFeature *) feature;{
-    
-    if (_logoTemplate.numberOfHoles != feature.numberOfHoles) {
+- (BOOL) isToptalLogo: (MSERFeature *) feature;
+{
+    if (_logoTemplate.numberOfHoles != feature.numberOfHoles) { 
         return NO; 
     }
     
-    if (fabs(_logoTemplate.convexHullAreaRate - feature.convexHullAreaRate) > 0.05) { // 0.1) {
-        NSLog(@"convexHullAreaRate \t\t\t\t %f", fabs(_logoTemplate.convexHullAreaRate - feature.convexHullAreaRate));
+    if ( fabs(_logoTemplate.convexHullAreaRate - feature.convexHullAreaRate) > 0.05) { // 0.1) {
+        //NSLog(@"convexHullAreaRate \t\t\t\t %f", fabs(_logoTemplate.convexHullAreaRate - feature.convexHullAreaRate));
         return NO;
     }
     if ( fabs(_logoTemplate.minRectAreaRate - feature.minRectAreaRate) > 0.05) { // 0.1) {
-        NSLog(@"minRectAreaRate \t\t\t\t %f", fabs(_logoTemplate.minRectAreaRate - feature.minRectAreaRate));
+        //NSLog(@"minRectAreaRate \t\t\t\t %f", fabs(_logoTemplate.minRectAreaRate - feature.minRectAreaRate));
         return NO;
     }
-    if (fabs(_logoTemplate.skeletLengthRate - feature.skeletLengthRate) > 0.02) {
-        NSLog(@"skeletLengthRate \t\t\t\t %f", fabs(_logoTemplate.skeletLengthRate - feature.skeletLengthRate));
+    if ( fabs(_logoTemplate.skeletLengthRate - feature.skeletLengthRate) > 0.02) {
+        //NSLog(@"skeletLengthRate \t\t\t\t %f", fabs(_logoTemplate.skeletLengthRate - feature.skeletLengthRate));
         return NO;
     }
     if ( fabs(_logoTemplate.contourAreaRate - feature.contourAreaRate) > 0.1) {//0.2) {
-        NSLog(@"contourAreaRate \t\t\t\t %f", fabs(_logoTemplate.contourAreaRate - feature.contourAreaRate));
+        //NSLog(@"contourAreaRate \t\t\t\t %f", fabs(_logoTemplate.contourAreaRate - feature.contourAreaRate));
         return NO;
     }
 
-    NSLog(@"------------------------------------------");
-    NSLog(@"%@", [_logoTemplate description]);
-    NSLog(@"%@", [feature description]);
-    NSLog(@"%@", [feature toString]);
-    NSLog(@"%f \t %f \t %f \t %f", 
-          fabs(_logoTemplate.convexHullAreaRate - feature.convexHullAreaRate),
-          fabs(_logoTemplate.minRectAreaRate - feature.minRectAreaRate),
-          fabs(_logoTemplate.skeletLengthRate - feature.skeletLengthRate),
-          fabs(_logoTemplate.contourAreaRate - feature.contourAreaRate)
-          );
+//    NSLog(@"------------------------------------------");
+//    NSLog(@"%@", [_logoTemplate description]);
+//    NSLog(@"%@", [feature description]);
+//    NSLog(@"%@", [feature toString]);
+//    NSLog(@"%f \t %f \t %f \t %f", 
+//          fabs(_logoTemplate.convexHullAreaRate - feature.convexHullAreaRate),
+//          fabs(_logoTemplate.minRectAreaRate - feature.minRectAreaRate),
+//          fabs(_logoTemplate.skeletLengthRate - feature.skeletLengthRate),
+//          fabs(_logoTemplate.contourAreaRate - feature.contourAreaRate)
+//          );
     
     return YES;
 }
 
 #pragma mark - helper
 
-- (void) loadTemplate{
-    
+- (void) loadTemplate
+{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     _logoTemplate = [[MSERFeature alloc] init];
     
@@ -131,8 +132,8 @@
     _logoTemplate.contourAreaRate = [defaults doubleForKey: KEY_CONTOUR_AREA_RATE];
 }
 
-- (void) storeTemplate{
-    
+- (void) storeTemplate
+{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];    
     [defaults setInteger: _logoTemplate.numberOfHoles forKey: KEY_NUMBER_OF_HOLES];
     [defaults setDouble: _logoTemplate.convexHullAreaRate forKey: KEY_CONVEX_AREA_RATE];

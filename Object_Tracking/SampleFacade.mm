@@ -7,12 +7,11 @@
 //
 
 #import "SampleFacade.h"
-#import "ObjectTrackingSample.h"
 #import "NSString+StdString.h"
 #import "ImageUtils.h"
+#import "ObjectTrackingSample.h"
 
 @interface SampleFacade(){
-    
     SampleBase * _sample;
 }
 
@@ -39,7 +38,7 @@
     cv::Mat outputImage;
     
     _sample->processFrame(inputImage, outputImage);
-    UIImage * result = [ImageUtils imageWithMat:outputImage andImageOrientation:[source imageOrientation]];
+    UIImage * result = [ImageUtils UIImageFromCVMat:outputImage];
     return result;
 }
 
@@ -50,7 +49,6 @@
 - (void) setReferenceFrame:(cv::Mat&) referenceFrame{
     
     _sample->setReferenceFrame(referenceFrame);
-    
 }
 
 - (void) resetReferenceFrame{

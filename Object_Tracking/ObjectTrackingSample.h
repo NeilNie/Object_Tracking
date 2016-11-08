@@ -16,9 +16,6 @@ class ObjectTrackingSample : public SampleBase
 public:
     ObjectTrackingSample();
     
-    //! Returns true if this sample requires setting a reference image for latter use
-    virtual bool isReferenceFrameRequired() const;
-    
     //! Sets the reference frame for latter processing
     virtual void setReferenceFrame(const cv::Mat& reference);
     

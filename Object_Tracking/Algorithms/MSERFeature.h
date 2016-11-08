@@ -21,7 +21,7 @@
 @property double skeletLengthRate;
 @property double contourAreaRate;
 
--(double) distace:(MSERFeature *)other;
+-(double) distace: (MSERFeature *) other;
 
 -(NSString *)description;
 

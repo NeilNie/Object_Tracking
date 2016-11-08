@@ -36,6 +36,6 @@
 /*
  Returns true if the given feature is similar to the one learned from the template
  */
-- (BOOL) isObject: (MSERFeature *) feature;
+- (BOOL) isToptalLogo: (MSERFeature *) feature;
 
 @end
