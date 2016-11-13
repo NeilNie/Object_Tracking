@@ -16,7 +16,8 @@
 
 @property (strong, nonatomic) SampleFacade * currentSample;
 
-@property (weak, nonatomic) IBOutlet UIImageView *testImage2;
+@property (weak, nonatomic) IBOutlet UIImageView *currentFrameView;
+@property (strong, nonatomic) UIImage *currentFrame;
 @property (weak, nonatomic) IBOutlet UIImageView *testImage;
 @property (weak, nonatomic) IBOutlet UIView *captureView;
 @property (weak, nonatomic) IBOutlet UIImageView *containerView;

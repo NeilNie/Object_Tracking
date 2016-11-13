@@ -45,7 +45,7 @@ void ObjectTrackingClass::init(cv::Mat& image, // output image
 }
 
 // track object
-void ObjectTrackingClass::track(cv::Mat& image, // output image
+void ObjectTrackingClass::track(cv::Mat& image,  // output image
                                 cv::Mat& image1, // previous frame
                                 cv::Mat& image2, // next frame
                                 std::vector<cv::Point2f>& points1, // previous points

@@ -22,7 +22,7 @@ public:
     // clears reference frame parameters
     virtual void resetReferenceFrame() const;
     
-    //! Processes a frame and returns output image 
+    //! Processes a frame and returns output image
     virtual bool processFrame(const cv::Mat& inputFrame, cv::Mat& outputFrame);
     
 private:

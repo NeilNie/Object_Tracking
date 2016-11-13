@@ -37,4 +37,7 @@ extern const cv::Scalar LIGHT_GRAY;
 
 + (std::vector<cv::Point>) maxMser: (cv::Mat *) gray;
 
++(UIImage*) imageWithMat:(const cv::Mat&) image andImageOrientation: (UIImageOrientation) orientation;
++(UIImage*) imageWithMat:(const cv::Mat&) image andDeviceOrientation: (UIDeviceOrientation) orientation;
+
 @end

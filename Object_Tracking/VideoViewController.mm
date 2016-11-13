@@ -91,17 +91,24 @@
     }
 }
 
+-(CGRect)mapImageRect{
+    
+    return
+    CGRectMake(self.captureView.frame.origin.y * 2 - 200,
+               self.captureView.frame.origin.x * 2,
+               self.captureView.frame.size.height * 2,
+               self.captureView.frame.size.width * 2
+               );
+    
+}
+
 - (UIImage *)imageByCroppingImage:(UIImage *)image{
     
-    // not equivalent to image.size (which depends on the imageOrientation)
-    CGRect cropRect = CGRectMake(self.view.frame.size.width - self.captureView.frame.origin.y - self.captureView.frame.size.height,
-                                 self.view.frame.size.height -self.captureView.frame.origin.x - self.captureView.frame.size.width,
-                                 self.captureView.frame.size.height,
-                                 self.captureView.frame.size.width);
+    CGRect cropRect = [self mapImageRect];
     
     CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], cropRect);
     
-    UIImage *cropped = [UIImage imageWithCGImage:imageRef scale:0.0 orientation:UIImageOrientationLeft];
+    UIImage *cropped = [UIImage imageWithCGImage:imageRef scale:1.0 orientation:UIImageOrientationLeft];
     CGImageRelease(imageRef);
     
     return cropped;
@@ -112,10 +119,14 @@
 #ifdef __cplusplus
 
 - (void) processImage:(cv::Mat&)image{
+    
     // Do some OpenCV stuff with the image
+    self.currentFrame = [ImageUtils imageWithMat:image andImageOrientation:UIImageOrientationLeft];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.currentFrameView.image = self.currentFrame;
+    });
     [self.currentSample processFrame:image into:outputFrame];
     outputFrame.copyTo(image);
-    self.testImage2.image = [ImageUtils UIImageFromCVMat:outputFrame];
 }
 #endif
 
@@ -123,10 +134,7 @@
 
 - (IBAction) captureReferenceFrame:(id) sender{
     
-    UIImage *uiimage = [ImageUtils UIImageFromCVMat:outputFrame];
-    self.testImage2.image = uiimage;
-    self.testImage.image = [self imageByCroppingImage:uiimage];
-    outputFrame = [ImageUtils cvMatFromUIImage:[self imageByCroppingImage:uiimage]];
+    self.testImage.image = [self imageByCroppingImage:self.currentFrame];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.currentSample setReferenceFrame:outputFrame];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="16C32f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="16C41b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gsl-qF-HuJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bB5-71-da1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bB5-71-da1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <gestureRecognizers/>
                             </imageView>
@@ -43,32 +43,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ga-CL-dIR">
-                                <rect key="frame" x="280" y="490" width="95" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sxK-7s-8Cy">
+                                <rect key="frame" x="225" y="490" width="150" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="ff4-uE-l4s"/>
-                                    <constraint firstAttribute="width" constant="95" id="s8z-dy-sat"/>
+                                    <constraint firstAttribute="width" constant="150" id="6uJ-N8-f1P"/>
+                                    <constraint firstAttribute="height" constant="128" id="Tzk-mw-0hx"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qpb-MN-FVV">
-                                <rect key="frame" x="185" y="490" width="95" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W2E-mh-vhe">
+                                <rect key="frame" x="0.0" y="490" width="150" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="XBO-bU-V8d"/>
-                                    <constraint firstAttribute="height" constant="128" id="YD5-Qz-Gft"/>
+                                    <constraint firstAttribute="height" constant="128" id="4lv-Fi-W1q"/>
+                                    <constraint firstAttribute="width" constant="150" id="hju-OV-nx1"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Frame" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e0-Y6-mLs">
+                                <rect key="frame" x="20" y="461" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="W2E-mh-vhe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0We-Iz-UVO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bB5-71-da1" secondAttribute="bottom" id="Bkf-R5-21J"/>
                             <constraint firstItem="RxQ-Qe-EV1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DLm-gh-woI"/>
                             <constraint firstItem="bB5-71-da1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ebb-zu-IY8"/>
-                            <constraint firstItem="8ga-CL-dIR" firstAttribute="leading" secondItem="Qpb-MN-FVV" secondAttribute="trailing" id="Lr5-YH-fqQ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8ga-CL-dIR" secondAttribute="bottom" id="Pbr-J5-WrH"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qpb-MN-FVV" secondAttribute="bottom" id="UAo-FD-Eug"/>
-                            <constraint firstAttribute="trailing" secondItem="8ga-CL-dIR" secondAttribute="trailing" id="axR-kw-cVi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="W2E-mh-vhe" secondAttribute="bottom" id="NBZ-UZ-0ds"/>
+                            <constraint firstAttribute="trailing" secondItem="sxK-7s-8Cy" secondAttribute="trailing" id="O8Q-eZ-gj9"/>
                             <constraint firstItem="bB5-71-da1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bl0-e6-ruj"/>
                             <constraint firstItem="rTT-la-3SN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cLe-4Q-OCz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sxK-7s-8Cy" secondAttribute="bottom" id="cie-fj-Uem"/>
                             <constraint firstAttribute="trailing" secondItem="bB5-71-da1" secondAttribute="trailing" id="kCA-J5-Xb6"/>
                             <constraint firstItem="rTT-la-3SN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="t5Y-Vu-IXA"/>
                             <constraint firstItem="RxQ-Qe-EV1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="wwu-hY-XaT"/>
@@ -80,8 +87,8 @@
                         <outlet property="captureView" destination="IeW-E0-uBh" id="xXL-0l-IhW"/>
                         <outlet property="clearReferenceFrameButton" destination="rTT-la-3SN" id="bvT-ph-D85"/>
                         <outlet property="containerView" destination="bB5-71-da1" id="VVy-Ha-GZ4"/>
-                        <outlet property="testImage" destination="8ga-CL-dIR" id="M1q-Vn-vZD"/>
-                        <outlet property="testImage2" destination="Qpb-MN-FVV" id="rkv-x8-Hvm"/>
+                        <outlet property="currentFrameView" destination="W2E-mh-vhe" id="PR1-x8-Syl"/>
+                        <outlet property="testImage" destination="sxK-7s-8Cy" id="ND6-61-OUE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

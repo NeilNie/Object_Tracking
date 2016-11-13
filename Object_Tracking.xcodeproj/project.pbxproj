@@ -30,6 +30,7 @@
 		2823BF8A1DD16DAD00D530D4 /* FeatureDetectionClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2823BF861DD16DAD00D530D4 /* FeatureDetectionClass.cpp */; };
 		2823BF8B1DD16DAD00D530D4 /* FeatureDetectionSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2823BF881DD16DAD00D530D4 /* FeatureDetectionSample.cpp */; };
 		2823BF8F1DD16DE400D530D4 /* FeatureDetectionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2823BF8E1DD16DE400D530D4 /* FeatureDetectionViewController.mm */; };
+		28AA98541DD7E9FC00C8F990 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AA98531DD7E9FC00C8F990 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		2823BF891DD16DAD00D530D4 /* FeatureDetectionSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureDetectionSample.h; sourceTree = "<group>"; };
 		2823BF8D1DD16DE400D530D4 /* FeatureDetectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureDetectionViewController.h; sourceTree = "<group>"; };
 		2823BF8E1DD16DE400D530D4 /* FeatureDetectionViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FeatureDetectionViewController.mm; sourceTree = "<group>"; };
+		28AA98531DD7E9FC00C8F990 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9D19A605FBB8061045344166 /* Pods-Object_Tracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Object_Tracking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Object_Tracking/Pods-Object_Tracking.debug.xcconfig"; sourceTree = "<group>"; };
 		BB42437E00136F391C9A20FF /* libPods-Object_Tracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Object_Tracking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2ED191FFABD83FCC7D510D0 /* Pods-Object_Tracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Object_Tracking.release.xcconfig"; path = "Pods/Target Support Files/Pods-Object_Tracking/Pods-Object_Tracking.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		281E472F1DC167B300AFB85D /* Object_Tracking */ = {
 			isa = PBXGroup;
 			children = (
+				28AA98531DD7E9FC00C8F990 /* Launch Screen.storyboard */,
 				281E47391DC167B300AFB85D /* Main.storyboard */,
 				2820020A1DC691180013A603 /* Utils */,
 				282001FD1DC691120013A603 /* MSER Algorithms */,
@@ -309,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				281E473D1DC167B300AFB85D /* Assets.xcassets in Resources */,
+				28AA98541DD7E9FC00C8F990 /* Launch Screen.storyboard in Resources */,
 				281E473B1DC167B300AFB85D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

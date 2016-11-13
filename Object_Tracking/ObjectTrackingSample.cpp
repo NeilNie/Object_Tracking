@@ -32,6 +32,7 @@ void ObjectTrackingSample::resetReferenceFrame() const{
 
 //! Processes a frame and returns output image
 bool ObjectTrackingSample::processFrame(const cv::Mat& inputFrame, cv::Mat& outputFrame){
+    
     // display the frame
     inputFrame.copyTo(outputFrame);
     
