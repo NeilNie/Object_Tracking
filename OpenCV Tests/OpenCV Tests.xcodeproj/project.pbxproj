@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		285B73FE1DDD13F400C61D59 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285B73FD1DDD13F400C61D59 /* opencv2.framework */; };
 		289223031DDD10DA0090F637 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 289223021DDD10DA0090F637 /* AppDelegate.m */; };
 		289223061DDD10DA0090F637 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 289223051DDD10DA0090F637 /* main.m */; };
 		289223091DDD10DA0090F637 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289223081DDD10DA0090F637 /* ViewController.m */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		285B73FD1DDD13F400C61D59 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../opencv2.framework; sourceTree = "<group>"; };
 		289222FE1DDD10DA0090F637 /* OpenCV Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenCV Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		289223011DDD10DA0090F637 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		289223021DDD10DA0090F637 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				285B73FE1DDD13F400C61D59 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 		289222F51DDD10DA0090F637 = {
 			isa = PBXGroup;
 			children = (
+				285B73FD1DDD13F400C61D59 /* opencv2.framework */,
 				289223001DDD10DA0090F637 /* OpenCV Tests */,
 				289223171DDD10DA0090F637 /* OpenCV TestsTests */,
 				289223221DDD10DA0090F637 /* OpenCV TestsUITests */,
@@ -414,6 +418,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../opencv2.framework\"",
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/../..\"",
+				);
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../..\"";
 				INFOPLIST_FILE = "OpenCV Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.OpenCV-Tests";
@@ -427,6 +437,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../opencv2.framework\"",
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/../..\"",
+				);
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../..\"";
 				INFOPLIST_FILE = "OpenCV Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.OpenCV-Tests";
@@ -507,6 +523,7 @@
 				2892232A1DDD10DA0090F637 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2892232B1DDD10DA0090F637 /* Build configuration list for PBXNativeTarget "OpenCV TestsTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +532,7 @@
 				2892232D1DDD10DA0090F637 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2892232E1DDD10DA0090F637 /* Build configuration list for PBXNativeTarget "OpenCV TestsUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +541,7 @@
 				289223301DDD10DA0090F637 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
