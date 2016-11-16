@@ -162,7 +162,6 @@ The function implements a sparse iterative version of the Lucas-Kanade optical f
 @cite Bouguet00 . The function is parallelized with the TBB library.
 
 @note
-
 -   An example using the Lucas-Kanade optical flow algorithm can be found at
     opencv_source_code/samples/cpp/lkdemo.cpp
 -   (Python) An example using the Lucas-Kanade optical flow algorithm can be found at
@@ -209,7 +208,6 @@ The function finds an optical flow for each prev pixel using the @cite Farneback
 \f[\texttt{prev} (y,x)  \sim \texttt{next} ( y + \texttt{flow} (y,x)[1],  x + \texttt{flow} (y,x)[0])\f]
 
 @note
-
 -   An example using the optical flow algorithm described by Gunnar Farneback can be found at
     opencv_source_code/samples/cpp/fback.cpp
 -   (Python) An example using the optical flow algorithm described by Gunnar Farneback can be
@@ -320,7 +318,6 @@ The class implements a standard Kalman filter <http://en.wikipedia.org/wiki/Kalm
 an extended Kalman filter functionality. See the OpenCV sample kalman.cpp.
 
 @note
-
 -   An example using the standard Kalman filter can be found at
     opencv_source_code/samples/cpp/kalman.cpp
  */

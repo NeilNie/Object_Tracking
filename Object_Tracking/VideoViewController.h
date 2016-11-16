@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "SampleBase.h"
 #import "SampleFacade.h"
 #import "ImageUtils.h"
 
 @interface VideoViewController : UIViewController <UIGestureRecognizerDelegate>
 
-@property (strong, nonatomic) SampleFacade * currentSample;
+@property (strong, nonatomic) SampleFacade * objectTracker;
 
 @property (weak, nonatomic) IBOutlet UIImageView *currentFrameView;
 @property (strong, nonatomic) UIImage *currentFrame;

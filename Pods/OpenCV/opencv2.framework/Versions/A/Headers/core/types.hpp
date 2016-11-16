@@ -172,7 +172,7 @@ public:
     //! checks whether the point is inside the specified rectangle
     bool inside(const Rect_<_Tp>& r) const;
 
-    _Tp x, y; //< the point coordinates
+    _Tp x, y; ///< the point coordinates
 };
 
 typedef Point_<int> Point2i;
@@ -480,7 +480,7 @@ public:
     Rect boundingRect() const;
 
     Point2f center; ///< the rectangle mass center
-    Size2f size;    //< width and height of the rectangle
+    Size2f size;    ///< width and height of the rectangle
     float angle;    ///< the rotation angle. When the angle is 0, 90, 180, 270 etc., the rectangle becomes an up-right rectangle.
 };
 

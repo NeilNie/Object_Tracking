@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "FeatureDetectionSample.h"
+#include "cvneon.h"
 
 #define kDetectorORB   "ORB"
 #define kDetectorAKAZE "AKAZE"
@@ -30,6 +31,24 @@ FeatureDetectionSample::FeatureDetectionSample()
 static bool keypoint_score_greater(const cv::KeyPoint& kp1, const cv::KeyPoint& kp2){
     return kp1.response > kp2.response;
 }
+
+void FeatureDetectionSample::getGray(const cv::Mat& input, cv::Mat& gray){
+    
+    const int numChannes = input.channels();
+    
+    if (numChannes == 4){
+        cv::neon_cvtColorBGRA2GRAY(input, gray);
+        
+    }
+    else if (numChannes == 3){
+        cv::cvtColor(input, gray, cv::COLOR_BGR2GRAY);
+    }
+    else if (numChannes == 1)
+    {
+        gray = input;
+    }
+}
+
 
 //! Processes a frame and returns output image
 bool FeatureDetectionSample::processFrame(const cv::Mat& inputFrame, cv::Mat& outputFrame)

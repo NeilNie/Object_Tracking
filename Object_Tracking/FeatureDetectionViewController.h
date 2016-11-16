@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "SampleBase.h"
 #import "SampleFacade.h"
 #import "ImageUtils.h"
 

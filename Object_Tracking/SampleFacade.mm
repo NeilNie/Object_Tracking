@@ -1,8 +1,8 @@
 //
 //  SampleFacade.m
 //  OpenCV Tutorial
-//
-//  Created by BloodAxe on 8/14/12.
+//  Created by Neil Nie, in 10/2016
+//  Referenced From BloodAxe on 8/14/12.
 //
 //
 
@@ -12,19 +12,18 @@
 #import "ObjectTrackingSample.h"
 
 @interface SampleFacade(){
-    SampleBase * _sample;
+    ObjectTrackingSample* _sample;
 }
 
 @end
 
 @implementation SampleFacade
 
-- (id)init{
+- (instancetype)init{
     
     if (self = [super init]){
         _sample = new ObjectTrackingSample();
     }
-    
     return self;
 }
 
@@ -42,8 +41,39 @@
     return result;
 }
 
+-(NSArray *__nonnull)getPoints{
+    
+    //get ObjectTrackingSample class pointsPrev, which contains all the points beging tracked. Send this to the VC and display on the UI
+    std::vector<cv::Point2f> points = _sample->ObjectTrackingSample::pointsPrev;
+    
+    NSMutableArray *array = [NSMutableArray array];
+    
+    //contruct the array
+    for (int i = 0; i < points.size(); i++) {
+        
+        CVPoint_objc *point = [[CVPoint_objc alloc] initWithx:points[i].x y:points[i].y];
+        [array addObject:point];
+    }
+    
+    return array;
+}
+
+-(NSArray *__nonnull)getExtremes{
+    
+    //get ObjectTrackingSample class extremes, which contains all the extreme points. Draw a rectangle on the screen with these points.
+    std::vector<cv::Point2f> extremes = _sample->ObjectTrackingSample::extremes;
+    
+    NSMutableArray *array = [NSMutableArray array];
+    
+    for (int i = 0; i < extremes.size(); i++) {
+        CVPoint_objc *point = [[CVPoint_objc alloc] initWithx:extremes[i].x y:extremes[i].y];
+        [array addObject:point];
+    }
+    return array;
+}
+
 - (bool) getIsReferenceFrameRequired{
-    return _sample->isReferenceFrameRequired();
+    return true;
 }
 
 - (void) setReferenceFrame:(cv::Mat&) referenceFrame{

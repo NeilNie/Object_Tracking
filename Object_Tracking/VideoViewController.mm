@@ -30,15 +30,15 @@
 {
     [super viewDidLoad];
     
-    self.currentSample = [[SampleFacade alloc] init];
+    self.objectTracker = [[SampleFacade alloc] init];
     
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
     [self.view addGestureRecognizer:pan];
     
-    self.videoSource = [[CvVideoCamera alloc] initWithParentView:self.containerView];
+    self.videoSource = [[CvVideoCamera alloc] initWithParentView:self.currentFrameView];
     self.videoSource.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
     self.videoSource.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
-    self.videoSource.defaultFPS = 30;
+    self.videoSource.defaultFPS = 15;
     self.videoSource.imageWidth = 1280;
     self.videoSource.imageHeight = 720;
     self.videoSource.delegate = self;
@@ -94,10 +94,10 @@
 -(CGRect)mapImageRect{
     
     return
-    CGRectMake(self.captureView.frame.origin.y * 2 - 200,
-               self.captureView.frame.origin.x * 2,
-               self.captureView.frame.size.height * 2,
-               self.captureView.frame.size.width * 2
+    CGRectMake(self.captureView.frame.origin.y * 2.0,
+               self.captureView.frame.origin.x * 2.0,
+               self.captureView.frame.size.height * 2.0,
+               self.captureView.frame.size.width * 2.0
                );
     
 }
@@ -123,10 +123,12 @@
     // Do some OpenCV stuff with the image
     self.currentFrame = [ImageUtils imageWithMat:image andImageOrientation:UIImageOrientationLeft];
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.currentFrameView.image = self.currentFrame;
+        self.containerView.image = self.currentFrame;
     });
-    [self.currentSample processFrame:image into:outputFrame];
+    [self.objectTracker processFrame:[ImageUtils cvMatFromUIImage:[self imageByCroppingImage:self.currentFrame]] into:outputFrame];
     outputFrame.copyTo(image);
+    NSLog(@"points: %@", [self.objectTracker getPoints]);
+    NSLog(@"extreme points %@", [self.objectTracker getExtremes]);
 }
 #endif
 
@@ -135,9 +137,9 @@
 - (IBAction) captureReferenceFrame:(id) sender{
     
     self.testImage.image = [self imageByCroppingImage:self.currentFrame];
-    
+    outputFrame = [ImageUtils cvMatFromUIImage:self.testImage.image];
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.currentSample setReferenceFrame:outputFrame];
+        [self.objectTracker setReferenceFrame:outputFrame];
     });
 }
 
@@ -146,7 +148,7 @@
 - (IBAction) clearReferenceFrame:(id) sender{
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.currentSample resetReferenceFrame];
+        [self.objectTracker resetReferenceFrame];
     });
 }
 

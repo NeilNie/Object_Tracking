@@ -53,6 +53,7 @@ void ObjectTrackingClass::track(cv::Mat& image,  // output image
                                 std::vector<uchar>& status, // status array
                                 std::vector<float>& err) // error array
 {
+    
     // tracking code
     cv::calcOpticalFlowPyrLK(image1, image2,
                              points1, points2,
@@ -62,8 +63,8 @@ void ObjectTrackingClass::track(cv::Mat& image,  // output image
                              minEigThreshold);
     
     // work out maximum X,Y keypoint values in the next_points keypoint vector
-    cv::Point2f min(FLT_MAX, FLT_MAX);
-    cv::Point2f max(FLT_MIN, FLT_MIN);
+//    cv::Point2f min(FLT_MAX, FLT_MAX);
+//    cv::Point2f max(FLT_MIN, FLT_MIN);
     
     // refactor the points array to remove points lost due to tracking error
     size_t i, k;
@@ -74,25 +75,30 @@ void ObjectTrackingClass::track(cv::Mat& image,  // output image
         
         points2[k++] = points2[i];
         
-        // find keypoints at the extremes
-        min.x = Min(min.x, points2[i].x);
-        min.y = Min(min.y, points2[i].y);
-        max.x = Max(max.x, points2[i].x);
-        max.y = Max(max.y, points2[i].y);
+        //!!!!Now we no longer draws on the output frame. In fact, the output is not valueable. The points and extremes are processed and calculated in the ObjectTrackingSample class.
+        //!!!!
         
+//        // find keypoints at the extremes
+//        min.x = Min(min.x, points2[i].x);
+//        min.y = Min(min.y, points2[i].y);
+//        max.x = Max(max.x, points2[i].x);
+//        max.y = Max(max.y, points2[i].y);
+//        
         // draw points
-        cv::circle( image, points2[i], 3, cv::Scalar(0,255,0), -1, 8);
+//        cv::circle( image, points2[i], 3, cv::Scalar(0,255,0), -1, 8);
     }
+    
     points2.resize(k);
     
-    // Draw lines between the extreme points (square)
-    cv::Point2f point0(min.x, min.y);
-    cv::Point2f point1(max.x, min.y);
-    cv::Point2f point2(max.x, max.y);
-    cv::Point2f point3(min.x, max.y);
+//    // Draw lines between the extreme points (square)
+//    cv::Point2f point0(min.x, min.y);
+//    cv::Point2f point1(max.x, min.y);
+//    cv::Point2f point2(max.x, max.y);
+//    cv::Point2f point3(min.x, max.y);
+//    
+//    cv::line(image, point0, point1, cv::Scalar( 0, 255, 0 ), 4 );
+//    cv::line(image, point1, point2, cv::Scalar( 0, 255, 0 ), 4 );
+//    cv::line(image, point2, point3, cv::Scalar( 0, 255, 0 ), 4 );
+//    cv::line(image, point3, point0, cv::Scalar( 0, 255, 0 ), 4 );
     
-    cv::line(image, point0, point1, cv::Scalar( 0, 255, 0 ), 4 );
-    cv::line(image, point1, point2, cv::Scalar( 0, 255, 0 ), 4 );
-    cv::line(image, point2, point3, cv::Scalar( 0, 255, 0 ), 4 );
-    cv::line(image, point3, point0, cv::Scalar( 0, 255, 0 ), 4 );
 }

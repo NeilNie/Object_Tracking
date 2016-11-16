@@ -9,15 +9,15 @@
 #ifndef OpenCV_Tutorial_FeatureDetection_h
 #define OpenCV_Tutorial_FeatureDetection_h
 
-#include "SampleBase.h"
-
-class FeatureDetectionSample : public SampleBase{
+class FeatureDetectionSample {
     
 public:
     FeatureDetectionSample();
     
     //! Processes a frame and returns output image
     virtual bool processFrame(const cv::Mat& inputFrame, cv::Mat& outputFrame);
+    
+    static void getGray(const cv::Mat& input, cv::Mat& gray);
     
 private:
     cv::Mat grayImage;
