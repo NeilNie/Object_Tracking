@@ -44,7 +44,7 @@
 -(NSArray *__nonnull)getPoints{
     
     //get ObjectTrackingSample class pointsPrev, which contains all the points beging tracked. Send this to the VC and display on the UI
-    std::vector<cv::Point2f> points = _sample->ObjectTrackingSample::pointsPrev;
+    std::vector<cv::Point2f> points = _sample->ObjectTrackingSample::pointsNext;
     
     NSMutableArray *array = [NSMutableArray array];
     

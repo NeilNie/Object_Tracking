@@ -141,7 +141,8 @@ const cv::Scalar LIGHT_GRAY = cv::Scalar(100, 100, 100);
 + (std::vector<cv::Point>) maxMser: (cv::Mat *) gray
 {
     std::vector<std::vector<cv::Point>> msers;
-    [[MSERManager sharedInstance] detectRegions: *gray intoVector: msers];
+    std::vector<cv::Rect> bbox;
+    [[MSERManager sharedInstance] detectRegions: *gray intoVector: msers bbox:bbox];
     
     if (msers.size() == 0) return std::vector<cv::Point>();
     

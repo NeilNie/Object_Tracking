@@ -28,7 +28,7 @@ public:
     virtual void setReferenceFrame(const cv::Mat& reference);
     
     //! clears reference frame parameters
-    virtual void resetReferenceFrame() const;
+    virtual void resetReferenceFrame();
     
     //! Processes a frame and returns output image
     virtual bool processFrame(const cv::Mat& inputFrame, cv::Mat& outputFrame);
@@ -36,6 +36,10 @@ public:
     static void getGray(const cv::Mat& input, cv::Mat& gray);
     
 private:
+    
+    bool computeObject;
+    bool detectObject;
+    bool trackObject;
     
     cv::Mat imageNext, imagePrev;
     

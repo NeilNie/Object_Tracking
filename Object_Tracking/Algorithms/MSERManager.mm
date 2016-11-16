@@ -1,5 +1,5 @@
 ////////
-// This sample is published as part of the blog article at www.toptal.com/blog 
+// This sample is published as part of the blog article at www.toptal.com/blog
 // Visit www.toptal.com/blog and subscribe to our newsletter to read great posts
 ////////
 
@@ -16,8 +16,8 @@
 
 @implementation MSERManager
 
-+ (MSERManager *) sharedInstance
-{
++ (MSERManager *) sharedInstance{
+    
     static MSERManager *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -33,7 +33,7 @@ cv::Ptr<cv::MSER> mserDetector;
 {
     self = [super init];
     
-    if(self) 
+    if(self)
     {
         /* THESE ARE ALL DEFAULT VALUES */
         int delta = 5;                  //! delta, in the code, it compares (size_{i}-size_{i-delta})/size_{i-delta}
@@ -47,38 +47,37 @@ cv::Ptr<cv::MSER> mserDetector;
         double areaThreshold = 1.01;    //! the area threshold to cause re-initialize
         double minMargin = 0.003;       //! ignore too small margin
         int edgeBlurSize = 0;           //! the aperture size for edge blur
-
-        mserDetector = cv::MSER::create(
-                                               delta, minArea, maxArea, 
-                                               maxVariation, minDiversity, maxEvolution, 
-                                               areaThreshold, minMargin, edgeBlurSize
-                                               );        
+        
+        mserDetector = cv::MSER::create(delta, minArea, maxArea,
+                                        maxVariation, minDiversity, maxEvolution,
+                                        areaThreshold, minMargin, edgeBlurSize
+                                        );
     }
     
     return self;
 }
 
-- (void) detectRegions: (cv::Mat &) gray intoVector: (std::vector<std::vector<cv::Point>> &) vector;
-{
-    std::vector<cv::Rect> mserBbox;
-    mserDetector->detectRegions(gray, vector, mserBbox);
+- (void) detectRegions: (cv::Mat &) gray
+            intoVector:(std::vector<std::vector<cv::Point>> &)vector
+                  bbox:(std::vector<cv::Rect> &)bbox{
+    mserDetector->detectRegions(gray, vector, bbox);
 }
 
-- (MSERFeature *) extractFeature: (std::vector<cv::Point> *) mser
-{
+- (MSERFeature *) extractFeature: (std::vector<cv::Point> *) mser{
+    
     cv::Mat mserImg = [ImageUtils mserToMat: mser];
     if (mserImg.cols <= 2 || mserImg.rows <= 2) { return nil; }
-        
+    
     MSERFeature *result = [[MSERFeature alloc] init];
     cv::RotatedRect minRect = cv::minAreaRect(*mser);
-        
+    
     // numer of holes
     result.numberOfHoles = [self numberOfHoles: &mserImg];
     
     // MSER_AREA / CONVEX_HULL_AREA
     std::vector<cv::Point> convexHull;
     cv::convexHull(*mser, convexHull);
-    result.convexHullAreaRate = (double)mser->size() / cv::contourArea( convexHull );   
+    result.convexHullAreaRate = (double)mser->size() / cv::contourArea( convexHull );
     
     // MSER_AREA / MIN_RECT_AREA
     result.minRectAreaRate = (double)mser->size() / (double) minRect.size.area();
@@ -103,13 +102,13 @@ cv::Ptr<cv::MSER> mserDetector;
     cv::Mat img;
     mserImg->copyTo(img);
     
-    cv::threshold(img, img, 127, 255, cv::THRESH_BINARY); 
+    cv::threshold(img, img, 127, 255, cv::THRESH_BINARY);
     cv::Mat skel(img.size(), CV_8UC1, cv::Scalar(0));
     cv::Mat temp;
     cv::Mat eroded;
     
     cv::Mat element = cv::getStructuringElement(cv::MORPH_CROSS, cv::Size(3, 3));
-    bool done;		
+    bool done;
     do
     {
         cv::erode(img, eroded, element);
@@ -134,20 +133,20 @@ cv::Ptr<cv::MSER> mserDetector;
     if (hierarchy.size() == contours.size()) return 1;
     
     int result = 0;
-    for (size_t i = 0; i < hierarchy.size(); i++) { 
+    for (size_t i = 0; i < hierarchy.size(); i++) {
         if (hierarchy[i][3] != - 1) result++;
     }
     
     return result;
 }
 
-- (double) contourArea: (cv::Mat *) img 
+- (double) contourArea: (cv::Mat *) img
 {
     std::vector<std::vector<cv::Point>> contours;
     std::vector<cv::Vec4i> hierarchy;
     cv::findContours(*img, contours, hierarchy, cv::RETR_TREE, cv::CHAIN_APPROX_SIMPLE);
     
-    for (size_t i = 0; i < hierarchy.size(); i++) { 
+    for (size_t i = 0; i < hierarchy.size(); i++) {
         if (hierarchy[i][3] == -1) {
             double area = cv::contourArea(contours[i]);
             if (area > 0) return area;

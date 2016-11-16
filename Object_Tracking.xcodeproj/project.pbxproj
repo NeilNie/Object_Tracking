@@ -17,7 +17,6 @@
 		281E476F1DC167F100AFB85D /* ObjectTrackingSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 281E476C1DC167F100AFB85D /* ObjectTrackingSample.cpp */; };
 		281E47741DC1682B00AFB85D /* VideoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 281E47731DC1682B00AFB85D /* VideoViewController.mm */; };
 		281E47791DC1689200AFB85D /* NSString+StdString.mm in Sources */ = {isa = PBXBuildFile; fileRef = 281E47781DC1689200AFB85D /* NSString+StdString.mm */; };
-		281E47801DC1697A00AFB85D /* Globals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 281E477E1DC1697A00AFB85D /* Globals.cpp */; };
 		281E47831DC1699800AFB85D /* cvneon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 281E47811DC1699800AFB85D /* cvneon.cpp */; };
 		282002061DC691120013A603 /* GeometryUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 282001FF1DC691120013A603 /* GeometryUtil.mm */; };
 		282002071DC691120013A603 /* MLManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 282002011DC691120013A603 /* MLManager.mm */; };
@@ -52,8 +51,6 @@
 		281E47771DC1689200AFB85D /* NSString+StdString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+StdString.h"; path = "../NSString+StdString.h"; sourceTree = "<group>"; };
 		281E47781DC1689200AFB85D /* NSString+StdString.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSString+StdString.mm"; path = "../NSString+StdString.mm"; sourceTree = "<group>"; };
 		281E477D1DC168B800AFB85D /* object_tracking.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = object_tracking.pch; path = ../object_tracking.pch; sourceTree = "<group>"; };
-		281E477E1DC1697A00AFB85D /* Globals.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Globals.cpp; path = ../Globals.cpp; sourceTree = "<group>"; };
-		281E477F1DC1697A00AFB85D /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Globals.h; path = ../Globals.h; sourceTree = "<group>"; };
 		281E47811DC1699800AFB85D /* cvneon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cvneon.cpp; sourceTree = "<group>"; };
 		281E47821DC1699800AFB85D /* cvneon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvneon.h; sourceTree = "<group>"; };
 		281E47861DC16BEE00AFB85D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -217,8 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				281E477D1DC168B800AFB85D /* object_tracking.pch */,
-				281E477E1DC1697A00AFB85D /* Globals.cpp */,
-				281E477F1DC1697A00AFB85D /* Globals.h */,
 				281E47771DC1689200AFB85D /* NSString+StdString.h */,
 				281E47781DC1689200AFB85D /* NSString+StdString.mm */,
 				2820020B1DC691180013A603 /* FPS.h */,
@@ -381,7 +376,6 @@
 				281E47741DC1682B00AFB85D /* VideoViewController.mm in Sources */,
 				2823BF8A1DD16DAD00D530D4 /* FeatureDetectionClass.cpp in Sources */,
 				2820020F1DC691180013A603 /* FPS.mm in Sources */,
-				281E47801DC1697A00AFB85D /* Globals.cpp in Sources */,
 				281E47351DC167B300AFB85D /* AppDelegate.m in Sources */,
 				282002101DC691180013A603 /* ImageUtils.mm in Sources */,
 				281E47691DC167EA00AFB85D /* SampleFacade.mm in Sources */,

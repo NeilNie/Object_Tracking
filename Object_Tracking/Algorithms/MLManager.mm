@@ -81,7 +81,7 @@
     return [self.logoTemplate distace: feature];
 }
 
-- (BOOL) isToptalLogo: (MSERFeature *) feature;
+- (BOOL) isFeature: (MSERFeature *) feature;
 {
     if (_logoTemplate.numberOfHoles != feature.numberOfHoles) { 
         return NO; 

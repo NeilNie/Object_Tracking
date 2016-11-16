@@ -32,8 +32,7 @@
             (long)self.numberOfHoles, self.convexHullAreaRate, self.minRectAreaRate, self.skeletLengthRate, self.contourAreaRate];
 }
 
--(NSString *)toString
-{
+-(NSString *)toString{
     return [NSString stringWithFormat: 
             @"%li \t %f \t %f \t %f \t %f ", 
             (long)self.numberOfHoles, self.convexHullAreaRate, self.minRectAreaRate, self.skeletLengthRate, self.contourAreaRate];    

@@ -1,5 +1,5 @@
 ////////
-// This sample is published as part of the blog article at www.toptal.com/blog 
+// This sample is published as part of the blog article at www.toptal.com/blog
 // Visit www.toptal.com/blog and subscribe to our newsletter to read great posts
 ////////
 
@@ -19,11 +19,11 @@
 
 + (cv::Mat) getPerspectiveMatrix: (cv::Point2f[]) points toSize: (cv::Size2f) size
 {
-    cv::Point2f dst[] = { 
-        cv::Point2f(0, 0), 
-        cv::Point2f(size.width, 0), 
-        cv::Point2f(size.width, size.width), 
-        cv::Point2f(0, size.width) 
+    cv::Point2f dst[] = {
+        cv::Point2f(0, 0),
+        cv::Point2f(size.width, 0),
+        cv::Point2f(size.width, size.width),
+        cv::Point2f(0, size.width)
     };
     BOOL first = PYTHAGOR(points[0], points[1]) < PYTHAGOR(points[1], points[2]);
     cv::Point2f src[] = {
@@ -41,7 +41,7 @@
 {
     cv::Mat dst(cv::Size(size, size), image->type());
     cv::warpPerspective(*image, dst, *M, dst.size(), cv::INTER_LINEAR, cv::BORDER_DEFAULT, cv::Scalar(1, 1, 1));
-
+    
     return dst;
 }
 

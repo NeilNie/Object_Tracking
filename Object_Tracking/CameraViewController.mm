@@ -1,5 +1,5 @@
 ////////
-// This sample is published as part of the blog article at www.toptal.com/blog 
+// This sample is published as part of the blog article at www.toptal.com/blog
 // Visit www.toptal.com/blog and subscribe to our newsletter to read great posts
 ////////
 
@@ -62,9 +62,9 @@
 
 - (void) test {
     
-    UIImage *logo = [UIImage imageNamed: @"toptal logo"];    
+    UIImage *logo = [UIImage imageNamed: @"toptal logo"];
     cv::Mat image = [ImageUtils cvMatFromUIImage: logo];
-
+    
     //get gray image
     cv::Mat gray;
     cvtColor(image, gray, CV_BGRA2GRAY);
@@ -73,14 +73,14 @@
     std::vector<cv::Point> mser = [ImageUtils maxMser: &gray];
     
     //get 4 vertices of the maxMSER minrect
-    cv::RotatedRect rect = cv::minAreaRect(mser);    
+    cv::RotatedRect rect = cv::minAreaRect(mser);
     cv::Point2f points[4];
     rect.points(points);
     
     //normalize image
     cv::Mat M = [GeometryUtil getPerspectiveMatrix: points toSize: rect.size];
     cv::Mat normalizedImage = [GeometryUtil normalizeImage: &gray withTranformationMatrix: &M withSize: rect.size.width];
-
+    
     //get maxMser from normalized image
     std::vector<cv::Point> normalizedMser = [ImageUtils maxMser: &normalizedImage];
     
@@ -95,54 +95,51 @@
 
 -(void)processImage:(cv::Mat &)image
 {
-    if (!started) { [FPS draw: image]; return; }
+    if (!started){
+        [FPS draw: image]; return; }
     
+    //convert it into gray image
     cv::Mat gray;
     cvtColor(image, gray, CV_BGRA2GRAY);
     
     std::vector<std::vector<cv::Point>> msers;
-    [[MSERManager sharedInstance] detectRegions: gray intoVector: msers];
-    if (msers.size() == 0) { return; };
+    std::vector<cv::Rect> bbox; //the bounding boxes, use this to display all the mser features outbounds.
+    [[MSERManager sharedInstance] detectRegions:gray intoVector: msers bbox:bbox]; //detection regions
+    if (msers.size() == 0) return; //if there is not region, return
     
     std::vector<cv::Point> *bestMser = nil;
     double bestPoint = 10.0;
     
-    std::for_each(msers.begin(), msers.end(), [&] (std::vector<cv::Point> &mser)
-                  {
-                      MSERFeature *feature = [[MSERManager sharedInstance] extractFeature: &mser];
-                      
-                      if(feature != nil){
-                          
-                          if([[MLManager sharedInstance] isToptalLogo: feature] ){
-                              
-                              double tmp = [[MLManager sharedInstance] distance:feature];
-                              if ( bestPoint > tmp ) {
-                                  bestPoint = tmp;
-                                  bestMser = &mser;
-                              }
-                              
-                              [ImageUtils drawMser: &mser intoImage: &image withColor: GREEN];
-                          }
-                          else{
-                              NSLog(@"%@", [feature toString]);
-                              [ImageUtils drawMser: &mser intoImage: &image withColor: RED];
-                          }
-                      }
-                      else{
-                          [ImageUtils drawMser: &mser intoImage: &image withColor: BLUE];
-                      }
-                  });
+    std::for_each(msers.begin(), msers.end(), [&] (std::vector<cv::Point> &mser){
+        
+        MSERFeature *feature = [[MSERManager sharedInstance] extractFeature: &mser];
+        
+        if(feature){
+            
+            if([[MLManager sharedInstance] isFeature: feature] ){
+                
+                double tmp = [[MLManager sharedInstance] distance:feature];
+                if (bestPoint > tmp ) {
+                    bestPoint = tmp;
+                    bestMser = &mser;
+                }
+                [ImageUtils drawMser: &mser intoImage: &image withColor: GREEN];
+            }else
+                [ImageUtils drawMser: &mser intoImage: &image withColor: RED];
+            
+        }else
+            [ImageUtils drawMser: &mser intoImage: &image withColor: BLUE];
+        
+    });
     
     if (bestMser){
         
         NSLog(@"minDist: %f", bestPoint);
         
         cv::Rect bound = cv::boundingRect(*bestMser);
-        cv::rectangle(image, bound, GREEN, 3);
-    }
-    else{
+        cv::rectangle(image, bound, GREEN, 3); //if there is best MSER, draw green bounds around it.
+    }else
         cv::rectangle(image, cv::Rect(0, 0, W, H), RED, 3);
-    }
     
 #if DEBUG
     const char* str_fps = [[NSString stringWithFormat: @"MSER: %ld", msers.size()] cStringUsingEncoding: NSUTF8StringEncoding];
@@ -151,6 +148,5 @@
     
     [FPS draw: image];
 }
-
 
 @end

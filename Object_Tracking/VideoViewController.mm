@@ -93,11 +93,12 @@
 
 -(CGRect)mapImageRect{
     
+    //!cropping method can be improved. The cropped image is not the desired result.
     return
-    CGRectMake(self.captureView.frame.origin.y * 2.0,
-               self.captureView.frame.origin.x * 2.0,
-               self.captureView.frame.size.height * 2.0,
-               self.captureView.frame.size.width * 2.0
+    CGRectMake(self.captureView.frame.origin.y * self.view.frame.size.width / self.captureView.frame.size.width,
+               self.captureView.frame.origin.x * self.view.frame.size.width / self.captureView.frame.size.width,
+               self.captureView.frame.size.height * self.view.frame.size.width / self.captureView.frame.size.width,
+               self.captureView.frame.size.width * self.view.frame.size.width / self.captureView.frame.size.width
                );
     
 }
@@ -125,10 +126,25 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         self.containerView.image = self.currentFrame;
     });
+    
+    //!processed the cropped image. However, the cropped portion is based on captureView. The origin and size of captureView compromises the accuracy.
     [self.objectTracker processFrame:[ImageUtils cvMatFromUIImage:[self imageByCroppingImage:self.currentFrame]] into:outputFrame];
     outputFrame.copyTo(image);
-    NSLog(@"points: %@", [self.objectTracker getPoints]);
-    NSLog(@"extreme points %@", [self.objectTracker getExtremes]);
+
+    if ([self.objectTracker getPoints].count > 0) {
+        self.trackingScreen.layer.sublayers = nil;
+        for (int i = 0; i < [self.objectTracker getPoints].count; i++) {
+            CVPoint_objc *point = [[self.objectTracker getPoints] objectAtIndex:i];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                CAShapeLayer *circleLayer = [CAShapeLayer layer];
+#warning the position of the dots are not accurate. This bug needs to be fixed.
+                [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:
+                                       CGRectMake(self.captureView.frame.origin.x + point.y * self.captureView.frame.size.width / self.trackingScreen.frame.size.width,
+                                                  self.captureView.frame.origin.y - point.x * self.captureView.frame.size.height / self.trackingScreen.frame.size.height, 5, 5)] CGPath]];
+                [self.trackingScreen.layer addSublayer:circleLayer];
+            });
+        }
+    }
 }
 #endif
 
@@ -151,6 +167,5 @@
         [self.objectTracker resetReferenceFrame];
     });
 }
-
 
 @end

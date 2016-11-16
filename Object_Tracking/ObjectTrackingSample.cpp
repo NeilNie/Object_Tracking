@@ -9,7 +9,6 @@
 #include <iostream>
 #include "ObjectTrackingClass.h"
 #include "ObjectTrackingSample.h"
-#include "Globals.h"
 #include <iostream>
 #include "cvneon.h"
 
@@ -48,7 +47,7 @@ void ObjectTrackingSample::getGray(const cv::Mat& input, cv::Mat& gray){
 }
 
 // Reset object keypoints and descriptors
-void ObjectTrackingSample::resetReferenceFrame() const{
+void ObjectTrackingSample::resetReferenceFrame() {
     trackObject = false;
     computeObject = false;
 }
@@ -116,6 +115,6 @@ bool ObjectTrackingSample::processFrame(const cv::Mat& inputFrame, cv::Mat& outp
     
     // backup points array
     std::swap(pointsNext, pointsPrev);
-
+    
     return true;
 }

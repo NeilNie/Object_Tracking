@@ -19,4 +19,8 @@
     return self;
 }
 
+-(NSString *)description{
+    return [NSString stringWithFormat:@"\n x: %f \n y: %f", self.x, self.y];
+}
+
 @end
