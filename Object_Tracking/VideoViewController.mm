@@ -9,7 +9,7 @@
 #import "VideoViewController.h"
 #import "ImageUtils.h"
 
-#import <opencv2/videoio/cap_ios.h>
+#import <opencv2/highgui/cap_ios.h>
 
 #define kTransitionDuration	0.75
 

@@ -27,7 +27,7 @@
     return instance;
 }
 
-cv::Ptr<cv::MSER> mserDetector;
+cv::MserFeatureDetector mserDetector;
 
 - (instancetype) init
 {
@@ -48,19 +48,18 @@ cv::Ptr<cv::MSER> mserDetector;
         double minMargin = 0.003;       //! ignore too small margin
         int edgeBlurSize = 0;           //! the aperture size for edge blur
         
-        mserDetector = cv::MSER::create(delta, minArea, maxArea,
-                                        maxVariation, minDiversity, maxEvolution,
-                                        areaThreshold, minMargin, edgeBlurSize
-                                        );
+        mserDetector = cv::MserFeatureDetector(delta, minArea, maxArea,
+                                               maxVariation, minDiversity, maxEvolution,
+                                               areaThreshold, minMargin, edgeBlurSize
+                                               );
     }
     
     return self;
 }
 
-- (void) detectRegions: (cv::Mat &) gray
-            intoVector:(std::vector<std::vector<cv::Point>> &)vector
-                  bbox:(std::vector<cv::Rect> &)bbox{
-    mserDetector->detectRegions(gray, vector, bbox);
+- (void) detectRegions: (cv::Mat &) gray intoVector: (std::vector<std::vector<cv::Point>> &) vector;
+{
+    mserDetector(gray, vector);
 }
 
 - (MSERFeature *) extractFeature: (std::vector<cv::Point> *) mser{

@@ -23,9 +23,9 @@ FeatureDetectionSample::FeatureDetectionSample()
     m_alorithms.push_back( kDetectorFAST );
     m_alorithms.push_back( kDetectorAKAZE );
     
-    m_ORB = cv::ORB::create();
-    m_FAST = cv::FastFeatureDetector::create();
-    m_AKAZE = cv::AKAZE::create();
+//!    m_ORB = cv::ORB();
+//!    m_FAST = cv::FastFeatureDetector();
+    //m_AKAZE = cv::AKAZE::create();
 }
 
 static bool keypoint_score_greater(const cv::KeyPoint& kp1, const cv::KeyPoint& kp2){
@@ -62,9 +62,6 @@ bool FeatureDetectionSample::processFrame(const cv::Mat& inputFrame, cv::Mat& ou
     }
     else if (m_detectorName == kDetectorFAST){
         m_FAST->detect(grayImage, objectKeypoints);
-    }
-    else if (m_detectorName == kDetectorAKAZE){
-        m_AKAZE->detect(grayImage, objectKeypoints);
     }
     
     cv::KeyPointsFilter::retainBest(objectKeypoints, m_maxFeatures);

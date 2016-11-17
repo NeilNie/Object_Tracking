@@ -12,7 +12,7 @@
 //
 
 #import "CameraViewController.h"
-#import <opencv2/videoio/cap_ios.h>
+#import <opencv2/highgui/cap_ios.h>
 
 #import "MSERManager.h"
 #import "MLManager.h"
@@ -104,7 +104,7 @@
     
     std::vector<std::vector<cv::Point>> msers;
     std::vector<cv::Rect> bbox; //the bounding boxes, use this to display all the mser features outbounds.
-    [[MSERManager sharedInstance] detectRegions:gray intoVector: msers bbox:bbox]; //detection regions
+    [[MSERManager sharedInstance] detectRegions:gray intoVector: msers]; //detection regions
     if (msers.size() == 0) return; //if there is not region, return
     
     std::vector<cv::Point> *bestMser = nil;

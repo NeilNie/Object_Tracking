@@ -9,6 +9,10 @@
 #include "cvneon.h"
 #include <cassert>
 
+#if (!TARGET_IPHONE_SIMULATOR)
+#include <arm_neon.h>
+#endif
+
 namespace cv
 {
     bool isAligned(const cv::Mat& m)

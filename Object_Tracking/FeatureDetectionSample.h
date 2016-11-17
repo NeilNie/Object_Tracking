@@ -28,7 +28,7 @@ private:
     std::vector<std::string> m_alorithms;
     
     cv::Ptr<cv::ORB>  m_ORB;
-    cv::Ptr<cv::AKAZE> m_AKAZE;
+    //cv::Ptr<cv::AKAZE> m_AKAZE;
     cv::Ptr<cv::FastFeatureDetector> m_FAST;
     
     int m_maxFeatures;

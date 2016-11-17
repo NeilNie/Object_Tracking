@@ -245,10 +245,10 @@ cv::Mat FeatureDetectionClass::match(cv::Mat& image2, // input scene image
 {
     // 1a. Detection of the features
     std::vector<cv::KeyPoint> keypoints2;
-    detector->detect(image2,keypoints2);
+    //!detector->detect(image2,keypoints2);
     // 1b. Extraction of the descriptors
     cv::Mat descriptors2;
-    detector->compute(image2,keypoints2,descriptors2);
+    //!detector->compute(image2,keypoints2,descriptors2);
     
     // 2. Match the two image descriptors
     // from object image to scene image

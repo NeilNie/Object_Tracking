@@ -16,7 +16,7 @@ class FeatureDetectionClass
 private:
     // pointer to the feature point detector object
     // pointer to the feature descriptor extractor object
-    cv::Ptr<cv::AKAZE> detector;
+    //!cv::Ptr<cv::AKAZE> detector;
     
     // pointer to the matcher object
     cv::Ptr<cv::DescriptorMatcher > matcher;
@@ -29,9 +29,9 @@ private:
 public:
     FeatureDetectionClass(): ratio(0.65f), refineF(true), confidence(0.99), distance(3.0) {
         // SURF is the default feature detector and extractor
-        detector = cv::AKAZE::create();
+        //!detector = cv::AKAZE::create();
         // BruteForce matcher is the default matcher
-        matcher.reset(new cv::BFMatcher(detector->defaultNorm()));
+        //!matcher.reset(new cv::BFMatcher(detector->defaultNorm()));
     }
         
     // Set confidence level

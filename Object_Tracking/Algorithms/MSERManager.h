@@ -26,7 +26,7 @@
 /*
  Extracts all msers into provided vector
  */
-- (void) detectRegions: (cv::Mat &) gray intoVector:(std::vector<std::vector<cv::Point>> &)vector bbox:(std::vector<cv::Rect> &)bbox;
+- (void) detectRegions: (cv::Mat &) gray intoVector:(std::vector<std::vector<cv::Point>> &)vector;
 
 /*
  Extracts feature from the mser. For some MSERs feature can be NULL !!!

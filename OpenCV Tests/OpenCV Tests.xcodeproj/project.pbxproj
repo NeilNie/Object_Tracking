@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		285B73FE1DDD13F400C61D59 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285B73FD1DDD13F400C61D59 /* opencv2.framework */; };
+		2805EE701DDD2B3F008F44B5 /* ImageUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2805EE6F1DDD2B3F008F44B5 /* ImageUtils.mm */; };
 		289223031DDD10DA0090F637 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 289223021DDD10DA0090F637 /* AppDelegate.m */; };
 		289223061DDD10DA0090F637 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 289223051DDD10DA0090F637 /* main.m */; };
-		289223091DDD10DA0090F637 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289223081DDD10DA0090F637 /* ViewController.m */; };
+		289223091DDD10DA0090F637 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 289223081DDD10DA0090F637 /* ViewController.mm */; };
 		2892230B1DDD10DA0090F637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2892230A1DDD10DA0090F637 /* Assets.xcassets */; };
 		2892230E1DDD10DA0090F637 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2892230C1DDD10DA0090F637 /* Main.storyboard */; };
 		289223191DDD10DA0090F637 /* OpenCV_TestsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 289223181DDD10DA0090F637 /* OpenCV_TestsTests.m */; };
@@ -35,13 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		285B73FD1DDD13F400C61D59 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../opencv2.framework; sourceTree = "<group>"; };
+		2805EE6E1DDD2B3F008F44B5 /* ImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtils.h; sourceTree = "<group>"; };
+		2805EE6F1DDD2B3F008F44B5 /* ImageUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageUtils.mm; sourceTree = "<group>"; };
 		289222FE1DDD10DA0090F637 /* OpenCV Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenCV Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		289223011DDD10DA0090F637 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		289223021DDD10DA0090F637 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		289223051DDD10DA0090F637 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		289223071DDD10DA0090F637 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		289223081DDD10DA0090F637 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		289223081DDD10DA0090F637 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		2892230A1DDD10DA0090F637 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2892230D1DDD10DA0090F637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2892230F1DDD10DA0090F637 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				285B73FE1DDD13F400C61D59 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +79,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2805EE711DDD2E85008F44B5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2805EE6E1DDD2B3F008F44B5 /* ImageUtils.h */,
+				2805EE6F1DDD2B3F008F44B5 /* ImageUtils.mm */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		289222F51DDD10DA0090F637 = {
 			isa = PBXGroup;
 			children = (
-				285B73FD1DDD13F400C61D59 /* opencv2.framework */,
 				289223001DDD10DA0090F637 /* OpenCV Tests */,
 				289223171DDD10DA0090F637 /* OpenCV TestsTests */,
 				289223221DDD10DA0090F637 /* OpenCV TestsUITests */,
@@ -106,7 +114,8 @@
 				289223011DDD10DA0090F637 /* AppDelegate.h */,
 				289223021DDD10DA0090F637 /* AppDelegate.m */,
 				289223071DDD10DA0090F637 /* ViewController.h */,
-				289223081DDD10DA0090F637 /* ViewController.m */,
+				289223081DDD10DA0090F637 /* ViewController.mm */,
+				2805EE711DDD2E85008F44B5 /* Helpers */,
 				2892230A1DDD10DA0090F637 /* Assets.xcassets */,
 				2892230C1DDD10DA0090F637 /* Main.storyboard */,
 				2892230F1DDD10DA0090F637 /* Info.plist */,
@@ -276,7 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				289223091DDD10DA0090F637 /* ViewController.m in Sources */,
+				289223091DDD10DA0090F637 /* ViewController.mm in Sources */,
+				2805EE701DDD2B3F008F44B5 /* ImageUtils.mm in Sources */,
 				289223061DDD10DA0090F637 /* main.m in Sources */,
 				289223031DDD10DA0090F637 /* AppDelegate.m in Sources */,
 			);
