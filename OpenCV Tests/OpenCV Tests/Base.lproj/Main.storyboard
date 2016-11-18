@@ -700,12 +700,22 @@
                                     <action selector="processImage:" target="XfG-lQ-9wD" id="1kC-nk-lnJ"/>
                                 </connections>
                             </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s13-cz-NOp">
+                                <rect key="frame" x="456" y="0.0" width="140" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="J5Z-jj-B4x"/>
+                                    <constraint firstAttribute="width" constant="140" id="w0w-K2-rfM"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="n8h-k5-o6A"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="0u3-P2-4cd" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="5uo-5A-3Hs"/>
                             <constraint firstItem="0u3-P2-4cd" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Bc6-6X-a4E"/>
+                            <constraint firstAttribute="bottom" secondItem="s13-cz-NOp" secondAttribute="bottom" id="HvT-Y0-hQb"/>
                             <constraint firstItem="Zvd-bx-UMn" firstAttribute="centerX" secondItem="0u3-P2-4cd" secondAttribute="centerX" id="Kh3-Ya-d72"/>
                             <constraint firstAttribute="bottom" secondItem="0u3-P2-4cd" secondAttribute="bottom" id="Lv8-WQ-9vl"/>
+                            <constraint firstAttribute="trailing" secondItem="s13-cz-NOp" secondAttribute="trailing" id="UsH-nx-fhd"/>
                             <constraint firstItem="Zvd-bx-UMn" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="gku-a7-CwV"/>
                             <constraint firstAttribute="trailing" secondItem="0u3-P2-4cd" secondAttribute="trailing" id="vct-8F-T9r"/>
                         </constraints>

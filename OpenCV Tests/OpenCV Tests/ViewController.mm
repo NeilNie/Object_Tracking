@@ -8,15 +8,24 @@
 
 #import "ViewController.h"
 #import <opencv2/opencv.hpp>
-#import <opencv2/highgui.hpp>
 #import <opencv2/core.hpp>
 #import <opencv2/imgproc.hpp>
-#import <opencv2/features2d.hpp>
+#include <opencv2/highgui/highgui.hpp>
 #import <opencv2/features2d/features2d.hpp>
 #include <iostream>
 #import "ImageUtils.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace cv;
 
 @implementation ViewController
+
+cv::MserFeatureDetector mserDetector;
+
+- (void) detectRegions: (cv::Mat &) gray intoVector: (std::vector<std::vector<cv::Point>> &) vector{
+    mserDetector(gray, vector);
+}
 
 -(IBAction)processImage:(id)sender{
     
@@ -24,10 +33,8 @@
     cv::Mat testImage;
     cv::cvtColor(image, testImage, CV_BGR2GRAY);
     
-    std::vector<std::vector <cv::Point2f>> contours;
-    std::vector<cv::Rect> bboxes;
+    std::vector<std::vector<cv::Point>> contours;
     
-    //cv::Ptr<cv::MSER> mserDetector;
     /* THESE ARE ALL DEFAULT VALUES */
     int delta = 5;                  //! delta, in the code, it compares (size_{i}-size_{i-delta})/size_{i-delta}
     //int minArea = 5120;            //! (640 * 480 / 60) ... max mser is 1/60 of the whole image
@@ -41,46 +48,34 @@
     double minMargin = 0.003;       //! ignore too small margin
     int edgeBlurSize = 0;           //! the aperture size for edge blur
     
-    //mserDetector = cv::MSER::create(delta, minArea, maxArea,
-                                    maxVariation, minDiversity, maxEvolution,
-                                    areaThreshold, minMargin, edgeBlurSize
-                                    );
+    mserDetector = cv::MserFeatureDetector(delta, minArea, maxArea,
+                                           maxVariation, minDiversity, maxEvolution,
+                                           areaThreshold, minMargin, edgeBlurSize
+                                           );
+    [self detectRegions:testImage intoVector:contours];
     
-//    Mat inImg = imread("M:\\____videoSample____\\SceneText\\SceneText01.jpg");
-//    
-//    Mat textImg;
-//    
-//    cvtColor(inImg, textImg, CV_BGR2GRAY);
-//    
-//    //Extract MSER
-//    vector< vector< Point> > contours;
-//    
-//    vector< Rect> bboxes;
-//    
-//    Ptr< MSER> mser = MSER::create(21, (int)(0.00002 * textImg.cols * textImg.rows), (int)(0.05 * textImg.cols * textImg.rows), 1, 0.7);
-//    
-//    mser->detectRegions(textImg, contours, bboxes);
-//    
-//    for (int i = 0; i < bboxes.size(); i++){
-//        rectangle(inImg, bboxes[i], CV_RGB(0, 255, 0));
-//    }
-//    namedWindow("t");
-//    imshow("t", inImg);
-
+    for (int i = 0; i < contours.size(); i++) {
+        cv::Rect bound = cv::boundingRect(contours[i]);
+        cv::rectangle(image, bound, CV_RGB(100, 100, 100));
+    }
+//    cv::Rect bound = cv::boundingRect(contours[20]);
+//    cv::rectangle(image, bound, CV_RGB(100, 100, 100));
+    
+    self.image.image = [ImageUtils UIImageFromCVMat:image];
 }
 
 - (void)viewDidLoad {
     
     std::cout << "Hello World";
     [super viewDidLoad];
-    self.image.image = [NSImage imageNamed:@"test1"];
+    self.image.image = [NSImage imageNamed:@"test3"];
     // Do any additional setup after loading the view.
 }
 
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
-
+    
     // Update the view, if already loaded.
 }
 

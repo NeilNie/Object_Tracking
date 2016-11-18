@@ -41,6 +41,7 @@
 		284B958F1DDE66FB00E3D249 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284B958E1DDE66FB00E3D249 /* QuartzCore.framework */; };
 		28AA98541DD7E9FC00C8F990 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AA98531DD7E9FC00C8F990 /* Launch Screen.storyboard */; };
 		28B5BEA01DDBE4D40064B421 /* CVPoint_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B5BE9F1DDBE4D40064B421 /* CVPoint_objc.m */; };
+		28DCF3E21DDE9974000E673C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28DCF3E11DDE9974000E673C /* libc++.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		28AA98531DD7E9FC00C8F990 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		28B5BE9E1DDBE4D40064B421 /* CVPoint_objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVPoint_objc.h; sourceTree = "<group>"; };
 		28B5BE9F1DDBE4D40064B421 /* CVPoint_objc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVPoint_objc.m; sourceTree = "<group>"; };
+		28DCF3E11DDE9974000E673C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28DCF3E21DDE9974000E673C /* libc++.tbd in Frameworks */,
 				284B958F1DDE66FB00E3D249 /* QuartzCore.framework in Frameworks */,
 				284B958D1DDE66F500E3D249 /* OpenGLES.framework in Frameworks */,
 				284B958B1DDE66F000E3D249 /* GLKit.framework in Frameworks */,
@@ -218,6 +221,7 @@
 		281E47851DC16BEE00AFB85D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28DCF3E11DDE9974000E673C /* libc++.tbd */,
 				284B958E1DDE66FB00E3D249 /* QuartzCore.framework */,
 				284B958C1DDE66F500E3D249 /* OpenGLES.framework */,
 				284B958A1DDE66F000E3D249 /* GLKit.framework */,
@@ -491,7 +495,7 @@
 				GCC_PREFIX_HEADER = /Users/Neil/Desktop/Object_Tracking/Object_Tracking/object_tracking.pch;
 				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../../Documents/Developer/Resources/Frameworks/OpenCV_iOS\"";
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.Object-Tracking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,7 +520,7 @@
 				GCC_PREFIX_HEADER = /Users/Neil/Desktop/Object_Tracking/Object_Tracking/object_tracking.pch;
 				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../../Documents/Developer/Resources/Frameworks/OpenCV_iOS\"";
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.Object-Tracking";
 				PRODUCT_NAME = "$(TARGET_NAME)";

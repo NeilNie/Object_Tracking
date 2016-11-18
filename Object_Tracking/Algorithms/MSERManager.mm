@@ -57,7 +57,7 @@ cv::MserFeatureDetector mserDetector;
     return self;
 }
 
-- (void) detectRegions: (cv::Mat &) gray intoVector: (std::vector<std::vector<cv::Point>> &) vector;
+- (void) detectRegions: (cv::Mat &) gray intoVector: (std::vector<std::vector<cv::Point>> &) vector
 {
     mserDetector(gray, vector);
 }
