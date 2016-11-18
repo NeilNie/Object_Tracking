@@ -27,4 +27,10 @@ extern const cv::Scalar LIGHT_GRAY;
 
 + (NSImage *) UIImageFromCVMat: (cv::Mat)cvMat;
 
++ (cv::Mat) mserToMat: (std::vector<cv::Point> *) mser;
+
++ (void) drawMser: (std::vector<cv::Point> *) mser intoImage: (cv::Mat *) image withColor: (cv::Scalar) color;
+
++ (std::vector<cv::Point>) maxMser: (cv::Mat *) gray;
+
 @end

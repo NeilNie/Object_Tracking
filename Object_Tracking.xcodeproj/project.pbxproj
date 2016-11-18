@@ -24,9 +24,6 @@
 		2820020F1DC691180013A603 /* FPS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2820020C1DC691180013A603 /* FPS.mm */; };
 		282002101DC691180013A603 /* ImageUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2820020E1DC691180013A603 /* ImageUtils.mm */; };
 		282002131DC691220013A603 /* CameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 282002121DC691220013A603 /* CameraViewController.mm */; };
-		2823BF8A1DD16DAD00D530D4 /* FeatureDetectionClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2823BF861DD16DAD00D530D4 /* FeatureDetectionClass.cpp */; };
-		2823BF8B1DD16DAD00D530D4 /* FeatureDetectionSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2823BF881DD16DAD00D530D4 /* FeatureDetectionSample.cpp */; };
-		2823BF8F1DD16DE400D530D4 /* FeatureDetectionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2823BF8E1DD16DE400D530D4 /* FeatureDetectionViewController.mm */; };
 		284B957A1DDE647900E3D249 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284B95791DDE647900E3D249 /* opencv2.framework */; };
 		284B957B1DDE647E00E3D249 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281E47861DC16BEE00AFB85D /* AVFoundation.framework */; };
 		284B957D1DDE648200E3D249 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284B957C1DDE648200E3D249 /* CoreGraphics.framework */; };
@@ -80,12 +77,6 @@
 		2820020E1DC691180013A603 /* ImageUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageUtils.mm; sourceTree = "<group>"; };
 		282002111DC691220013A603 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		282002121DC691220013A603 /* CameraViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraViewController.mm; sourceTree = "<group>"; };
-		2823BF861DD16DAD00D530D4 /* FeatureDetectionClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FeatureDetectionClass.cpp; sourceTree = "<group>"; };
-		2823BF871DD16DAD00D530D4 /* FeatureDetectionClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureDetectionClass.h; sourceTree = "<group>"; };
-		2823BF881DD16DAD00D530D4 /* FeatureDetectionSample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FeatureDetectionSample.cpp; sourceTree = "<group>"; };
-		2823BF891DD16DAD00D530D4 /* FeatureDetectionSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureDetectionSample.h; sourceTree = "<group>"; };
-		2823BF8D1DD16DE400D530D4 /* FeatureDetectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureDetectionViewController.h; sourceTree = "<group>"; };
-		2823BF8E1DD16DE400D530D4 /* FeatureDetectionViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FeatureDetectionViewController.mm; sourceTree = "<group>"; };
 		284B95791DDE647900E3D249 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../Documents/Developer/Resources/Frameworks/OpenCV_iOS/opencv2.framework; sourceTree = "<group>"; };
 		284B957C1DDE648200E3D249 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		284B957E1DDE648700E3D249 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -153,7 +144,6 @@
 				2820020A1DC691180013A603 /* Utils */,
 				282001FD1DC691120013A603 /* MSER Algorithms */,
 				281E47841DC1699B00AFB85D /* OpenCV_neon */,
-				2823BF8C1DD16DB000D530D4 /* Feature_Detection */,
 				281E47701DC167F700AFB85D /* Object_Tracking */,
 				281E47711DC1680100AFB85D /* Bases */,
 				281E47631DC167CA00AFB85D /* ViewControllers */,
@@ -177,8 +167,6 @@
 		281E47631DC167CA00AFB85D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2823BF8D1DD16DE400D530D4 /* FeatureDetectionViewController.h */,
-				2823BF8E1DD16DE400D530D4 /* FeatureDetectionViewController.mm */,
 				282002111DC691220013A603 /* CameraViewController.h */,
 				282002121DC691220013A603 /* CameraViewController.mm */,
 				281E47721DC1682B00AFB85D /* VideoViewController.h */,
@@ -267,17 +255,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		2823BF8C1DD16DB000D530D4 /* Feature_Detection */ = {
-			isa = PBXGroup;
-			children = (
-				2823BF861DD16DAD00D530D4 /* FeatureDetectionClass.cpp */,
-				2823BF871DD16DAD00D530D4 /* FeatureDetectionClass.h */,
-				2823BF881DD16DAD00D530D4 /* FeatureDetectionSample.cpp */,
-				2823BF891DD16DAD00D530D4 /* FeatureDetectionSample.h */,
-			);
-			name = Feature_Detection;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,17 +334,14 @@
 				281E47831DC1699800AFB85D /* cvneon.cpp in Sources */,
 				282002091DC691120013A603 /* MSERManager.mm in Sources */,
 				281E47741DC1682B00AFB85D /* VideoViewController.mm in Sources */,
-				2823BF8A1DD16DAD00D530D4 /* FeatureDetectionClass.cpp in Sources */,
 				2820020F1DC691180013A603 /* FPS.mm in Sources */,
 				281E47351DC167B300AFB85D /* AppDelegate.m in Sources */,
 				282002101DC691180013A603 /* ImageUtils.mm in Sources */,
 				281E47691DC167EA00AFB85D /* SampleFacade.mm in Sources */,
 				282002071DC691120013A603 /* MLManager.mm in Sources */,
-				2823BF8F1DD16DE400D530D4 /* FeatureDetectionViewController.mm in Sources */,
 				282002061DC691120013A603 /* GeometryUtil.mm in Sources */,
 				281E47321DC167B300AFB85D /* main.m in Sources */,
 				281E47791DC1689200AFB85D /* NSString+StdString.mm in Sources */,
-				2823BF8B1DD16DAD00D530D4 /* FeatureDetectionSample.cpp in Sources */,
 				282002131DC691220013A603 /* CameraViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

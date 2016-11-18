@@ -13,13 +13,55 @@
 #include <opencv2/highgui/highgui.hpp>
 #import <opencv2/features2d/features2d.hpp>
 #include <iostream>
-#import "ImageUtils.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+#import "ImageUtils.h"
+#import "MSERManager.h"
 
 using namespace cv;
 
 @implementation ViewController
+
+#pragma mark - NSTableView Delegate & Datasource
+
+-(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
+    return self.array.count;
+}
+
+-(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
+    
+    NSString *cellID;
+    NSString *textValue;
+    
+    MSERFeature *feature = [self.array objectAtIndex:row];
+    
+    //MSER #
+    if ([tableColumn isEqual:tableView.tableColumns[0]]) {
+        cellID = @"idMSERN";
+        textValue = [NSString stringWithFormat:@"%li", (long)row];
+    }else if ([tableColumn isEqual:tableView.tableColumns[1]]){
+        cellID = @"idskeletLengthRate";
+        textValue = [NSString stringWithFormat:@"%f", feature.skeletLengthRate];
+    }else if ([tableColumn isEqual:tableView.tableColumns[2]]){
+        cellID = @"idcontourAreaRate";
+        textValue = [NSString stringWithFormat:@"%f", feature.contourAreaRate];
+    }else if ([tableColumn isEqual:tableView.tableColumns[3]]){
+        cellID = @"minRectAreaRate";
+        textValue = [NSString stringWithFormat:@"%f", feature.minRectAreaRate];
+    }
+        //else{
+//        cellID = @"numberOfHoles";
+//        textValue = [NSString stringWithFormat:@"%li", (long)feature.numberOfHoles];
+//    }
+    
+    NSTableCellView *cell = [tableView makeViewWithIdentifier:cellID owner:nil];
+    cell.textField.stringValue = textValue;
+    
+    return (cell)? cell : nil;
+}
+
+#pragma mark - cv & MSER
 
 cv::MserFeatureDetector mserDetector;
 
@@ -57,27 +99,32 @@ cv::MserFeatureDetector mserDetector;
     for (int i = 0; i < contours.size(); i++) {
         cv::Rect bound = cv::boundingRect(contours[i]);
         cv::rectangle(image, bound, CV_RGB(100, 100, 100));
+        
+        MSERFeature *feature = [MSERManager extractFeature:&contours[i]];
+        if (feature) {
+            [self.array addObject:feature];
+        }
     }
-//    cv::Rect bound = cv::boundingRect(contours[20]);
-//    cv::rectangle(image, bound, CV_RGB(100, 100, 100));
     
     self.image.image = [ImageUtils UIImageFromCVMat:image];
+    
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
-    
-    std::cout << "Hello World";
+
     [super viewDidLoad];
     self.image.image = [NSImage imageNamed:@"test3"];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.array = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view.
 }
-
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
     
     // Update the view, if already loaded.
 }
-
 
 @end

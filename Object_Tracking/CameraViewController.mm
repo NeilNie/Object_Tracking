@@ -93,8 +93,8 @@
     started = !started;
 }
 
--(void)processImage:(cv::Mat &)image
-{
+-(void)processImage:(cv::Mat &)image{
+    
     if (!started){
         [FPS draw: image]; return; }
     
@@ -103,7 +103,7 @@
     cvtColor(image, gray, CV_BGRA2GRAY);
     
     std::vector<std::vector<cv::Point>> msers;
-
+    
     [[MSERManager sharedInstance] detectRegions:gray intoVector: msers]; //detection regions
     if (msers.size() == 0) return; //if there is not region, return
     
@@ -143,10 +143,10 @@
     }else
         cv::rectangle(image, cv::Rect(0, 0, W, H), RED, 3);
     
-    //#if DEBUG
-    //    const char* str_fps = [[NSString stringWithFormat: @"MSER: %ld", msers.size()] cStringUsingEncoding: NSUTF8StringEncoding];
-    //    cv::putText(image, str_fps, cv::Point(10, H - 10), CV_FONT_HERSHEY_PLAIN, 1.0, RED);
-    //#endif
+#if DEBUG
+    const char* str_fps = [[NSString stringWithFormat: @"MSER: %ld", msers.size()] cStringUsingEncoding: NSUTF8StringEncoding];
+    cv::putText(image, str_fps, cv::Point(10, H - 10), CV_FONT_HERSHEY_PLAIN, 1.0, RED);
+#endif
     
     [FPS draw: image];
 }

@@ -15,7 +15,6 @@
 
 @property (strong, nonatomic) SampleFacade * objectTracker;
 
-
 @property (weak, nonatomic) IBOutlet UIView *trackingScreen;
 @property (weak, nonatomic) IBOutlet UIImageView *currentFrameView;
 @property (strong, nonatomic) UIImage *currentFrame;

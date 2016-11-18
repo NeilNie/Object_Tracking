@@ -46,13 +46,13 @@
     return instance;
 }
 
-- (void) learn: (UIImage *) templateImage;
-{
-    cv::Mat logo = [ImageUtils cvMatFromUIImage: templateImage];
+- (void) learn: (UIImage *) templateImage{
+    
+    cv::Mat image = [ImageUtils cvMatFromUIImage: templateImage];
     
     //get gray image
     cv::Mat gray;
-    cvtColor(logo, gray, CV_BGRA2GRAY);
+    cvtColor(image, gray, CV_BGRA2GRAY);
     
     //mser with maximum area is 
     std::vector<cv::Point> maxMser = [ImageUtils maxMser: &gray];
@@ -76,13 +76,12 @@
     [self storeTemplate];
 }
 
-- (double) distance: (MSERFeature *) feature
-{
+- (double) distance: (MSERFeature *) feature{
     return [self.logoTemplate distace: feature];
 }
 
-- (BOOL) isFeature: (MSERFeature *) feature;
-{
+- (BOOL) isFeature: (MSERFeature *) feature{
+    
     if (_logoTemplate.numberOfHoles != feature.numberOfHoles) { 
         return NO; 
     }
@@ -120,8 +119,8 @@
 
 #pragma mark - helper
 
-- (void) loadTemplate
-{
+- (void) loadTemplate{
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     _logoTemplate = [[MSERFeature alloc] init];
     
@@ -132,8 +131,8 @@
     _logoTemplate.contourAreaRate = [defaults doubleForKey: KEY_CONTOUR_AREA_RATE];
 }
 
-- (void) storeTemplate
-{
+- (void) storeTemplate{
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];    
     [defaults setInteger: _logoTemplate.numberOfHoles forKey: KEY_NUMBER_OF_HOLES];
     [defaults setDouble: _logoTemplate.convexHullAreaRate forKey: KEY_CONVEX_AREA_RATE];

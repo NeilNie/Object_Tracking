@@ -12,6 +12,7 @@
 //
 
 #import "ImageUtils.h"
+#import "MSERManager.h"
 
 //http://docs.opencv.org/doc/tutorials/ios/image_manipulation/image_manipulation.html
 
@@ -112,6 +113,49 @@ const cv::Scalar LIGHT_GRAY = cv::Scalar(100, 100, 100);
     CGColorSpaceRelease(colorSpace);
     
     return finalImage;
+}
+
++ (cv::Mat) mserToMat: (std::vector<cv::Point> *) mser
+{
+    int minX = std::min_element(mser->begin(), mser->end(), [] (cv::Point &p1, cv::Point &p2) { return p1.x < p2.x; })[0].x;
+    int minY = std::min_element(mser->begin(), mser->end(), [] (cv::Point &p1, cv::Point &p2) { return p1.y < p2.y; })[0].y;
+    int maxX = std::max_element(mser->begin(), mser->end(), [] (cv::Point &p1, cv::Point &p2) { return p1.x < p2.x; })[0].x;
+    int maxY = std::max_element(mser->begin(), mser->end(), [] (cv::Point &p1, cv::Point &p2) { return p1.y < p2.y; })[0].y;
+    
+    cv::Mat color(maxY - minY, maxX - minX, CV_8UC3);
+    
+    std::for_each(mser->begin(), mser->end(), [&] (cv::Point &p)
+                  {
+                      cv::Point newPoint = cv::Point(p.x - minX, p.y - minY);
+                      cv::line(color, newPoint, newPoint, WHITE);
+                  });
+    cv::Mat gray;
+    cvtColor(color, gray, CV_BGRA2GRAY);
+    
+    return gray;
+}
+
++ (void) drawMser: (std::vector<cv::Point> *) mser intoImage: (cv::Mat *) image withColor: (cv::Scalar) color
+{
+    std::for_each(mser->begin(), mser->end(), [&](cv::Point &p) {
+        cv::line(*image, p, p, color);
+    });
+}
+
++ (std::vector<cv::Point>) maxMser: (cv::Mat *) gray
+{
+    std::vector<std::vector<cv::Point>> msers;
+    std::vector<cv::Rect> bbox;
+    [MSERManager detectRegions: *gray intoVector: msers];
+    
+    if (msers.size() == 0) return std::vector<cv::Point>();
+    
+    std::vector<cv::Point> mser =
+    std::max_element(msers.begin(), msers.end(), [] (std::vector<cv::Point> &m1, std::vector<cv::Point> &m2) {
+        return m1.size() < m2.size();
+    })[0];
+    
+    return mser;
 }
 
 @end
