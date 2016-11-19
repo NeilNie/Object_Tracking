@@ -28,8 +28,6 @@
 
 @interface MLManager()
 
-@property MSERFeature *logoTemplate;
-
 @end
 
 @implementation MLManager

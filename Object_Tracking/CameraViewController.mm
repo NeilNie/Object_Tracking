@@ -56,41 +56,49 @@
     
     [super viewDidAppear: animated];
     
-    [self test];
-    [camera start];
+    //[self test];
+    [self learn:[UIImage imageNamed: @"traffic_stop_sign"]];
 }
 
-- (void) test {
+- (void) learn: (UIImage *) templateImage{
     
-    UIImage *logo = [UIImage imageNamed: @"toptal logo"];
-    cv::Mat image = [ImageUtils cvMatFromUIImage: logo];
+    cv::Mat image = [ImageUtils cvMatFromUIImage: templateImage];
     
     //get gray image
     cv::Mat gray;
     cvtColor(image, gray, CV_BGRA2GRAY);
     
     //mser with maximum area is
-    std::vector<cv::Point> mser = [ImageUtils maxMser: &gray];
+    std::vector<cv::Point> maxMser = [ImageUtils maxMser: &gray];
     
-    //get 4 vertices of the maxMSER minrect
-    cv::RotatedRect rect = cv::minAreaRect(mser);
-    cv::Point2f points[4];
-    rect.points(points);
+//    //get 4 vertices of the maxMSER minrect
+//    cv::RotatedRect rect = cv::minAreaRect(maxMser);
+//    cv::Point2f points[4];
+//    rect.points(points);
+//    
+//    //normalize image
+//    cv::Mat M = [GeometryUtil getPerspectiveMatrix: points toSize: rect.size];
+//    cv::Mat normalizedImage = [GeometryUtil normalizeImage: &gray withTranformationMatrix: &M withSize: rect.size.width];
+//    
+//    //get maxMser from normalized image
+//    std::vector<cv::Point> normalizedMser = [ImageUtils maxMser: &normalizedImage];
     
-    //normalize image
-    cv::Mat M = [GeometryUtil getPerspectiveMatrix: points toSize: rect.size];
-    cv::Mat normalizedImage = [GeometryUtil normalizeImage: &gray withTranformationMatrix: &M withSize: rect.size.width];
+    //remember the template
+    //[MLManager sharedInstance].logoTemplate = [[MSERManager sharedInstance] extractFeature: &normalizedMser];
     
-    //get maxMser from normalized image
-    std::vector<cv::Point> normalizedMser = [ImageUtils maxMser: &normalizedImage];
+    [MLManager sharedInstance].logoTemplate = [[MSERManager sharedInstance] extractFeature: &maxMser];
     
-    _img.backgroundColor = [UIColor greenColor];
-    _img.contentMode = UIViewContentModeCenter;
-    _img.image = [ImageUtils UIImageFromCVMat: normalizedImage];
+    //store the feature
+    [[MLManager sharedInstance] storeTemplate];
+    
+    [self.img setImage:[ImageUtils UIImageFromCVMat: [ImageUtils mserToMat:&maxMser]]];
 }
 
 - (IBAction)btn_TouchUp:(id)sender {
     started = !started;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [camera start];
+    });
 }
 
 -(void)processImage:(cv::Mat &)image{
@@ -115,6 +123,8 @@
         MSERFeature *feature = [[MSERManager sharedInstance] extractFeature: &mser];
         
         if(feature){
+            
+            //NSLog(@"%@", feature);
             
             if([[MLManager sharedInstance] isFeature: feature] ){
                 
@@ -142,13 +152,14 @@
         cv::rectangle(image, bound, GREEN, 3); //if there is best MSER, draw green bounds around it.
     }else
         cv::rectangle(image, cv::Rect(0, 0, W, H), RED, 3);
+
     
-#if DEBUG
     const char* str_fps = [[NSString stringWithFormat: @"MSER: %ld", msers.size()] cStringUsingEncoding: NSUTF8StringEncoding];
     cv::putText(image, str_fps, cv::Point(10, H - 10), CV_FONT_HERSHEY_PLAIN, 1.0, RED);
-#endif
     
-    [FPS draw: image];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [FPS draw: image];
+    });
 }
 
 @end

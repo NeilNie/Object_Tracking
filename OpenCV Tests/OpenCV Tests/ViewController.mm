@@ -97,11 +97,10 @@ cv::MserFeatureDetector mserDetector;
     [self detectRegions:testImage intoVector:contours];
     
     for (int i = 0; i < contours.size(); i++) {
-        cv::Rect bound = cv::boundingRect(contours[i]);
-        cv::rectangle(image, bound, CV_RGB(100, 100, 100));
-        
         MSERFeature *feature = [MSERManager extractFeature:&contours[i]];
         if (feature) {
+            cv::Rect bound = cv::boundingRect(contours[i]);
+            cv::rectangle(image, bound, CV_RGB(100, 100, 100));
             [self.array addObject:feature];
         }
     }

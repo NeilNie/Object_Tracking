@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -172,8 +173,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="94x-8y-N8g"/>
-                        <segue destination="TqQ-uG-fWy" kind="relationship" relationship="viewControllers" id="AFI-Em-4xL"/>
+                        <segue destination="TqQ-uG-fWy" kind="relationship" relationship="viewControllers" id="Zya-Qt-hSm"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="X4S-ly-XgE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2UU-YI-2Zt" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -88,7 +88,7 @@ cv::MserFeatureDetector mserDetector;
     double contourArea = [self contourArea: &mserImg];
     if (contourArea == 0.0) return nil;
     result.contourAreaRate = (double)mser->size() / contourArea;
-    if (result.contourAreaRate > 1.0) return nil;
+    if (result.contourAreaRate > 1.05) return nil;
     
     return result;
 }

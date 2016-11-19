@@ -21,6 +21,8 @@
  */
 @interface MLManager : NSObject
 
+@property (strong) MSERFeature *logoTemplate;
+
 + (MLManager *) sharedInstance;
 
 /*
@@ -37,5 +39,9 @@
  Returns true if the given feature is similar to the one learned from the template
  */
 - (BOOL)isFeature: (MSERFeature *) feature;
+
+- (void) storeTemplate;
+
+- (void) loadTemplate;
 
 @end
