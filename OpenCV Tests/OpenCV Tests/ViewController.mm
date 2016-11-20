@@ -26,7 +26,10 @@ using namespace cv;
 #pragma mark - NSTableView Delegate & Datasource
 
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
-    return self.array.count;
+    if ([tableView isEqual:self.tableView]) {
+        return self.array.count;
+    }
+    return self.imageArray.count;
 }
 
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
@@ -34,31 +37,36 @@ using namespace cv;
     NSString *cellID;
     NSString *textValue;
     
-    MSERFeature *feature = [self.array objectAtIndex:row];
-    
-    //MSER #
-    if ([tableColumn isEqual:tableView.tableColumns[0]]) {
-        cellID = @"idMSERN";
-        textValue = [NSString stringWithFormat:@"%li", (long)row];
-    }else if ([tableColumn isEqual:tableView.tableColumns[1]]){
-        cellID = @"idskeletLengthRate";
-        textValue = [NSString stringWithFormat:@"%f", feature.skeletLengthRate];
-    }else if ([tableColumn isEqual:tableView.tableColumns[2]]){
-        cellID = @"idcontourAreaRate";
-        textValue = [NSString stringWithFormat:@"%f", feature.contourAreaRate];
-    }else if ([tableColumn isEqual:tableView.tableColumns[3]]){
-        cellID = @"minRectAreaRate";
-        textValue = [NSString stringWithFormat:@"%f", feature.minRectAreaRate];
+    if ([tableView isEqual:self.tableView]) {
+        MSERFeature *feature = [self.array objectAtIndex:row];
+        
+        //MSER #
+        if ([tableColumn isEqual:tableView.tableColumns[0]]) {
+            cellID = @"idMSERN";
+            textValue = [NSString stringWithFormat:@"%li", (long)row];
+        }else if ([tableColumn isEqual:tableView.tableColumns[1]]){
+            cellID = @"idskeletLengthRate";
+            textValue = [NSString stringWithFormat:@"%f", feature.skeletLengthRate];
+        }else if ([tableColumn isEqual:tableView.tableColumns[2]]){
+            cellID = @"idcontourAreaRate";
+            textValue = [NSString stringWithFormat:@"%f", feature.contourAreaRate];
+        }else if ([tableColumn isEqual:tableView.tableColumns[3]]){
+            cellID = @"minRectAreaRate";
+            textValue = [NSString stringWithFormat:@"%f", feature.minRectAreaRate];
+        }
+        
+        NSTableCellView *cell = [tableView makeViewWithIdentifier:cellID owner:nil];
+        cell.textField.stringValue = textValue;
+        
+        return (cell)? cell : nil;
+
+    }else{
+        cellID = @"idImageCell";
+        textValue = [[[self.imageArray objectAtIndex:row] componentsSeparatedByString:@"/"] lastObject];
+        NSTableCellView *cell = [tableView makeViewWithIdentifier:cellID owner:nil];
+        cell.textField.stringValue = textValue;
+        return cell;
     }
-        //else{
-//        cellID = @"numberOfHoles";
-//        textValue = [NSString stringWithFormat:@"%li", (long)feature.numberOfHoles];
-//    }
-    
-    NSTableCellView *cell = [tableView makeViewWithIdentifier:cellID owner:nil];
-    cell.textField.stringValue = textValue;
-    
-    return (cell)? cell : nil;
 }
 
 #pragma mark - cv & MSER
@@ -70,6 +78,10 @@ cv::MserFeatureDetector mserDetector;
 }
 
 -(IBAction)processImage:(id)sender{
+    
+    self.array = [NSMutableArray array];
+    
+    self.image.image = [[NSImage alloc] initWithContentsOfFile:[self.imageArray objectAtIndex:[self.images selectedRow]]];
     
     cv::Mat image = [ImageUtils cvMatFromUIImage:self.image.image];
     cv::Mat testImage;
@@ -94,6 +106,7 @@ cv::MserFeatureDetector mserDetector;
                                            maxVariation, minDiversity, maxEvolution,
                                            areaThreshold, minMargin, edgeBlurSize
                                            );
+    
     [self detectRegions:testImage intoVector:contours];
     
     for (int i = 0; i < contours.size(); i++) {
@@ -113,10 +126,14 @@ cv::MserFeatureDetector mserDetector;
 - (void)viewDidLoad {
 
     [super viewDidLoad];
-    self.image.image = [NSImage imageNamed:@"test3"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.array = [[NSMutableArray alloc] init];
+    
+    NSString *directory = [NSString stringWithFormat:@"images"];
+    self.imageArray = [[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:directory];
+    [self.images reloadData];
+    
     // Do any additional setup after loading the view.
 }
 

@@ -57,7 +57,7 @@
     [super viewDidAppear: animated];
     
     //[self test];
-    [self learn:[UIImage imageNamed: @"traffic_stop_sign"]];
+    [self learn:[UIImage imageNamed: @"e"]];
 }
 
 - (void) learn: (UIImage *) templateImage{

@@ -8,12 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
+@interface ViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource, NSWindowDelegate>
 
 @property (strong) NSMutableArray *array;
+@property (strong) NSArray *imageArray;
 
 @property (weak) IBOutlet NSImageView *image;
 @property (weak) IBOutlet NSTableView *tableView;
+@property (weak) IBOutlet NSTableView *images;
 
 @end
 
