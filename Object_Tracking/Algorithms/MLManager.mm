@@ -1,15 +1,14 @@
-////////
-// This sample is published as part of the blog article at www.toptal.com/blog 
-// Visit www.toptal.com/blog and subscribe to our newsletter to read great posts
-////////
 
 //
 //  MLManager.m
 //  LogoDetector
 //
-//  Created by altaibayar tseveenbayar on 15/05/15.
-//  Copyright (c) 2015 altaibayar tseveenbayar. All rights reserved.
-//
+//  Created By Yongyang Nie 11/20/2016
+//  Copyright (c) 2016 Yongyang Nie. All rights reserved.
+//  License:
+//  You may not copy, redistribute, use without quoting the author.
+//  By using this file, you agree to the following LICENSE:
+//  https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
 
 #import "MLManager.h"
 #import "ImageUtils.h"

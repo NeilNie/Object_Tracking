@@ -1,6 +1,11 @@
 # Object_Tracking
 Object tracking application using Open Computer Vision Framework. 
 
+**You may not copy, redistribute, use without quoting the author.
+By visiting this project, you agree to the following LICENSE:
+[license](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode)**
+
+
 ##Introducion
 The goal for this application is to track a part of an image based on user selection. The project explores different algorithms and find the most optmized solution. Currently, there are companies and organization that have acheived this goal with different platforms, such as DJI Phantom 4 Drone with Visual Tracking (r)(c)
 
