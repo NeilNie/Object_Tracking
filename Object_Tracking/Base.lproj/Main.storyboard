@@ -1,10 +1,3 @@
-//  Created By Yongyang Nie 11/20/2016
-//  Copyright (c) 2016 Yongyang Nie. All rights reserved.
-//  License:
-//  You may not copy, redistribute, use without quoting the author.
-//  By using this file, you agree to the following LICENSE:
-//  https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
-
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="16C48b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gsl-qF-HuJ">
     <device id="retina4_7" orientation="portrait">

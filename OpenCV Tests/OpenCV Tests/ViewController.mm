@@ -118,6 +118,9 @@ cv::MserFeatureDetector mserDetector;
         }
     }
     
+    std::vector<cv::Point> mser = [ImageUtils maxMser:&testImage];
+    self.maxMser.image = [ImageUtils UIImageFromCVMat:[ImageUtils mserToMat:&mser]];
+    
     self.image.image = [ImageUtils UIImageFromCVMat:image];
     
     [self.tableView reloadData];

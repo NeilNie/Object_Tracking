@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		008B7BF41DE152FA00B4DB7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008B7BF31DE152FA00B4DB7D /* Images.xcassets */; };
+		00CD0B531DE49EF70006D602 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD0B521DE49EF70006D602 /* opencv2.framework */; };
 		00DC61441DE13FFB00D7E289 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 00DC61431DE13FFB00D7E289 /* images */; };
 		2805EE701DDD2B3F008F44B5 /* ImageUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2805EE6F1DDD2B3F008F44B5 /* ImageUtils.mm */; };
 		285184B11DDF4265000E612C /* MSERFeature.mm in Sources */ = {isa = PBXBuildFile; fileRef = 285184B01DDF4265000E612C /* MSERFeature.mm */; };
 		285184B41DDF460D000E612C /* MSERManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 285184B31DDF460D000E612C /* MSERManager.mm */; };
-		286C03EB1DDE7F1000B419A0 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 286C03EA1DDE7F1000B419A0 /* opencv2.framework */; };
 		289223031DDD10DA0090F637 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 289223021DDD10DA0090F637 /* AppDelegate.m */; };
 		289223061DDD10DA0090F637 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 289223051DDD10DA0090F637 /* main.m */; };
 		289223091DDD10DA0090F637 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 289223081DDD10DA0090F637 /* ViewController.mm */; };
@@ -38,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		008B7BF31DE152FA00B4DB7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		00CD0B521DE49EF70006D602 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../Documents/Developer/Resources/Frameworks/OpenCV/opencv2.framework; sourceTree = "<group>"; };
 		00DC61431DE13FFB00D7E289 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		2805EE6E1DDD2B3F008F44B5 /* ImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtils.h; sourceTree = "<group>"; };
 		2805EE6F1DDD2B3F008F44B5 /* ImageUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageUtils.mm; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		285184B01DDF4265000E612C /* MSERFeature.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MSERFeature.mm; path = ../../Object_Tracking/Algorithms/MSERFeature.mm; sourceTree = "<group>"; };
 		285184B21DDF460D000E612C /* MSERManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSERManager.h; sourceTree = "<group>"; };
 		285184B31DDF460D000E612C /* MSERManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MSERManager.mm; sourceTree = "<group>"; };
-		286C03EA1DDE7F1000B419A0 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../Documents/Developer/Resources/Frameworks/OpenCV_macOS/opencv2.framework; sourceTree = SOURCE_ROOT; };
 		289222FE1DDD10DA0090F637 /* OpenCV Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenCV Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		289223011DDD10DA0090F637 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		289223021DDD10DA0090F637 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				286C03EB1DDE7F1000B419A0 /* opencv2.framework in Frameworks */,
+				00CD0B531DE49EF70006D602 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +101,7 @@
 		289222F51DDD10DA0090F637 = {
 			isa = PBXGroup;
 			children = (
-				286C03EA1DDE7F1000B419A0 /* opencv2.framework */,
+				00CD0B521DE49EF70006D602 /* opencv2.framework */,
 				289223001DDD10DA0090F637 /* OpenCV Tests */,
 				289222FF1DDD10DA0090F637 /* Products */,
 			);
@@ -425,11 +425,12 @@
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/**",
-					"\"$(SRCROOT)/../../../Documents/Developer/Resources/Frameworks/OpenCV_macOS\"/**",
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/../../../Documents/Developer/Resources/Frameworks/OpenCV\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../Documents/Developer/Resources/Frameworks/OpenCV_iOS/opencv2.framework/Headers\"/**";
-				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../../../Documents/Developer/Resources/Frameworks/OpenCV_macOS\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../Documents/Developer/Resources/Frameworks/OpenCV/opencv2.framework\"";
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../../../Documents/Developer/Resources/Frameworks/OpenCV\"";
 				INFOPLIST_FILE = "OpenCV Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.OpenCV-Tests";
@@ -446,11 +447,12 @@
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/**",
-					"\"$(SRCROOT)/../../../Documents/Developer/Resources/Frameworks/OpenCV_macOS\"/**",
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/../../../Documents/Developer/Resources/Frameworks/OpenCV\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../Documents/Developer/Resources/Frameworks/OpenCV_iOS/opencv2.framework/Headers\"/**";
-				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../../../Documents/Developer/Resources/Frameworks/OpenCV_macOS\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../Documents/Developer/Resources/Frameworks/OpenCV/opencv2.framework\"";
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../../../Documents/Developer/Resources/Frameworks/OpenCV\"";
 				INFOPLIST_FILE = "OpenCV Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.OpenCV-Tests";

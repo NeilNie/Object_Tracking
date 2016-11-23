@@ -979,6 +979,7 @@
                     <connections>
                         <outlet property="image" destination="0u3-P2-4cd" id="sJC-MP-qvB"/>
                         <outlet property="images" destination="DBz-wL-YG0" id="07T-Zd-ht4"/>
+                        <outlet property="maxMser" destination="o6u-VC-HPU" id="2wW-nK-xk0"/>
                         <outlet property="tableView" destination="QdE-Ab-iW5" id="HZm-Sv-PH7"/>
                     </connections>
                 </viewController>

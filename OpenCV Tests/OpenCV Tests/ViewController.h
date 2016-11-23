@@ -14,6 +14,7 @@
 @property (strong) NSArray *imageArray;
 
 @property (weak) IBOutlet NSImageView *image;
+@property (weak) IBOutlet NSImageView *maxMser;
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet NSTableView *images;
 

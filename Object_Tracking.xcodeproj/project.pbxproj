@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00CD0B551DE49EFD0006D602 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD0B541DE49EFD0006D602 /* opencv2.framework */; };
 		281E47321DC167B300AFB85D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47311DC167B300AFB85D /* main.m */; };
 		281E47351DC167B300AFB85D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47341DC167B300AFB85D /* AppDelegate.m */; };
 		281E473B1DC167B300AFB85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281E47391DC167B300AFB85D /* Main.storyboard */; };
@@ -24,7 +25,6 @@
 		2820020F1DC691180013A603 /* FPS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2820020C1DC691180013A603 /* FPS.mm */; };
 		282002101DC691180013A603 /* ImageUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2820020E1DC691180013A603 /* ImageUtils.mm */; };
 		282002131DC691220013A603 /* CameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 282002121DC691220013A603 /* CameraViewController.mm */; };
-		284B957A1DDE647900E3D249 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284B95791DDE647900E3D249 /* opencv2.framework */; };
 		284B957B1DDE647E00E3D249 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281E47861DC16BEE00AFB85D /* AVFoundation.framework */; };
 		284B957D1DDE648200E3D249 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284B957C1DDE648200E3D249 /* CoreGraphics.framework */; };
 		284B957F1DDE648700E3D249 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284B957E1DDE648700E3D249 /* UIKit.framework */; };
@@ -42,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		00480B4F1DE106AE00EC4170 /* object_tracking.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object_tracking.pch; sourceTree = "<group>"; };
+		00CD0B541DE49EFD0006D602 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../Documents/Developer/Resources/Frameworks/OpenCV/opencv2.framework; sourceTree = "<group>"; };
 		281E472D1DC167B300AFB85D /* Object_Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Object_Tracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		281E47311DC167B300AFB85D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		281E47331DC167B300AFB85D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		2820020E1DC691180013A603 /* ImageUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageUtils.mm; sourceTree = "<group>"; };
 		282002111DC691220013A603 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		282002121DC691220013A603 /* CameraViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraViewController.mm; sourceTree = "<group>"; };
-		284B95791DDE647900E3D249 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../Documents/Developer/Resources/Frameworks/OpenCV_iOS/opencv2.framework; sourceTree = "<group>"; };
 		284B957C1DDE648200E3D249 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		284B957E1DDE648700E3D249 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		284B95801DDE66D600E3D249 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -104,12 +104,12 @@
 				284B95891DDE66EA00E3D249 /* Foundation.framework in Frameworks */,
 				284B95871DDE66E500E3D249 /* CoreVideo.framework in Frameworks */,
 				284B95851DDE66E100E3D249 /* CoreMedia.framework in Frameworks */,
+				00CD0B551DE49EFD0006D602 /* opencv2.framework in Frameworks */,
 				284B95831DDE66DC00E3D249 /* CoreImage.framework in Frameworks */,
 				284B95811DDE66D600E3D249 /* AssetsLibrary.framework in Frameworks */,
 				284B957F1DDE648700E3D249 /* UIKit.framework in Frameworks */,
 				284B957D1DDE648200E3D249 /* CoreGraphics.framework in Frameworks */,
 				284B957B1DDE647E00E3D249 /* AVFoundation.framework in Frameworks */,
-				284B957A1DDE647900E3D249 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +119,7 @@
 		281E47241DC167B300AFB85D = {
 			isa = PBXGroup;
 			children = (
-				284B95791DDE647900E3D249 /* opencv2.framework */,
+				00CD0B541DE49EFD0006D602 /* opencv2.framework */,
 				281E472F1DC167B300AFB85D /* Object_Tracking */,
 				281E472E1DC167B300AFB85D /* Products */,
 				281E47851DC16BEE00AFB85D /* Frameworks */,
@@ -459,13 +459,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"\"$(SRCROOT)/../../Documents/Developer/Resources/Frameworks/OpenCV_iOS\"/**",
+					"\"$(SRCROOT)/../../Documents/Developer/Resources/Frameworks/OpenCV\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/YongyangNie/Desktop/Object_Tracking/Object_Tracking/Utils/object_tracking.pch;
-				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../../Documents/Developer/Resources/Frameworks/OpenCV_iOS\"";
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../../Documents/Developer/Resources/Frameworks/OpenCV\"";
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -484,13 +484,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"\"$(SRCROOT)/../../Documents/Developer/Resources/Frameworks/OpenCV_iOS\"/**",
+					"\"$(SRCROOT)/../../Documents/Developer/Resources/Frameworks/OpenCV\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/YongyangNie/Desktop/Object_Tracking/Object_Tracking/Utils/object_tracking.pch;
-				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../../Documents/Developer/Resources/Frameworks/OpenCV_iOS\"";
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../../Documents/Developer/Resources/Frameworks/OpenCV\"";
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
