@@ -11,6 +11,15 @@
 
 #import <UIKit/UIKit.h>
 #import <opencv2/highgui/cap_ios.h>
+#import "MSERManager.h"
+#import "MLManager.h"
+#import "ImageUtils.h"
+#import "GeometryUtil.h"
+#import "MLViewController.h"
+
+#ifdef DEBUG
+#import "FPS.h"
+#endif
 
 @interface CameraViewController : UIViewController < CvVideoCameraDelegate >
 

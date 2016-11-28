@@ -7,17 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004EFB341DEB9B26000537AB /* PRFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EFB331DEB9B26000537AB /* PRFViewController.m */; };
+		004EFB3A1DEB9BDA000537AB /* MLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EFB391DEB9BDA000537AB /* MLViewController.m */; };
 		00CD0B551DE49EFD0006D602 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD0B541DE49EFD0006D602 /* opencv2.framework */; };
 		281E47321DC167B300AFB85D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47311DC167B300AFB85D /* main.m */; };
 		281E47351DC167B300AFB85D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47341DC167B300AFB85D /* AppDelegate.m */; };
 		281E473B1DC167B300AFB85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281E47391DC167B300AFB85D /* Main.storyboard */; };
 		281E473D1DC167B300AFB85D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281E473C1DC167B300AFB85D /* Assets.xcassets */; };
-		281E47691DC167EA00AFB85D /* SampleFacade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 281E47671DC167EA00AFB85D /* SampleFacade.mm */; };
-		281E476E1DC167F100AFB85D /* ObjectTrackingClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 281E476A1DC167F100AFB85D /* ObjectTrackingClass.cpp */; };
-		281E476F1DC167F100AFB85D /* ObjectTrackingSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 281E476C1DC167F100AFB85D /* ObjectTrackingSample.cpp */; };
-		281E47741DC1682B00AFB85D /* VideoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 281E47731DC1682B00AFB85D /* VideoViewController.mm */; };
-		281E47791DC1689200AFB85D /* NSString+StdString.mm in Sources */ = {isa = PBXBuildFile; fileRef = 281E47781DC1689200AFB85D /* NSString+StdString.mm */; };
-		281E47831DC1699800AFB85D /* cvneon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 281E47811DC1699800AFB85D /* cvneon.cpp */; };
 		282002061DC691120013A603 /* GeometryUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 282001FF1DC691120013A603 /* GeometryUtil.mm */; };
 		282002071DC691120013A603 /* MLManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 282002011DC691120013A603 /* MLManager.mm */; };
 		282002081DC691120013A603 /* MSERFeature.mm in Sources */ = {isa = PBXBuildFile; fileRef = 282002031DC691120013A603 /* MSERFeature.mm */; };
@@ -37,11 +33,14 @@
 		284B958D1DDE66F500E3D249 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284B958C1DDE66F500E3D249 /* OpenGLES.framework */; };
 		284B958F1DDE66FB00E3D249 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284B958E1DDE66FB00E3D249 /* QuartzCore.framework */; };
 		28AA98541DD7E9FC00C8F990 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AA98531DD7E9FC00C8F990 /* Launch Screen.storyboard */; };
-		28B5BEA01DDBE4D40064B421 /* CVPoint_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B5BE9F1DDBE4D40064B421 /* CVPoint_objc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00480B4F1DE106AE00EC4170 /* object_tracking.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object_tracking.pch; sourceTree = "<group>"; };
+		004EFB321DEB9B26000537AB /* PRFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRFViewController.h; sourceTree = "<group>"; };
+		004EFB331DEB9B26000537AB /* PRFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRFViewController.m; sourceTree = "<group>"; };
+		004EFB381DEB9BD9000537AB /* MLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLViewController.h; path = ../MLViewController.h; sourceTree = "<group>"; };
+		004EFB391DEB9BDA000537AB /* MLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLViewController.m; path = ../MLViewController.m; sourceTree = "<group>"; };
 		00CD0B541DE49EFD0006D602 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../Documents/Developer/Resources/Frameworks/OpenCV/opencv2.framework; sourceTree = "<group>"; };
 		281E472D1DC167B300AFB85D /* Object_Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Object_Tracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		281E47311DC167B300AFB85D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -50,18 +49,6 @@
 		281E473A1DC167B300AFB85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		281E473C1DC167B300AFB85D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		281E47411DC167B300AFB85D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		281E47661DC167EA00AFB85D /* SampleFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleFacade.h; sourceTree = "<group>"; };
-		281E47671DC167EA00AFB85D /* SampleFacade.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SampleFacade.mm; sourceTree = "<group>"; };
-		281E476A1DC167F100AFB85D /* ObjectTrackingClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectTrackingClass.cpp; sourceTree = "<group>"; };
-		281E476B1DC167F100AFB85D /* ObjectTrackingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectTrackingClass.h; sourceTree = "<group>"; };
-		281E476C1DC167F100AFB85D /* ObjectTrackingSample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectTrackingSample.cpp; sourceTree = "<group>"; };
-		281E476D1DC167F100AFB85D /* ObjectTrackingSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectTrackingSample.h; sourceTree = "<group>"; };
-		281E47721DC1682B00AFB85D /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
-		281E47731DC1682B00AFB85D /* VideoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoViewController.mm; sourceTree = "<group>"; };
-		281E47771DC1689200AFB85D /* NSString+StdString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+StdString.h"; path = "../NSString+StdString.h"; sourceTree = "<group>"; };
-		281E47781DC1689200AFB85D /* NSString+StdString.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSString+StdString.mm"; path = "../NSString+StdString.mm"; sourceTree = "<group>"; };
-		281E47811DC1699800AFB85D /* cvneon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cvneon.cpp; sourceTree = "<group>"; };
-		281E47821DC1699800AFB85D /* cvneon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvneon.h; sourceTree = "<group>"; };
 		281E47861DC16BEE00AFB85D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		282001FE1DC691120013A603 /* GeometryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryUtil.h; sourceTree = "<group>"; };
 		282001FF1DC691120013A603 /* GeometryUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GeometryUtil.mm; sourceTree = "<group>"; };
@@ -88,8 +75,6 @@
 		284B958C1DDE66F500E3D249 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		284B958E1DDE66FB00E3D249 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		28AA98531DD7E9FC00C8F990 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
-		28B5BE9E1DDBE4D40064B421 /* CVPoint_objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVPoint_objc.h; sourceTree = "<group>"; };
-		28B5BE9F1DDBE4D40064B421 /* CVPoint_objc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVPoint_objc.m; sourceTree = "<group>"; };
 		28DCF3E11DDE9974000E673C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -141,9 +126,6 @@
 				281E47391DC167B300AFB85D /* Main.storyboard */,
 				2820020A1DC691180013A603 /* Utils */,
 				282001FD1DC691120013A603 /* MSER Algorithms */,
-				281E47841DC1699B00AFB85D /* OpenCV_neon */,
-				281E47701DC167F700AFB85D /* Object_Tracking */,
-				281E47711DC1680100AFB85D /* Bases */,
 				281E47631DC167CA00AFB85D /* ViewControllers */,
 				281E47301DC167B300AFB85D /* Supporting Files */,
 			);
@@ -165,43 +147,14 @@
 		281E47631DC167CA00AFB85D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				004EFB381DEB9BD9000537AB /* MLViewController.h */,
+				004EFB391DEB9BDA000537AB /* MLViewController.m */,
 				282002111DC691220013A603 /* CameraViewController.h */,
 				282002121DC691220013A603 /* CameraViewController.mm */,
-				281E47721DC1682B00AFB85D /* VideoViewController.h */,
-				281E47731DC1682B00AFB85D /* VideoViewController.mm */,
+				004EFB321DEB9B26000537AB /* PRFViewController.h */,
+				004EFB331DEB9B26000537AB /* PRFViewController.m */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		281E47701DC167F700AFB85D /* Object_Tracking */ = {
-			isa = PBXGroup;
-			children = (
-				281E476A1DC167F100AFB85D /* ObjectTrackingClass.cpp */,
-				281E476B1DC167F100AFB85D /* ObjectTrackingClass.h */,
-				281E476C1DC167F100AFB85D /* ObjectTrackingSample.cpp */,
-				281E476D1DC167F100AFB85D /* ObjectTrackingSample.h */,
-			);
-			name = Object_Tracking;
-			sourceTree = "<group>";
-		};
-		281E47711DC1680100AFB85D /* Bases */ = {
-			isa = PBXGroup;
-			children = (
-				281E47661DC167EA00AFB85D /* SampleFacade.h */,
-				281E47671DC167EA00AFB85D /* SampleFacade.mm */,
-				28B5BE9E1DDBE4D40064B421 /* CVPoint_objc.h */,
-				28B5BE9F1DDBE4D40064B421 /* CVPoint_objc.m */,
-			);
-			name = Bases;
-			sourceTree = "<group>";
-		};
-		281E47841DC1699B00AFB85D /* OpenCV_neon */ = {
-			isa = PBXGroup;
-			children = (
-				281E47811DC1699800AFB85D /* cvneon.cpp */,
-				281E47821DC1699800AFB85D /* cvneon.h */,
-			);
-			name = OpenCV_neon;
 			sourceTree = "<group>";
 		};
 		281E47851DC16BEE00AFB85D /* Frameworks */ = {
@@ -243,8 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				00480B4F1DE106AE00EC4170 /* object_tracking.pch */,
-				281E47771DC1689200AFB85D /* NSString+StdString.h */,
-				281E47781DC1689200AFB85D /* NSString+StdString.mm */,
 				2820020B1DC691180013A603 /* FPS.h */,
 				2820020C1DC691180013A603 /* FPS.mm */,
 				2820020D1DC691180013A603 /* ImageUtils.h */,
@@ -325,21 +276,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28B5BEA01DDBE4D40064B421 /* CVPoint_objc.m in Sources */,
-				281E476F1DC167F100AFB85D /* ObjectTrackingSample.cpp in Sources */,
-				281E476E1DC167F100AFB85D /* ObjectTrackingClass.cpp in Sources */,
 				282002081DC691120013A603 /* MSERFeature.mm in Sources */,
-				281E47831DC1699800AFB85D /* cvneon.cpp in Sources */,
+				004EFB3A1DEB9BDA000537AB /* MLViewController.m in Sources */,
 				282002091DC691120013A603 /* MSERManager.mm in Sources */,
-				281E47741DC1682B00AFB85D /* VideoViewController.mm in Sources */,
 				2820020F1DC691180013A603 /* FPS.mm in Sources */,
 				281E47351DC167B300AFB85D /* AppDelegate.m in Sources */,
 				282002101DC691180013A603 /* ImageUtils.mm in Sources */,
-				281E47691DC167EA00AFB85D /* SampleFacade.mm in Sources */,
+				004EFB341DEB9B26000537AB /* PRFViewController.m in Sources */,
 				282002071DC691120013A603 /* MLManager.mm in Sources */,
 				282002061DC691120013A603 /* GeometryUtil.mm in Sources */,
 				281E47321DC167B300AFB85D /* main.m in Sources */,
-				281E47791DC1689200AFB85D /* NSString+StdString.mm in Sources */,
 				282002131DC691220013A603 /* CameraViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

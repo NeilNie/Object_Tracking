@@ -10,16 +10,6 @@
 
 
 #import "CameraViewController.h"
-#import <opencv2/highgui/cap_ios.h>
-
-#import "MSERManager.h"
-#import "MLManager.h"
-#import "ImageUtils.h"
-#import "GeometryUtil.h"
-
-#ifdef DEBUG
-#import "FPS.h"
-#endif
 
 //this two values are dependant on defaultAVCaptureSessionPreset
 #define W (480)
@@ -54,8 +44,15 @@
     
     [super viewDidAppear: animated];
     
-    //[self test];
     [self learn:[UIImage imageNamed: @"e"]];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    MLViewController *vc = [segue destinationViewController];
+#warning fix this
+    vc.imageView.image = nil;
+    vc.mserView.image = nil;
 }
 
 - (void) learn: (UIImage *) templateImage{
@@ -68,21 +65,6 @@
     
     //mser with maximum area is
     std::vector<cv::Point> maxMser = [ImageUtils maxMser: &gray];
-    
-//    //get 4 vertices of the maxMSER minrect
-//    cv::RotatedRect rect = cv::minAreaRect(maxMser);
-//    cv::Point2f points[4];
-//    rect.points(points);
-//    
-//    //normalize image
-//    cv::Mat M = [GeometryUtil getPerspectiveMatrix: points toSize: rect.size];
-//    cv::Mat normalizedImage = [GeometryUtil normalizeImage: &gray withTranformationMatrix: &M withSize: rect.size.width];
-//    
-//    //get maxMser from normalized image
-//    std::vector<cv::Point> normalizedMser = [ImageUtils maxMser: &normalizedImage];
-    
-    //remember the template
-    //[MLManager sharedInstance].logoTemplate = [[MSERManager sharedInstance] extractFeature: &normalizedMser];
     
     [MLManager sharedInstance].logoTemplate = [[MSERManager sharedInstance] extractFeature: &maxMser];
     
