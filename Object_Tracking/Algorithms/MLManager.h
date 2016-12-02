@@ -19,9 +19,13 @@
  */
 @interface MLManager : NSObject
 
+@property (strong) NSDictionary *preference;
+
 @property (strong) MSERFeature *logoTemplate;
 
 + (MLManager *) sharedInstance;
+
++ (MLManager *) sharedInstanceWithPreference:(NSDictionary *)dic;
 
 /*
  Stores feature from the biggest MSER in the templateImage

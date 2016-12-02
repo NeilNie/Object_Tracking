@@ -21,6 +21,7 @@
 #define KEY_MIN_RECT_AREA_RATE @"KEY_MIN_RECT_AREA_RATE"
 #define KEY_SKELET_LENGTH_RATE @"KEY_SKELET_LENGTH_RATE"
 #define KEY_CONTOUR_AREA_RATE @"KEY_CONTOUR_AREA_RATE"
+#define KEY_PREFERENCE @"KEY_PREFERENCE"
 
 #define AVERAGE 0.113544
 #define STDEV 0.063218
@@ -38,6 +39,19 @@
     dispatch_once(&onceToken, ^{
         instance = [[MLManager alloc] init];        
         [instance loadTemplate];
+    });
+    
+    return instance;
+}
+
++ (MLManager *) sharedInstanceWithPreference:(NSDictionary *)dic
+{
+    static MLManager *instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[MLManager alloc] init];
+        [instance loadTemplate];
+        instance.preference = dic;
     });
     
     return instance;
@@ -138,6 +152,16 @@
     [defaults setDouble: _logoTemplate.contourAreaRate forKey: KEY_CONTOUR_AREA_RATE];
     
     [defaults synchronize];
+}
+
+-(NSDictionary *)getPreference{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:KEY_PREFERENCE];
+}
+
+-(void)setPreference{
+    
 }
 
 @end

@@ -44,7 +44,7 @@
     
     [super viewDidAppear: animated];
     
-    [self learn:[UIImage imageNamed: @"e"]];
+    [self learn:[UIImage imageNamed: @"cocacola_Logo"]];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

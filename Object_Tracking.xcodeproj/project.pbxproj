@@ -410,7 +410,7 @@
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/YongyangNie/Desktop/Object_Tracking/Object_Tracking/Utils/object_tracking.pch;
+				GCC_PREFIX_HEADER = /Users/Neil/Desktop/Object_Tracking/Object_Tracking/Utils/object_tracking.pch;
 				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../../Documents/Developer/Resources/Frameworks/OpenCV\"";
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -435,7 +435,7 @@
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/YongyangNie/Desktop/Object_Tracking/Object_Tracking/Utils/object_tracking.pch;
+				GCC_PREFIX_HEADER = /Users/Neil/Desktop/Object_Tracking/Object_Tracking/Utils/object_tracking.pch;
 				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "\"$(SRCROOT)/../../Documents/Developer/Resources/Frameworks/OpenCV\"";
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
