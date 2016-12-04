@@ -21,14 +21,20 @@
 #pragma mark - IBActions
 
 - (IBAction)switchDefinition:(id)sender {
+    
+    //NSDictionary *preference = [[MLManager sharedInstance] getPreference];
 }
 
 - (IBAction)switchMode:(id)sender {
+    //NSDictionary *preference = [[MLManager sharedInstance] getPreference];
 }
 
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {
+    
+    //NSDictionary *preference = [[MLManager sharedInstance] getPreference];
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

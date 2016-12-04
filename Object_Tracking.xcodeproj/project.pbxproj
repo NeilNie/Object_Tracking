@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		004EFB341DEB9B26000537AB /* PRFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EFB331DEB9B26000537AB /* PRFViewController.m */; };
-		004EFB3A1DEB9BDA000537AB /* MLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EFB391DEB9BDA000537AB /* MLViewController.m */; };
+		004EFB3A1DEB9BDA000537AB /* MLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 004EFB391DEB9BDA000537AB /* MLViewController.mm */; };
 		00CD0B551DE49EFD0006D602 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD0B541DE49EFD0006D602 /* opencv2.framework */; };
 		281E47321DC167B300AFB85D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47311DC167B300AFB85D /* main.m */; };
 		281E47351DC167B300AFB85D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47341DC167B300AFB85D /* AppDelegate.m */; };
@@ -33,6 +33,8 @@
 		284B958D1DDE66F500E3D249 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284B958C1DDE66F500E3D249 /* OpenGLES.framework */; };
 		284B958F1DDE66FB00E3D249 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284B958E1DDE66FB00E3D249 /* QuartzCore.framework */; };
 		28AA98541DD7E9FC00C8F990 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AA98531DD7E9FC00C8F990 /* Launch Screen.storyboard */; };
+		28EE38EB1DF48F7F006398A8 /* Settings_000000_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EE38EA1DF48F7F006398A8 /* Settings_000000_100.png */; };
+		28EE38ED1DF49001006398A8 /* Info_000000_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EE38EC1DF49001006398A8 /* Info_000000_100.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +42,7 @@
 		004EFB321DEB9B26000537AB /* PRFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRFViewController.h; sourceTree = "<group>"; };
 		004EFB331DEB9B26000537AB /* PRFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRFViewController.m; sourceTree = "<group>"; };
 		004EFB381DEB9BD9000537AB /* MLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLViewController.h; path = ../MLViewController.h; sourceTree = "<group>"; };
-		004EFB391DEB9BDA000537AB /* MLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLViewController.m; path = ../MLViewController.m; sourceTree = "<group>"; };
+		004EFB391DEB9BDA000537AB /* MLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MLViewController.mm; path = ../MLViewController.mm; sourceTree = "<group>"; };
 		00CD0B541DE49EFD0006D602 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../Documents/Developer/Resources/Frameworks/OpenCV/opencv2.framework; sourceTree = "<group>"; };
 		281E472D1DC167B300AFB85D /* Object_Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Object_Tracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		281E47311DC167B300AFB85D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -76,6 +78,8 @@
 		284B958E1DDE66FB00E3D249 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		28AA98531DD7E9FC00C8F990 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		28DCF3E11DDE9974000E673C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		28EE38EA1DF48F7F006398A8 /* Settings_000000_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings_000000_100.png; sourceTree = "<group>"; };
+		28EE38EC1DF49001006398A8 /* Info_000000_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info_000000_100.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				281E47331DC167B300AFB85D /* AppDelegate.h */,
+				28EE38EC1DF49001006398A8 /* Info_000000_100.png */,
+				28EE38EA1DF48F7F006398A8 /* Settings_000000_100.png */,
 				281E47341DC167B300AFB85D /* AppDelegate.m */,
 				281E473C1DC167B300AFB85D /* Assets.xcassets */,
 				281E47411DC167B300AFB85D /* Info.plist */,
@@ -148,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				004EFB381DEB9BD9000537AB /* MLViewController.h */,
-				004EFB391DEB9BDA000537AB /* MLViewController.m */,
+				004EFB391DEB9BDA000537AB /* MLViewController.mm */,
 				282002111DC691220013A603 /* CameraViewController.h */,
 				282002121DC691220013A603 /* CameraViewController.mm */,
 				004EFB321DEB9B26000537AB /* PRFViewController.h */,
@@ -263,8 +269,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EE38ED1DF49001006398A8 /* Info_000000_100.png in Resources */,
 				281E473D1DC167B300AFB85D /* Assets.xcassets in Resources */,
 				28AA98541DD7E9FC00C8F990 /* Launch Screen.storyboard in Resources */,
+				28EE38EB1DF48F7F006398A8 /* Settings_000000_100.png in Resources */,
 				281E473B1DC167B300AFB85D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				282002081DC691120013A603 /* MSERFeature.mm in Sources */,
-				004EFB3A1DEB9BDA000537AB /* MLViewController.m in Sources */,
+				004EFB3A1DEB9BDA000537AB /* MLViewController.mm in Sources */,
 				282002091DC691120013A603 /* MSERManager.mm in Sources */,
 				2820020F1DC691180013A603 /* FPS.mm in Sources */,
 				281E47351DC167B300AFB85D /* AppDelegate.m in Sources */,

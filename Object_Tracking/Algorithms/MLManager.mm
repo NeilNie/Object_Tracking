@@ -130,6 +130,19 @@
 
 #pragma mark - helper
 
+-(NSDictionary *)getPreference{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:KEY_PREFERENCE];
+}
+
+-(void)updatePreference:(NSDictionary *)newPreference{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:newPreference forKey:KEY_PREFERENCE];
+    self.preference = newPreference;
+}
+
 - (void) loadTemplate{
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -152,16 +165,6 @@
     [defaults setDouble: _logoTemplate.contourAreaRate forKey: KEY_CONTOUR_AREA_RATE];
     
     [defaults synchronize];
-}
-
--(NSDictionary *)getPreference{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [defaults objectForKey:KEY_PREFERENCE];
-}
-
--(void)setPreference{
-    
 }
 
 @end

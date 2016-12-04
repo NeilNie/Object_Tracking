@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MLManager.h"
+#import "MSERManager.h"
+#import "ImageUtils.h"
+#import "GeometryUtil.h"
 
 @interface MLViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
@@ -15,5 +18,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIImageView *mserView;
+
+@end
+
+@protocol MLViewControllerDelegate <NSObject>
+
 
 @end

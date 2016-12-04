@@ -46,4 +46,8 @@
 
 - (void) loadTemplate;
 
+-(void)setPreference:(NSDictionary *)newPreference;
+
+-(NSDictionary *)getPreference;
+
 @end

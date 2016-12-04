@@ -38,44 +38,17 @@
     camera.delegate = self;
     
     started = NO;
+    self.label.hidden = NO;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear: animated];
-    
-    [self learn:[UIImage imageNamed: @"cocacola_Logo"]];
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    MLViewController *vc = [segue destinationViewController];
-#warning fix this
-    vc.imageView.image = nil;
-    vc.mserView.image = nil;
-}
-
-- (void) learn: (UIImage *) templateImage{
-    
-    cv::Mat image = [ImageUtils cvMatFromUIImage: templateImage];
-    
-    //get gray image
-    cv::Mat gray;
-    cvtColor(image, gray, CV_BGRA2GRAY);
-    
-    //mser with maximum area is
-    std::vector<cv::Point> maxMser = [ImageUtils maxMser: &gray];
-    
-    [MLManager sharedInstance].logoTemplate = [[MSERManager sharedInstance] extractFeature: &maxMser];
-    
-    //store the feature
-    [[MLManager sharedInstance] storeTemplate];
-    
-    [self.img setImage:[ImageUtils UIImageFromCVMat: [ImageUtils mserToMat:&maxMser]]];
 }
 
 - (IBAction)btn_TouchUp:(id)sender {
     started = !started;
+    self.label.hidden = YES;
     dispatch_async(dispatch_get_main_queue(), ^{
         [camera start];
     });
@@ -132,7 +105,7 @@
         cv::rectangle(image, bound, GREEN, 3); //if there is best MSER, draw green bounds around it.
     }else
         cv::rectangle(image, cv::Rect(0, 0, W, H), RED, 3);
-
+    
     
     const char* str_fps = [[NSString stringWithFormat: @"MSER: %ld", msers.size()] cStringUsingEncoding: NSUTF8StringEncoding];
     cv::putText(image, str_fps, cv::Point(10, H - 10), CV_FONT_HERSHEY_PLAIN, 1.0, RED);
