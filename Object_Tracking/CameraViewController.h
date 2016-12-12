@@ -14,7 +14,6 @@
 #import "MSERManager.h"
 #import "MLManager.h"
 #import "ImageUtils.h"
-#import "GeometryUtil.h"
 #import "MLViewController.h"
 
 #ifdef DEBUG

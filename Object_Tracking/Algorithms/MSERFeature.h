@@ -18,6 +18,7 @@
 
 @interface MSERFeature : NSObject
 
+@property NSString *name;
 @property NSInteger numberOfHoles;
 @property double convexHullAreaRate;
 @property double minRectAreaRate;

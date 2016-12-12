@@ -91,8 +91,6 @@ cv::MserFeatureDetector mserDetector;
     
     /* THESE ARE ALL DEFAULT VALUES */
     int delta = 5;                  //! delta, in the code, it compares (size_{i}-size_{i-delta})/size_{i-delta}
-    //int minArea = 5120;            //! (640 * 480 / 60) ... max mser is 1/60 of the whole image
-    //int maxArea = 10480;            //! (640 * 480 / 15) ... max mser is 1/15 of the whole image
     int minArea = 60;               //! prune the area which bigger than maxArea
     int maxArea = 14400;            //! prune the area which smaller than minArea
     double maxVariation = 0.25;     //! prune the area have simliar size to its children
@@ -113,7 +111,7 @@ cv::MserFeatureDetector mserDetector;
         MSERFeature *feature = [MSERManager extractFeature:&contours[i]];
         if (feature) {
             cv::Rect bound = cv::boundingRect(contours[i]);
-            cv::rectangle(image, bound, CV_RGB(100, 100, 100));
+            cv::rectangle(image, bound, CV_RGB(41, 257, 47));
             [self.array addObject:feature];
         }
     }

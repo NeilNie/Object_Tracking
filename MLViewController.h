@@ -10,7 +10,6 @@
 #import "MLManager.h"
 #import "MSERManager.h"
 #import "ImageUtils.h"
-#import "GeometryUtil.h"
 
 @interface MLViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

@@ -14,7 +14,6 @@
 		281E47351DC167B300AFB85D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47341DC167B300AFB85D /* AppDelegate.m */; };
 		281E473B1DC167B300AFB85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281E47391DC167B300AFB85D /* Main.storyboard */; };
 		281E473D1DC167B300AFB85D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281E473C1DC167B300AFB85D /* Assets.xcassets */; };
-		282002061DC691120013A603 /* GeometryUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 282001FF1DC691120013A603 /* GeometryUtil.mm */; };
 		282002071DC691120013A603 /* MLManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 282002011DC691120013A603 /* MLManager.mm */; };
 		282002081DC691120013A603 /* MSERFeature.mm in Sources */ = {isa = PBXBuildFile; fileRef = 282002031DC691120013A603 /* MSERFeature.mm */; };
 		282002091DC691120013A603 /* MSERManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 282002051DC691120013A603 /* MSERManager.mm */; };
@@ -52,8 +51,6 @@
 		281E473C1DC167B300AFB85D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		281E47411DC167B300AFB85D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		281E47861DC16BEE00AFB85D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		282001FE1DC691120013A603 /* GeometryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryUtil.h; sourceTree = "<group>"; };
-		282001FF1DC691120013A603 /* GeometryUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GeometryUtil.mm; sourceTree = "<group>"; };
 		282002001DC691120013A603 /* MLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLManager.h; sourceTree = "<group>"; };
 		282002011DC691120013A603 /* MLManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MLManager.mm; sourceTree = "<group>"; };
 		282002021DC691120013A603 /* MSERFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSERFeature.h; sourceTree = "<group>"; };
@@ -185,8 +182,6 @@
 		282001FD1DC691120013A603 /* MSER Algorithms */ = {
 			isa = PBXGroup;
 			children = (
-				282001FE1DC691120013A603 /* GeometryUtil.h */,
-				282001FF1DC691120013A603 /* GeometryUtil.mm */,
 				282002001DC691120013A603 /* MLManager.h */,
 				282002011DC691120013A603 /* MLManager.mm */,
 				282002021DC691120013A603 /* MSERFeature.h */,
@@ -292,7 +287,6 @@
 				282002101DC691180013A603 /* ImageUtils.mm in Sources */,
 				004EFB341DEB9B26000537AB /* PRFViewController.m in Sources */,
 				282002071DC691120013A603 /* MLManager.mm in Sources */,
-				282002061DC691120013A603 /* GeometryUtil.mm in Sources */,
 				281E47321DC167B300AFB85D /* main.m in Sources */,
 				282002131DC691220013A603 /* CameraViewController.mm in Sources */,
 			);

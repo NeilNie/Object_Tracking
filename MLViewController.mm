@@ -26,6 +26,7 @@
     std::vector<cv::Point> maxMser = [ImageUtils maxMser: &gray];
     
     [MLManager sharedInstance].logoTemplate = [[MSERManager sharedInstance] extractFeature: &maxMser];
+    [MLManager sharedInstance].logoTemplate.name = [self.imageArray objectAtIndex:[self.table indexPathForSelectedRow].row];
     
     //store the feature
     [[MLManager sharedInstance] storeTemplate];

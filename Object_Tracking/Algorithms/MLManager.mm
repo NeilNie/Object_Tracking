@@ -14,14 +14,15 @@
 #import "ImageUtils.h"
 #import <opencv2/highgui/cap_ios.h>
 #import "MSERManager.h"
-#import "GeometryUtil.h"
 
+#define KEY_LEARN @"KEY_LEARN"
 #define KEY_NUMBER_OF_HOLES @"KEY_NUMBER_OF_HOLES"
 #define KEY_CONVEX_AREA_RATE @"KEY_CONVEX_AREA_RATE"
 #define KEY_MIN_RECT_AREA_RATE @"KEY_MIN_RECT_AREA_RATE"
 #define KEY_SKELET_LENGTH_RATE @"KEY_SKELET_LENGTH_RATE"
 #define KEY_CONTOUR_AREA_RATE @"KEY_CONTOUR_AREA_RATE"
 #define KEY_PREFERENCE @"KEY_PREFERENCE"
+#define KEY_NAME @"NAME"
 
 #define AVERAGE 0.113544
 #define STDEV 0.063218
@@ -72,10 +73,8 @@
     cv::RotatedRect rect = cv::minAreaRect(maxMser);    
     cv::Point2f points[4];
     rect.points(points);
-
-    //normalize image
-    cv::Mat M = [GeometryUtil getPerspectiveMatrix: points toSize: rect.size];
-    cv::Mat normalizedImage = [GeometryUtil normalizeImage: &gray withTranformationMatrix: &M withSize: rect.size.width];
+    
+    cv::Mat normalizedImage;
 
     //get maxMser from normalized image
     std::vector<cv::Point> normalizedMser = [ImageUtils maxMser: &normalizedImage];
@@ -153,6 +152,7 @@
     _logoTemplate.minRectAreaRate = [defaults doubleForKey: KEY_MIN_RECT_AREA_RATE];
     _logoTemplate.skeletLengthRate = [defaults doubleForKey: KEY_SKELET_LENGTH_RATE];
     _logoTemplate.contourAreaRate = [defaults doubleForKey: KEY_CONTOUR_AREA_RATE];
+    _logoTemplate.name = [defaults stringForKey:KEY_NAME];
 }
 
 - (void) storeTemplate{
@@ -163,6 +163,7 @@
     [defaults setDouble: _logoTemplate.minRectAreaRate forKey: KEY_MIN_RECT_AREA_RATE];
     [defaults setDouble: _logoTemplate.skeletLengthRate forKey: KEY_SKELET_LENGTH_RATE];
     [defaults setDouble: _logoTemplate.contourAreaRate forKey: KEY_CONTOUR_AREA_RATE];
+    [defaults setObject:_logoTemplate.name forKey:KEY_NAME];
     
     [defaults synchronize];
 }

@@ -38,7 +38,6 @@
     camera.delegate = self;
     
     started = NO;
-    self.label.hidden = NO;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -48,7 +47,6 @@
 
 - (IBAction)btn_TouchUp:(id)sender {
     started = !started;
-    self.label.hidden = YES;
     dispatch_async(dispatch_get_main_queue(), ^{
         [camera start];
     });
@@ -77,8 +75,6 @@
         
         if(feature){
             
-            //NSLog(@"%@", feature);
-            
             if([[MLManager sharedInstance] isFeature: feature] ){
                 
                 double tmp = [[MLManager sharedInstance] distance:feature];
@@ -88,21 +84,20 @@
                 }
                 [ImageUtils drawMser: &mser intoImage: &image withColor: GREEN];
             }
-            //            else
-            //                [ImageUtils drawMser: &mser intoImage: &image withColor: RED];
-            
         }
-        //        else
-        //            [ImageUtils drawMser: &mser intoImage: &image withColor: BLUE];
-        //
     });
     
     if (bestMser){
         
         NSLog(@"minDist: %f", bestPoint);
-        
+        NSLog(@"name: %@", [[MLManager sharedInstance] logoTemplate].name);
         cv::Rect bound = cv::boundingRect(*bestMser);
         cv::rectangle(image, bound, GREEN, 3); //if there is best MSER, draw green bounds around it.
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.label.text = [[MLManager sharedInstance] logoTemplate].name;
+            self.label.center = CGPointMake(bound.x, bound.y);
+        });
     }else
         cv::rectangle(image, cv::Rect(0, 0, W, H), RED, 3);
     
