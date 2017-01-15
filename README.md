@@ -11,6 +11,12 @@ The goal for this application is to track a part of an image based on user selec
 
 I am also writing a research paper on this project. If you are interested in that, please let me know. 
 
+##Screen Shot
+![ScreenShot](https://github.com/NeilNie/Object_Tracking/IMG_0122)
+![ScreenShot](https://github.com/NeilNie/Object_Tracking/IMG_0123)
+![ScreenShot](https://github.com/NeilNie/Object_Tracking/IMG_0124)
+![ScreenShot](https://github.com/NeilNie/Object_Tracking/IMG_0125)
+
 ##Algorithms
 
 MSER help us to identify and track objects (regions). With MSER, we can teach the computer different images, pattern. I newly created a macOS application for MSER testing. Current, MSER is our biggest focus. We have had success in detecting regions as well as tracking regions. In the iOS application, you can programmatically set the template image to track (ex. cocola logo) then test it with realworld images. (Upon your request, I will be able to provide more information) <br>

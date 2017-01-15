@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		008B7BF41DE152FA00B4DB7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008B7BF31DE152FA00B4DB7D /* Images.xcassets */; };
-		00CD0B531DE49EF70006D602 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD0B521DE49EF70006D602 /* opencv2.framework */; };
+		00AD818C1E2B1E96003933E5 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AD818B1E2B1E96003933E5 /* opencv2.framework */; };
 		00DC61441DE13FFB00D7E289 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 00DC61431DE13FFB00D7E289 /* images */; };
 		2805EE701DDD2B3F008F44B5 /* ImageUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2805EE6F1DDD2B3F008F44B5 /* ImageUtils.mm */; };
 		285184B11DDF4265000E612C /* MSERFeature.mm in Sources */ = {isa = PBXBuildFile; fileRef = 285184B01DDF4265000E612C /* MSERFeature.mm */; };
@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		008B7BF31DE152FA00B4DB7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		00CD0B521DE49EF70006D602 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../Documents/Developer/Resources/Frameworks/OpenCV/opencv2.framework; sourceTree = "<group>"; };
+		00AD818B1E2B1E96003933E5 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../Resources/Frameworks/OpenCV/opencv2.framework; sourceTree = "<group>"; };
 		00DC61431DE13FFB00D7E289 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		2805EE6E1DDD2B3F008F44B5 /* ImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtils.h; sourceTree = "<group>"; };
 		2805EE6F1DDD2B3F008F44B5 /* ImageUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageUtils.mm; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00CD0B531DE49EF70006D602 /* opencv2.framework in Frameworks */,
+				00AD818C1E2B1E96003933E5 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +101,7 @@
 		289222F51DDD10DA0090F637 = {
 			isa = PBXGroup;
 			children = (
-				00CD0B521DE49EF70006D602 /* opencv2.framework */,
+				00AD818B1E2B1E96003933E5 /* opencv2.framework */,
 				289223001DDD10DA0090F637 /* OpenCV Tests */,
 				289222FF1DDD10DA0090F637 /* Products */,
 			);
@@ -421,6 +421,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -443,6 +444,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
 				FRAMEWORK_SEARCH_PATHS = (

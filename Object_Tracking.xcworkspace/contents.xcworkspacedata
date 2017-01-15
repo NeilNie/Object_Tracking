@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:OpenCV Tests/OpenCV Tests.xcodeproj">
+      location = "group:OpenCV_iOS.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Object_Tracking.xcodeproj">
+      location = "group:OpenCV Tests/OpenCV Tests.xcodeproj">
    </FileRef>
 </Workspace>
