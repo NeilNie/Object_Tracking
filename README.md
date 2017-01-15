@@ -12,10 +12,10 @@ The goal for this application is to track a part of an image based on user selec
 I am also writing a research paper on this project. If you are interested in that, please let me know. 
 
 ##Screen Shot
-![ScreenShot](https://github.com/NeilNie/Object_Tracking/IMG_0122)
-![ScreenShot](https://github.com/NeilNie/Object_Tracking/IMG_0123)
-![ScreenShot](https://github.com/NeilNie/Object_Tracking/IMG_0124)
-![ScreenShot](https://github.com/NeilNie/Object_Tracking/IMG_0125)
+![ScreenShot](https://github.com/NeilNie/Object_Tracking/IMG_0122.png)
+![ScreenShot](https://github.com/NeilNie/Object_Tracking/IMG_0123.png)
+![ScreenShot](https://github.com/NeilNie/Object_Tracking/IMG_0124.png)
+![ScreenShot](https://github.com/NeilNie/Object_Tracking/IMG_0125.png)
 
 ##Algorithms
 
