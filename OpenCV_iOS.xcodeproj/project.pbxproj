@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		004EFB341DEB9B26000537AB /* PRFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EFB331DEB9B26000537AB /* PRFViewController.m */; };
 		004EFB3A1DEB9BDA000537AB /* MLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 004EFB391DEB9BDA000537AB /* MLViewController.mm */; };
+<<<<<<< HEAD:OpenCV_iOS.xcodeproj/project.pbxproj
 		00C6A7AA1E2B24EA000883D7 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C6A7A91E2B24EA000883D7 /* opencv2.framework */; };
+=======
+>>>>>>> origin/master:Object_Tracking.xcodeproj/project.pbxproj
 		281E47321DC167B300AFB85D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47311DC167B300AFB85D /* main.m */; };
 		281E47351DC167B300AFB85D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47341DC167B300AFB85D /* AppDelegate.m */; };
 		281E473B1DC167B300AFB85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281E47391DC167B300AFB85D /* Main.storyboard */; };
@@ -34,6 +37,7 @@
 		28AA98541DD7E9FC00C8F990 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AA98531DD7E9FC00C8F990 /* Launch Screen.storyboard */; };
 		28EE38EB1DF48F7F006398A8 /* Settings_000000_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EE38EA1DF48F7F006398A8 /* Settings_000000_100.png */; };
 		28EE38ED1DF49001006398A8 /* Info_000000_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EE38EC1DF49001006398A8 /* Info_000000_100.png */; };
+		28EF9E651E1C6FD30046F120 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EF9E641E1C6FD30046F120 /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +46,12 @@
 		004EFB331DEB9B26000537AB /* PRFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRFViewController.m; sourceTree = "<group>"; };
 		004EFB381DEB9BD9000537AB /* MLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLViewController.h; path = ../MLViewController.h; sourceTree = "<group>"; };
 		004EFB391DEB9BDA000537AB /* MLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MLViewController.mm; path = ../MLViewController.mm; sourceTree = "<group>"; };
+<<<<<<< HEAD:OpenCV_iOS.xcodeproj/project.pbxproj
 		00C6A7A91E2B24EA000883D7 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../Resources/Frameworks/OpenCV/opencv2.framework; sourceTree = "<group>"; };
 		281E472D1DC167B300AFB85D /* OpenCV_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCV_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+=======
+		281E472D1DC167B300AFB85D /* Object_Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Object_Tracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+>>>>>>> origin/master:Object_Tracking.xcodeproj/project.pbxproj
 		281E47311DC167B300AFB85D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		281E47331DC167B300AFB85D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		281E47341DC167B300AFB85D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -77,6 +85,7 @@
 		28DCF3E11DDE9974000E673C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		28EE38EA1DF48F7F006398A8 /* Settings_000000_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings_000000_100.png; sourceTree = "<group>"; };
 		28EE38EC1DF49001006398A8 /* Info_000000_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info_000000_100.png; sourceTree = "<group>"; };
+		28EF9E641E1C6FD30046F120 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../../Resources/Frameworks/OpenCV/opencv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +99,11 @@
 				284B95891DDE66EA00E3D249 /* Foundation.framework in Frameworks */,
 				284B95871DDE66E500E3D249 /* CoreVideo.framework in Frameworks */,
 				284B95851DDE66E100E3D249 /* CoreMedia.framework in Frameworks */,
+<<<<<<< HEAD:OpenCV_iOS.xcodeproj/project.pbxproj
 				00C6A7AA1E2B24EA000883D7 /* opencv2.framework in Frameworks */,
+=======
+				28EF9E651E1C6FD30046F120 /* opencv2.framework in Frameworks */,
+>>>>>>> origin/master:Object_Tracking.xcodeproj/project.pbxproj
 				284B95831DDE66DC00E3D249 /* CoreImage.framework in Frameworks */,
 				284B95811DDE66D600E3D249 /* AssetsLibrary.framework in Frameworks */,
 				284B957F1DDE648700E3D249 /* UIKit.framework in Frameworks */,
@@ -105,7 +118,11 @@
 		281E47241DC167B300AFB85D = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD:OpenCV_iOS.xcodeproj/project.pbxproj
 				00C6A7A91E2B24EA000883D7 /* opencv2.framework */,
+=======
+				28EF9E641E1C6FD30046F120 /* opencv2.framework */,
+>>>>>>> origin/master:Object_Tracking.xcodeproj/project.pbxproj
 				281E472F1DC167B300AFB85D /* Object_Tracking */,
 				281E472E1DC167B300AFB85D /* Products */,
 				281E47851DC16BEE00AFB85D /* Frameworks */,
@@ -407,12 +424,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+<<<<<<< HEAD:OpenCV_iOS.xcodeproj/project.pbxproj
 					"\"$(SRCROOT)/../../Resources/Frameworks/OpenCV\"",
+=======
+					"\"$(SRCROOT)/../../../../Resources/Frameworks/OpenCV\"",
+>>>>>>> origin/master:Object_Tracking.xcodeproj/project.pbxproj
 				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+<<<<<<< HEAD:OpenCV_iOS.xcodeproj/project.pbxproj
 				GCC_PREFIX_HEADER = "/Users/YongyangNie/Documents/Developer/Computer Vision Research/Object_Tracking/Object_Tracking/Utils/object_tracking.pch";
+=======
+				GCC_PREFIX_HEADER = /Users/Neil/Documents/Developer/Apple/Softwares/iOS/Object_Tracking/Object_Tracking/Utils/object_tracking.pch;
+>>>>>>> origin/master:Object_Tracking.xcodeproj/project.pbxproj
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -431,12 +456,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+<<<<<<< HEAD:OpenCV_iOS.xcodeproj/project.pbxproj
 					"\"$(SRCROOT)/../../Resources/Frameworks/OpenCV\"",
+=======
+					"\"$(SRCROOT)/../../../../Resources/Frameworks/OpenCV\"",
+>>>>>>> origin/master:Object_Tracking.xcodeproj/project.pbxproj
 				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+<<<<<<< HEAD:OpenCV_iOS.xcodeproj/project.pbxproj
 				GCC_PREFIX_HEADER = "/Users/YongyangNie/Documents/Developer/Computer Vision Research/Object_Tracking/Object_Tracking/Utils/object_tracking.pch";
+=======
+				GCC_PREFIX_HEADER = /Users/Neil/Documents/Developer/Apple/Softwares/iOS/Object_Tracking/Object_Tracking/Utils/object_tracking.pch;
+>>>>>>> origin/master:Object_Tracking.xcodeproj/project.pbxproj
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
