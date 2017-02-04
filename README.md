@@ -12,10 +12,10 @@ The goal for this application is to track a part of an image based on user selec
 I am also writing a research paper on this project. If you are interested in that, please let me know. 
 
 ##Screen Shot
-![ScreenShot](https://github.com/NeilNie/Object_Tracking/blob/master/IMG_0122.PNG)
-![ScreenShot](https://github.com/NeilNie/Object_Tracking/blob/master/IMG_0123.PNG)
-![ScreenShot](https://github.com/NeilNie/Object_Tracking/blob/master/IMG_0124.PNG)
-![ScreenShot](https://github.com/NeilNie/Object_Tracking/blob/master/IMG_0125.PNG)
+
+![ScreenShot](https://c1.staticflickr.com/3/2484/32923106685_9658c3882d_b.jpg)
+![ScreenShot](https://c1.staticflickr.com/3/2227/32108280423_c0664ae1b8_b.jpg)
+<a data-flickr-embed="true"  href="https://www.flickr.com/photos/147445179@N04/32079993634/in/dateposted-public/" title="IMG_0124"><img src="https://c1.staticflickr.com/1/620/32079993634_357917688e_b.jpg" width="500" height="888" alt="IMG_0124"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>![ScreenShot](https://c1.staticflickr.com/1/744/32079993594_c8d73e40b7_b.jpg)
 
 ##Algorithms
 

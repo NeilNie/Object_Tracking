@@ -1,0 +1,44 @@
+////////
+// This sample is published as part of the blog article at www.toptal.com/blog 
+// Visit www.toptal.com/blog and subscribe to our newsletter to read great posts
+////////
+
+//
+//  MSERFeature.m
+//  LogoDetector
+//
+//  Created By Yongyang Nie 11/20/2016
+//  Copyright (c) 2016 Yongyang Nie. All rights reserved.
+//  License:
+//  You may not copy, redistribute, use without quoting the author.
+//  By using this file, you agree to the following LICENSE:
+//  https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+
+#import "MSERFeature.h"
+
+@implementation MSERFeature
+
+-(double) distace: (MSERFeature *) other
+{
+    return 
+    (self.numberOfHoles == other.numberOfHoles ? 1 : 10) * 
+    (log(fabs(self.convexHullAreaRate - other.convexHullAreaRate)) + 
+     log(fabs(self.minRectAreaRate - other.minRectAreaRate)) + 
+     log(fabs(self.skeletLengthRate - other.skeletLengthRate)) + 
+     log(fabs(self.contourAreaRate - other.contourAreaRate)));
+}
+
+-(NSString *)description
+{
+    return [NSString stringWithFormat: 
+            @"numberOfHoles: %li, convexHullAreaRate: %f, minRectAreaRate: %f, skeletLengthRate: %f, contourAreaRate: %f ", 
+            (long)self.numberOfHoles, self.convexHullAreaRate, self.minRectAreaRate, self.skeletLengthRate, self.contourAreaRate];
+}
+
+-(NSString *)toString{
+    return [NSString stringWithFormat: 
+            @"%li \t %f \t %f \t %f \t %f ", 
+            (long)self.numberOfHoles, self.convexHullAreaRate, self.minRectAreaRate, self.skeletLengthRate, self.contourAreaRate];    
+}
+
+@end
