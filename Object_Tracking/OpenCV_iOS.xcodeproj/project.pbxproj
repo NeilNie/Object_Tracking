@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		004EFB341DEB9B26000537AB /* PRFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EFB331DEB9B26000537AB /* PRFViewController.m */; };
 		004EFB3A1DEB9BDA000537AB /* MLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 004EFB391DEB9BDA000537AB /* MLViewController.mm */; };
+		006B70C31E7CB530003F33DA /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006B70C21E7CB530003F33DA /* opencv2.framework */; };
 		281E47321DC167B300AFB85D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47311DC167B300AFB85D /* main.m */; };
 		281E47351DC167B300AFB85D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47341DC167B300AFB85D /* AppDelegate.m */; };
 		281E473B1DC167B300AFB85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281E47391DC167B300AFB85D /* Main.storyboard */; };
@@ -31,7 +32,6 @@
 		284B958D1DDE66F500E3D249 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284B958C1DDE66F500E3D249 /* OpenGLES.framework */; };
 		284B958F1DDE66FB00E3D249 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284B958E1DDE66FB00E3D249 /* QuartzCore.framework */; };
 		28AA98541DD7E9FC00C8F990 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AA98531DD7E9FC00C8F990 /* Launch Screen.storyboard */; };
-		28C6BFF51E55065100A68C98 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C6BFF41E55065100A68C98 /* opencv2.framework */; };
 		28EE38EB1DF48F7F006398A8 /* Settings_000000_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EE38EA1DF48F7F006398A8 /* Settings_000000_100.png */; };
 		28EE38ED1DF49001006398A8 /* Info_000000_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EE38EC1DF49001006398A8 /* Info_000000_100.png */; };
 /* End PBXBuildFile section */
@@ -42,6 +42,7 @@
 		004EFB331DEB9B26000537AB /* PRFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRFViewController.m; sourceTree = "<group>"; };
 		004EFB381DEB9BD9000537AB /* MLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLViewController.h; path = ../MLViewController.h; sourceTree = "<group>"; };
 		004EFB391DEB9BDA000537AB /* MLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MLViewController.mm; path = ../MLViewController.mm; sourceTree = "<group>"; };
+		006B70C21E7CB530003F33DA /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../Resources/Frameworks/OpenCV/opencv2.framework; sourceTree = "<group>"; };
 		281E472D1DC167B300AFB85D /* OpenCV_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCV_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		281E47311DC167B300AFB85D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		281E47331DC167B300AFB85D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		284B958C1DDE66F500E3D249 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		284B958E1DDE66FB00E3D249 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		28AA98531DD7E9FC00C8F990 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
-		28C6BFF41E55065100A68C98 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../../../Resources/Frameworks/OpenCV/opencv2.framework; sourceTree = "<group>"; };
 		28DCF3E11DDE9974000E673C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		28EE38EA1DF48F7F006398A8 /* Settings_000000_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings_000000_100.png; sourceTree = "<group>"; };
 		28EE38EC1DF49001006398A8 /* Info_000000_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Info_000000_100.png; sourceTree = "<group>"; };
@@ -89,8 +89,8 @@
 				284B958B1DDE66F000E3D249 /* GLKit.framework in Frameworks */,
 				284B95891DDE66EA00E3D249 /* Foundation.framework in Frameworks */,
 				284B95871DDE66E500E3D249 /* CoreVideo.framework in Frameworks */,
+				006B70C31E7CB530003F33DA /* opencv2.framework in Frameworks */,
 				284B95851DDE66E100E3D249 /* CoreMedia.framework in Frameworks */,
-				28C6BFF51E55065100A68C98 /* opencv2.framework in Frameworks */,
 				284B95831DDE66DC00E3D249 /* CoreImage.framework in Frameworks */,
 				284B95811DDE66D600E3D249 /* AssetsLibrary.framework in Frameworks */,
 				284B957F1DDE648700E3D249 /* UIKit.framework in Frameworks */,
@@ -105,7 +105,7 @@
 		281E47241DC167B300AFB85D = {
 			isa = PBXGroup;
 			children = (
-				28C6BFF41E55065100A68C98 /* opencv2.framework */,
+				006B70C21E7CB530003F33DA /* opencv2.framework */,
 				281E472F1DC167B300AFB85D /* Object_Tracking */,
 				281E472E1DC167B300AFB85D /* Products */,
 				281E47851DC16BEE00AFB85D /* Frameworks */,
@@ -407,12 +407,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"\"$(SRCROOT)/../../../../../Resources/Frameworks/OpenCV\"",
+					"\"$(SRCROOT)/../../Resources/Frameworks/OpenCV\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/Neil/Documents/Developer/Apple/Softwares/iOS/Object_Tracking/OpenCV iOS/Object_Tracking/Utils/object_tracking.pch";
+				GCC_PREFIX_HEADER = "/Users/YongyangNie/Documents/Developer/Computer Vision Research/Object_Tracking/Object_Tracking/Utils/object_tracking.pch";
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -431,12 +431,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"\"$(SRCROOT)/../../../../../Resources/Frameworks/OpenCV\"",
+					"\"$(SRCROOT)/../../Resources/Frameworks/OpenCV\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/Neil/Documents/Developer/Apple/Softwares/iOS/Object_Tracking/OpenCV iOS/Object_Tracking/Utils/object_tracking.pch";
+				GCC_PREFIX_HEADER = "/Users/YongyangNie/Documents/Developer/Computer Vision Research/Object_Tracking/Object_Tracking/Utils/object_tracking.pch";
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
