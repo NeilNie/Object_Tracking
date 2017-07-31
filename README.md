@@ -12,15 +12,21 @@ I am also writing a research paper on this project. If you are interested in tha
 
 ## Screen Shot
 
-![ScreenShot](https://c1.staticflickr.com/3/2484/32923106685_9658c3882d_b.jpg)
-![ScreenShot](https://c1.staticflickr.com/3/2227/32108280423_c0664ae1b8_b.jpg)
-<a data-flickr-embed="true"  href="https://www.flickr.com/photos/147445179@N04/32079993634/in/dateposted-public/" title="IMG_0124"><img src="https://c1.staticflickr.com/1/620/32079993634_357917688e_b.jpg" width="500" height="888" alt="IMG_0124"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>![ScreenShot](https://c1.staticflickr.com/1/744/32079993594_c8d73e40b7_b.jpg)
+Learn a template            |  Learning result
+:-------------------------:|:-------------------------:
+![ScreenShot](https://c1.staticflickr.com/3/2484/32923106685_9658c3882d_b.jpg) |  ![ScreenShot](https://c1.staticflickr.com/3/2227/32108280423_c0664ae1b8_b.jpg)
+
+Real time detection            |  Settings*
+:-------------------------:|:-------------------------:
+![](https://c1.staticflickr.com/1/620/32079993634_357917688e_b.jpg)| ![ScreenShot](https://c1.staticflickr.com/1/744/32079993594_c8d73e40b7_b.jpg)
+
+Yet to be finished. Contributions are welcomed
 
 ## Algorithms
 
-MSER help us to identify and track objects (regions). With MSER, we can teach the computer different images, pattern. I newly created a macOS application for MSER testing. Current, MSER is our biggest focus. We have had success in detecting regions as well as tracking regions. In the iOS application, you can programmatically set the template image to track (ex. cocola logo) then test it with realworld images. (Upon your request, I will be able to provide more information) <br>
+MSER help us to identify and track objects (regions). With MSER, we can teach the computer different images, pattern. I newly created a macOS application for MSER testing. Current, MSER is our biggest focus. We have had success in detecting regions as well as tracking regions. In the iOS application, you can programmatically set the template image to track (ex. cocola logo) then test it with realworld images. (Upon your request, I will be able to provide more information)
 
-####### This projects a couple of algorithms, LKT algorithm is great at analyzing the content of a frame. It's fast and easy to implement. This algorithm is specifically used in the `ObjectTracking` class. That class is wrapped with `ObjectTrackingSample` class, which is more user friendly and actually gives you some useful data. `SampleFacade` is a objective-c++ class that directly talk to the ViewController. In there, you can find familiar classes such as `NSMutableArray` (instead of `std::vector`) <br>
+###### This project has a couple of algorithms, LKT algorithm is great at analyzing the content of a frame. It's fast and easy to implement. This algorithm is specifically used in the `ObjectTracking` class. That class is wrapped with `ObjectTrackingSample` class, which is more user friendly and actually gives you some useful data. `SampleFacade` is a objective-c++ class that directly talk to the ViewController. In there, you can find familiar classes such as `NSMutableArray` (instead of `std::vector`) <br>
 
 ####### After some development and testing, the object tracking class is more reliable and purposeful than the other algorithms. However, improvements are need, please don't hesitate to fork this repo and make pull requests. 
 
