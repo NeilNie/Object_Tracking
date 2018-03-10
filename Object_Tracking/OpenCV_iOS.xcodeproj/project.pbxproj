@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		004EFB341DEB9B26000537AB /* PRFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EFB331DEB9B26000537AB /* PRFViewController.m */; };
 		004EFB3A1DEB9BDA000537AB /* MLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 004EFB391DEB9BDA000537AB /* MLViewController.mm */; };
-		00BB53A31F2EBEB500F7E7C8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BB53A21F2EBE5500F7E7C8 /* opencv2.framework */; };
+		00D48CD220546EDA0062E68B /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D48CD120546EDA0062E68B /* opencv2.framework */; };
 		281E47321DC167B300AFB85D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47311DC167B300AFB85D /* main.m */; };
 		281E47351DC167B300AFB85D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 281E47341DC167B300AFB85D /* AppDelegate.m */; };
 		281E473B1DC167B300AFB85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281E47391DC167B300AFB85D /* Main.storyboard */; };
@@ -42,7 +42,7 @@
 		004EFB331DEB9B26000537AB /* PRFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRFViewController.m; sourceTree = "<group>"; };
 		004EFB381DEB9BD9000537AB /* MLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLViewController.h; path = ../MLViewController.h; sourceTree = "<group>"; };
 		004EFB391DEB9BDA000537AB /* MLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MLViewController.mm; path = ../MLViewController.mm; sourceTree = "<group>"; };
-		00BB53A21F2EBE5500F7E7C8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../../../../Resources/Frameworks/OpenCV/opencv2.framework; sourceTree = "<group>"; };
+		00D48CD120546EDA0062E68B /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		281E472D1DC167B300AFB85D /* OpenCV_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCV_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		281E47311DC167B300AFB85D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		281E47331DC167B300AFB85D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,8 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00BB53A31F2EBEB500F7E7C8 /* opencv2.framework in Frameworks */,
 				284B958F1DDE66FB00E3D249 /* QuartzCore.framework in Frameworks */,
+				00D48CD220546EDA0062E68B /* opencv2.framework in Frameworks */,
 				284B958D1DDE66F500E3D249 /* OpenGLES.framework in Frameworks */,
 				284B958B1DDE66F000E3D249 /* GLKit.framework in Frameworks */,
 				284B95891DDE66EA00E3D249 /* Foundation.framework in Frameworks */,
@@ -105,7 +105,7 @@
 		281E47241DC167B300AFB85D = {
 			isa = PBXGroup;
 			children = (
-				00BB53A21F2EBE5500F7E7C8 /* opencv2.framework */,
+				00D48CD120546EDA0062E68B /* opencv2.framework */,
 				281E472F1DC167B300AFB85D /* Object_Tracking */,
 				281E472E1DC167B300AFB85D /* Products */,
 				281E47851DC16BEE00AFB85D /* Frameworks */,
@@ -231,12 +231,12 @@
 		281E47251DC167B300AFB85D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Yongyang Nie";
 				TargetAttributes = {
 					281E472C1DC167B300AFB85D = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 8NZ8K5GNH8;
+						DevelopmentTeam = YC4C987ET6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -315,7 +315,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -323,7 +325,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -364,7 +370,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -372,7 +380,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -402,7 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
+				DEVELOPMENT_TEAM = YC4C987ET6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,7 +424,7 @@
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/YongyangNie/Documents/Developer/Apple/Softwares/iOS/Object_Tracking/Object_Tracking/Object_Tracking/Utils/object_tracking.pch;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Object_Tracking/Utils/object_tracking.pch";
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -426,7 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
+				DEVELOPMENT_TEAM = YC4C987ET6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,7 +448,7 @@
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/YongyangNie/Documents/Developer/Apple/Softwares/iOS/Object_Tracking/Object_Tracking/Object_Tracking/Utils/object_tracking.pch;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Object_Tracking/Utils/object_tracking.pch";
 				INFOPLIST_FILE = Object_Tracking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
